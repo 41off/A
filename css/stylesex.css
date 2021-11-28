@@ -1,0 +1,240 @@
+﻿h1 {
+	color: #696969;
+	font-family:Cambria;
+	font-size:12px
+}
+
+.swapvideo {
+	width: 50%;
+    float: left;
+    padding-right: 3px;
+}
+.swapvideo .swaptitle {
+	margin-bottom: 20px;
+}
+.swapvideo .overlayvideo {
+    position:inherit
+}
+.canvas-container {
+    position: absolute !important;
+    width:50%;
+}
+.swapvideo .overlayvideo .video-js {
+    width: 100%;
+}
+.swaptitle h2 {
+	text-align: center;
+}
+.swap_video_btn {
+    width: 100%;
+}
+.swap_video_btn .playbtninner {
+    width: auto;
+    margin: 0;
+}
+
+
+.swap_video_btn .play_block_center {
+    width: 100%;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.toolblock {
+    overflow: hidden;
+    float: left;
+    
+}
+
+.toolblock .inner_tool {
+    width: 100%;
+    overflow: hidden;
+}
+.toolblock .inner_tool button {
+    width: 36px;
+    height: 36px;
+    font-size: 28px;
+    color:blue;
+    line-height: 32px;
+    background: pink;
+    border: 1px solid red;
+    border-radius: 4px;
+    float: left;
+    padding: 2px 2px;
+    margin:2px 2px
+}
+.toolblock .inner_tool button:last-child {
+     border-right: 2px dotted red;
+    }
+.toolblock .inner_tool button.active {
+    background: #E9E9E9;
+}
+.toolblock .inner_tool button .toolicon1 {
+    background-position: -142px 0;
+}
+.toolblock .inner_tool button .toolicon2 {
+    background-position: -160px 0;
+}
+.toolblock .inner_tool button .toolicon3 {
+    background-position: -178px 0;
+}
+.toolblock .inner_tool button .toolicon4 {
+    background-position: -196.5px 0;
+}
+.toolblock .inner_tool button .toolicon5 {
+    background-position: -102px 0;
+}
+.toolblock .inner_tool button .toolicon6 {
+    background-position: -122px 0;
+}
+.toolblock .inner_tool button .toolicon7 {
+    background-position: -81px 0;
+}
+.toolblock .inner_tool button .toolicon8 {
+    background-position: -60px 0;
+}
+.toolblock .inner_tool button .toolicon9 {
+    background-position: -20px 0;
+}
+.toolblock .inner_tool button .toolicon10 {
+    background-position: -40px 0;
+}
+.toolblock .inner_tool button .toolicon11 {
+    background-position: -0px 0;
+}
+.toolblock .inner_tool button .toolicon12 {
+    background-position: -216px 0;
+}
+
+.toolblock .inner_tool button i {
+    background: url('../images/toolimg2.png') no-repeat;
+    width: 18px;
+    height: 18px;
+    display:block;
+    margin: 2px auto;
+    border:thin;border-color:black
+}
+.bothplay .navbtn i {
+    width: 22px;
+    height: 17px;
+}
+.playblock .navbtn {
+    width: 32px;
+    height: 32px;
+    top: 4px;
+}
+.playblock .navbtn {
+    background: #00a6ff;
+    width: 36px;
+    height: 36px;
+    position: relative;
+    top: 2px;
+}
+.playblock button {
+    border: none;
+    padding: 0;
+}
+.playblock .playbtn {
+    width: 120px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 15px;
+}
+
+.playbtninner .playblock .playbtn {    
+    background: #00a6ff;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'ralewaybold';
+}
+.playblock .navbtn .nexticon {
+    background: url("../images/next_arrow.png") no-repeat;
+        background-size: auto;
+    background-size: auto;
+    background-size: 100% auto;
+}
+.playbtninner .playblock .navbtn i {
+    margin: 0 auto;
+    width: 18px;
+    height: 15px;
+    display: block;
+}
+.playbtninner .playblock .navbtn i {
+    width: 15px;
+    height: 13px;
+}
+.playbtninner .playblock .navbtn .preicon {
+    background: url("../images/previous_arrow.png") no-repeat;
+        background-size: auto;
+    background-size: 100% auto;
+}
+.video_palybtnblock{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.video_palybtnblock .zoombtn{
+    margin: 10px 0;
+}
+.video_palybtnblock .zoombtn button{
+    padding: 6px 20px;
+    cursor: pointer;
+} 
+.video_palybtnblock .slowmotion h4{
+    font-size: 16px;
+    font-weight: 600;
+}
+.line-drawing-tools{
+    font-size: 15px;
+    color: #15b18a;
+}
+
+.slowmotionblock button{
+    background-color: #f3f3f3;
+    border:1px solid #ccc;
+    padding: 7px 15px;
+    cursor: pointer;
+}
+.slowmotionblock button.active{
+    background-color: #c2c2c2;
+}
+
+.PGcontain {
+   left:3%;
+   right: 2%;
+   overflow:hidden
+
+}
+
+.PGcol-sm-12 {
+    position: absolute !important;
+    left:  10%;
+    right: 10%;
+    bottom: 3%;
+    background-color:transparent;
+    overflow:hidden
+}
+
+
+#video-canvas {
+    top:0%;
+    left:  0%;
+    left: 0%;
+    bottom:0%;
+    background-color:transparent;
+    overflow:hidden
+}
+
+#video-canvas1 {
+    top:0%;
+    left:  0%;
+    right: 0%;
+    bottom:0%;
+    background-color:transparent;
+    overflow:hidden
+}
+

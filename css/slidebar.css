@@ -1,0 +1,96 @@
+﻿#custom-seekbar {  
+  cursor: pointer;
+  height: 10px;
+  margin-bottom: 10px;
+  background:black;
+  overflow: hidden;
+  position: relative;
+  width: 99.9%;
+  left: 0.1%x;
+  border:thin;
+  border-right:0px
+  
+  border-color:silver;
+}
+
+#custom-seekbar span {
+  background-color: yellow;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 0px;
+}
+
+#custom-seekbar span:after {
+  content: '■';
+  display:block;
+  position: absolute;
+  background-color: blue;
+  width:12px;
+  color: blue;
+  top: 0;
+  right: 0;
+}
+
+#custom-seekbar span.hover:after {
+  content: '■';
+  display:block;
+  position: absolute;
+  background-color: red;
+  color: red;
+  top: 0;
+  right: 0;
+}
+
+
+#custom-seekbar2 {  
+  cursor: pointer;
+  height: 10px;
+  margin-bottom: 10px;
+  background:black;
+  overflow: hidden;
+  position: relative;
+  width: 99.9%;
+  left: 0.1%x;
+  border:thin;
+  border-right:0px
+  
+  border-color:silver;
+}
+
+#custom-seekbar2 span {
+  background-color: yellow;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 0px;
+}
+
+#custom-seekbar2 span:after {
+  content: '■';
+  display:block;
+  position: absolute;
+  background-color: blue;
+  width:12px;
+  color: blue;
+  top: 0;
+  right: 0;
+}
+
+#custom-seekbar2 span.hover:after {
+  content: '■';
+  display:block;
+  position: absolute;
+  background-color: red;
+  color: red;
+  top: 0;
+  right: 0%;
+}
+
+
+
+/* following rule is for hiding Stack Overflow's console */
+.as-console-wrapper{ display: none !important;}
+

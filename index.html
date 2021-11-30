@@ -14,41 +14,56 @@
 
     <title>Video Analysis Canvas</title>
   </head>
-  <body>
+  <body background="silver">
+  
+  
+  
+  
+  
+ 
+  
+  
   	<div class="PGcontain">
-    	<h4 class="text-center">Video Analysis Canvas</h4>
+    	<h5 class="text-center">Video Analysis Canvas</h5>
 
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="swapvideo">
 	 				<div class="swaptitle">
-	 					<center><h5 id="swaptitle-for-video1">Video 1</h5></center>
+	 					<center><h6>Video 1</h6></center>
 	 				</div>
 	 				
 	 				<div class="overlayvideo canvas_videoblock">
-	 				  	<canvas id="video-canvas" height="630" width="900">
-						</canvas>
-					 
-                     <video height="600" width="900" overflow="hidden" preload="auto"  controls muted 
+	 				  
+	 				 <div id="custom-seekbar">
+                      <span></span>
+                     </div>				  
+
+	 			  	<canvas id="video-canvas" height="400" width="800" style="background: transparent;">
+	 			  	</canvas>					 
+                     <video height="430" width="800" overflow="hidden" preload="auto"  controls muted loop 
 						       id="sidebyside-video_1" class="video-js vjs-default-skin vjs-big-play-centered side-by-side-videos"
 		                 	   data-setup='{"customControlsOnMobile": true}'>
                                <source src="https://www.dropbox.com/s/8llq09k2nubue5a/V1.mp4?raw=1" type="video/mp4">
                       </video>
-                     
-                  </div>
-                  
-	 			</div>
+                    </div>
+                 </div>
 
 	 			<div class="swapvideo">
 	 				<div class="swaptitle">
-	 					<center><h5 id="swaptitle-for-video1">Video 2</h5></center>
+	 					<center><h6 >Video 2</h6></center>
 	 				
 	 				</div>	 				
-	 				<div class="overlayvideo canvas_videoblock">
-	 					<canvas id="video-canvas1" height="630" width="900">
+	 				<div class="overlayvideo canvas_videoblock1">
+	 				
+	 				<div id="custom-seekbar2"> 
+                       <span></span>
+                       </div>
+
+	 					<canvas id="video-canvas1" height="400" width="800">
 						</canvas>
 
-						<video height="600" width="900" overflow="hidden" preload="auto" controls muted
+						<video height="430" width="800" overflow="hidden" preload="auto" controls muted loop
 						       id="sidebyside-video_2" class="video-js vjs-default-skin vjs-big-play-centered side-by-side-videos"
 		                 	   data-setup='{"customControlsOnMobile": true}'>
                                <source src="https://www.dropbox.com/s/f6fvnwe0qi7joyc/V2.mp4?raw=1" type="video/mp4">
@@ -60,16 +75,18 @@
 	 			
 			</div>
 			
-			
+  <!-- 			
 			<div class="bar">
 			  <div id="custom-seekbar">
                       <span></span>
                      </div>
             
-              <div id="custom-seekbar2"> 
+           
+            <div id="custom-seekbar2"> 
                        <span></span>
                        </div>
              </div>
+ 	-->
  			
 			<div class="PGcol-sm-12">
 			
@@ -107,7 +124,7 @@
 		 			 </center>
 		 				<div class="play_block_center">
 							<div class="toolblock">
-								<h3>Drawing Tools</h3>
+								<h6>Drawing Tools</h6>
 								<div class="inner_tool">
 								    <button id="addtextbutton" onclick="Addtext()">T</button>
 									<button class="line-drawing-tools" data-value="circle">
@@ -146,9 +163,9 @@
 									<button id="addtextbutton" onclick="Addtext1()">T</button>	
 							</div>
 								<center>
-								<a href="javascript:void(0)" class="line-drawing-tools" data-value="delete">Delete Selected Shape</a>
-								<br>
-								<a href="javascript:void(0)" class="line-drawing-tools" data-value="clear">Delete All Shapes</a>
+								   <button href="javascript:void(0)" class="line-drawing-tools"  data-value="delete">Delete Selected Shape</button>
+								   <button href="javascript:void(0)" class="line-drawing-tools" data-value="clear">Delete All Shapes</button>
+
 								</center>
 							</div>
 							
@@ -191,6 +208,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- Text - Color Palette JS -->
+    <script src="plugins/wrappers.js"></script>
     <script src="plugins/textbox.js"></script>
     <script src="js/slidebar.js"></script>
     <script src="js/slidebar2.js"></script>
@@ -198,6 +216,7 @@
 
 	
 	<!-- Video JS -->
+	<script src="plugins/videojs/js/video.js"></script>
 	<script src="plugins/videojs/js/video-5-15-1.js"></script>
 	<script src="plugins/videojs/js/videojs.zoomrotate.js"></script>
 

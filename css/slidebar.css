@@ -1,21 +1,20 @@
 ﻿#custom-seekbar {  
   cursor: pointer;
   height: 17px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   background:black;
-  overflow: hidden;
-  position: absolute;
-  width: 50.15%;
-  left: .25%;
+  overflow:visible;
+  position: relative;
+  width: 100%;
+  left: 0%;
   border:thin;
   border-right:0px;  
   border-color:red;
- 
- 
+  
 }
 
 #custom-seekbar span {
-  background-color: silver;
+  background-color: white;
   position: absolute;
   top: 0;
   left: 0;
@@ -32,6 +31,8 @@
   color: blue;
   top: 0;
   right: 0;
+  overflow:hidden
+  
 }
 
 #custom-seekbar span.hover:after {
@@ -41,7 +42,22 @@
   background-color: red;
   color: red;
   top: 0;
-  right: 0;
+  right: 0%;
+}
+
+.bar {
+  height: 18px;
+  margin-bottom: 2px;
+  background:black;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  left: 0%;
+  border:thin;
+  border-right:0px;  
+  border-color:black;
+  top: 10%
+  
 }
 
 
@@ -51,10 +67,10 @@
   height: 17px;
   margin-bottom: 0px;
   background:black;
-  overflow:hidden;
-  position: absolute;
-  width: 49.45%;
-  left: 50.55%;
+  overflow:visible;
+  position: relative;
+  width: 100%;
+  left: 0%;
   border:thin;
   border-right:0px;  
   border-color:red;
@@ -62,7 +78,7 @@
 }
 
 #custom-seekbar2 span {
-  background-color: silver;
+  background-color: white;
   position: absolute;
   top: 0;
   left: 0;
@@ -78,7 +94,8 @@
   width:12px;
   color: blue;
   top: 0;
-  right: 0;
+  right: 0px;
+  overflow:hidden
   
 }
 
@@ -90,21 +107,6 @@
   color: red;
   top: 0;
   right: 0%;
-}
-
-.bar {
-  height: 18px;
-  margin-bottom: 2px;
-  background:transparent;
-  overflow: hidden;
-  position: absolute;
-  width: 99%;
-  left: 0%;
-  border:thin;
-  border-right:0px;  
-  border-color:red;
-  bottom: 240px
-
 }
 
 .bar2 {
@@ -121,8 +123,6 @@
   bottom: 220px
 
 }
-
-
 
 
 /* following rule is for hiding Stack Overflow's console */

@@ -1,8 +1,18 @@
-﻿h1 {
+﻿body {
+  background-color: silver;
+  width:100%; height:100%;
+}
+
+canvas { display:block; 
+} /* To remove the scrollbars */
+
+
+h1 {
 	color: #696969;
 	font-family:Cambria;
 	font-size:12px
 }
+
 
 .swapvideo {
 	width: 50%;
@@ -33,13 +43,33 @@
     margin: 0;
 }
 
-
 .swap_video_btn .play_block_center {
     width: 100%;
     overflow: hidden;
     text-align: left;
     margin-top: 15px;
 }
+
+
+.line-drawing-tools{
+    font-size: 16px;
+    color: white;
+    background-color:black;
+    font-weight:600;
+    border:2px;
+    border-color: red;
+    border-radius: 2px
+}
+
+.line-drawing-tools:hover{
+    font-size: 16px;
+    color: black;
+    background-color: pink;
+    border:2px;
+    border-color: black;
+    border-radius: 2px
+}
+
 
 .toolblock {
     overflow: hidden;
@@ -113,44 +143,60 @@
     height: 18px;
     display:block;
     margin: 2px auto;
-    border:thin;border-color:black
+    border:thin;
+    border-color:black;
 }
+
 .bothplay .navbtn i {
-    width: 22px;
-    height: 17px;
+    width: 20px;
+    height: 14px;
 }
 .playblock .navbtn {
-    width: 32px;
-    height: 32px;
-    top: 4px;
-}
-.playblock .navbtn {
-    background: #00a6ff;
     width: 36px;
     height: 36px;
-    position: relative;
     top: 2px;
+    background-color:black
 }
+.playblock .navbtn:hover {
+    background: pink;
+    border:2px;
+    border-color:black;
+    border-radius: 2px;
+    position: relative;
+    top: 1px;
+    
+}
+
 .playblock button {
     border: none;
     padding: 0;
+    background-color:black
 }
+
 .playblock .playbtn {
     width: 120px;
     height: 37px;
     line-height: 37px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .playbtninner .playblock .playbtn {    
-    background: #00a6ff;
+    background: black;
     width: 140px;
     height: 40px;
     line-height: 40px;
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'ralewaybold';
 }
+
+.playbtninner .playblock .playbtn:hover {    
+    background: pink;
+    color:black;
+    font-weight:bold;
+    font-style:italic
+}
+
 .playblock .navbtn .nexticon {
     background: url("../images/next_arrow.png") no-repeat;
         background-size: auto;
@@ -188,10 +234,6 @@
     font-size: 16px;
     font-weight: 600;
 }
-.line-drawing-tools{
-    font-size: 15px;
-    color: #15b18a;
-}
 
 .slowmotionblock button{
     background-color: #f3f3f3;
@@ -212,9 +254,9 @@
 
 .PGcol-sm-12 {
     position: absolute !important;
-    left:  10%;
-    right: 10%;
-    bottom: 3%;
+    left:  5%;
+    right: 5%;
+    bottom:2%;
     background-color:transparent;
     overflow:hidden
 }
@@ -226,7 +268,8 @@
     left: 0%;
     bottom:0%;
     background-color:transparent;
-    overflow:hidden
+    overflow:hidden;
+    
 }
 
 #video-canvas1 {
@@ -235,6 +278,6 @@
     right: 0%;
     bottom:0%;
     background-color:transparent;
-    overflow:hidden
+    overflow:hidden;
 }
 

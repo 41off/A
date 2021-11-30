@@ -134,9 +134,9 @@ $(document).on('click', '.line-drawing-tools', function (event) {
     isPaintO = "0";
     isTriangleDrawing = "0";
     
-    
     if ($(this).hasClass('active')) {
         $(".line-drawing-tools").removeClass('active');
+               
     }
     else {
         var btnValue = $(this).data("value") || "";

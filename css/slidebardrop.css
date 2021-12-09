@@ -179,7 +179,7 @@
 
 .dropbtn:hover .box, .dropbtn:focus .box, .dropbtn:focus-within .box {
   visibility: visible;
-  background: url('../images/Dropbox.png') lightyellow;
+  background: url('../images/Dropbox.png') no-repeat;
   background-position: -15px -18px;
  
 }

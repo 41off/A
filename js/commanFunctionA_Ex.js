@@ -505,8 +505,8 @@ var startAngle
                 fill: 'lime'
             });
             
-            line.lineText = text3;
-            canvas.add(text3);
+      //      line.lineText = text3;
+      //      canvas.add(text3);
             line.lineText = text2;
             canvas.add(text2);
             isDownAngle = false;
@@ -618,8 +618,8 @@ var startAngle
                 fill: 'lime'
             });
             
-            line.lineText = text3;
-            canvas1.add(text3);
+      //      line.lineText = text3;
+       //     canvas1.add(text3);
             line.lineText = text2;
             canvas1.add(text2);
             isDownAngle = false;
@@ -646,6 +646,237 @@ var startAngle
 
 
 
+
+var startLine
+//var startAngle1
+ function drawLine() {
+ 
+    //draw angel in canvas 0
+   
+    canvas.on('mouse:down', function (o) {
+        if (isLineDrawing == "1") {
+            canvas.selection = false;
+            isDownAngle = true;
+            var pointer = canvas.getPointer(o.e);
+            var points = [pointer.x, pointer.y, pointer.x, pointer.y];
+
+            line = new fabric.Line(points, {
+                strokeWidth: 2,
+                fill: 'blue',
+                stroke: 'yellow',
+                originX: 'center',
+                originY: 'center'
+            });
+       //     line.line1 = line;
+            canvas.add(line);
+        }
+    });
+
+    canvas.on('mouse:move', function (o) {
+        if (!isDownAngle)
+            return;
+        if (isLineDrawing == "1") {
+            var pointer = canvas.getPointer(o.e);
+            line.set({x2: pointer.x, y2: pointer.y});
+            canvas.renderAll();
+        }
+    });
+    canvas.on('mouse:up', function (o) {
+
+        if (isLineDrawing == "1") {
+            y11 = line.get('y1');
+            y12 = line.get('y2');
+            x11 = line.get('x1');
+            x12 = line.get('x2');
+                        
+            var dy = y12 - y11;
+            var dx = x12 - x11;
+            
+            var omega = Math.hypot(dy, dx); // range (-PI, PI]
+            omega *= 180 / Math.PI;
+            line.startAngle = omega;
+            var angle = countAngle(omega);
+            var leng = parseInt(angle).toString() +' u   ' + '                        ';
+            var top = line.top;
+            var left = line.left;
+            if((omega >45 && omega < 75) || (omega >-180 && omega < -165)){
+                left += 11;
+            }
+            if((omega >76 && omega < 90) || (omega >-166 && omega < -145)){
+                left += 08;
+            }
+            if((omega >0 && omega < 46) || (omega >-146 && omega < -90)){
+                left += 20;
+            }
+            var text3 = new fabric.Text(leng, {
+                fontSize: 16,
+                fontWeight: 500,
+                fontFamily: 'Arial', top: top, left:left,
+                fill: 'lime'
+            });
+
+         
+            var theta = Math.atan2(dy, dx); // range (-PI, PI]
+            theta *= 180 / Math.PI;
+            line.startAngle = theta;
+            var angle = countAngle(theta);
+            var angl = parseInt(angle).toString() +'°';
+            var top = line.top;
+            var left = line.left;
+            if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
+                left += 11;
+            }
+            if((theta >76 && theta < 90) || (theta >-166 && theta < -145)){
+                left += 08;
+            }
+            if((theta >0 && theta < 46) || (theta >-146 && theta < -90)){
+                left += 20;
+            }
+            var text2 = new fabric.Text(angl, {
+                fontSize: 18,
+                fontFamily: 'Verdana', top: top, left:left,
+                fill: 'lime'
+            });
+            
+            line.lineText = text3;
+            canvas.add(text3);
+          //  line.lineText = text2;
+           // canvas.add(text2);
+            isDownAngle = false;
+            rotateText(line);
+
+   }
+ });
+     canvas.on('object:rotating', 
+       function (e) {
+        if(typeof e.target.lineText != "undefined"){
+            var newAngle = getCurrentAngle(e);
+            var theta = countAngle(newAngle);
+            var omega = countAngle(newAngle);
+            theta = parseInt(theta).toString() +'u';
+            omega = parseInt(omega).toString() +'°';
+            e.target.lineText.setText(theta);
+            e.target.lineText.setText(omega);
+            fill: 'white';
+            rotateText(e.target);
+          }
+ });
+   
+     //draw angel in canvas 1
+
+    canvas1.on('mouse:down', function (o) {
+        if (isLineDrawing == "1") {
+            canvas1.selection = false;
+            isDownAngle = true;
+            var pointer = canvas1.getPointer(o.e);
+            var points = [pointer.x, pointer.y, pointer.x, pointer.y];
+
+            line = new fabric.Line(points, {
+                strokeWidth: 2,
+                fill: 'blue',
+                stroke: 'yellow',
+                originX: 'center',
+                originY: 'center'
+            });
+       //     line.line1 = line;
+            canvas1.add(line);
+        }
+    });
+
+    canvas1.on('mouse:move', function (o) {
+        if (!isDownAngle)
+            return;
+        if (isLineDrawing == "1") {
+            var pointer = canvas1.getPointer(o.e);
+            line.set({x2: pointer.x, y2: pointer.y});
+            canvas1.renderAll();
+        }
+    });
+    canvas1.on('mouse:up', function (o) {
+
+        if (isLineDrawing == "1") {
+            y11 = line.get('y1');
+            y12 = line.get('y2');
+            x11 = line.get('x1');
+            x12 = line.get('x2');
+                        
+            var dy = y12 - y11;
+            var dx = x12 - x11;
+            
+            var omega = Math.hypot(dy, dx); // range (-PI, PI]
+            omega *= 180 / Math.PI;
+            line.startAngle = omega;
+            var angle = countAngle(omega);
+            var leng = parseInt(angle).toString() +' u     ' + '                        ';
+            var top = line.top;
+            var left = line.left;
+            if((omega >45 && omega < 75) || (omega >-180 && omega < -165)){
+                left += 11;
+            }
+            if((omega >76 && omega < 90) || (omega >-166 && omega < -145)){
+                left += 08;
+            }
+            if((omega >0 && omega < 46) || (omega >-146 && omega < -90)){
+                left += 20;
+            }
+            var text3 = new fabric.Text(leng, {
+                fontSize: 16,
+                fontWeight: 500,
+                fontFamily: 'Arial', top: top, left:left,
+                fill: 'lime'
+            });
+
+       
+            var theta = Math.atan2(dy, dx); // range (-PI, PI]
+            theta *= 180 / Math.PI;
+            line.startAngle = theta;
+            var angle = countAngle(theta);
+            var angl = parseInt(angle).toString() +'°';
+            var top = line.top;
+            var left = line.left;
+            if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
+                left += 11;
+            }
+            if((theta >76 && theta < 90) || (theta >-166 && theta < -145)){
+                left += 08;
+            }
+            if((theta >0 && theta < 46) || (theta >-146 && theta < -90)){
+                left += 20;
+            }
+            var text2 = new fabric.Text(angl, {
+                fontSize: 18,
+                fontFamily: 'Verdana', top: top, left:left,
+                fill: 'lime'
+            });
+            
+            line.lineText = text3;
+            canvas1.add(text3);
+        //    line.lineText = text2;
+        //    canvas1.add(text2);
+            isDownAngle = false;
+            rotateText(line);
+
+   }
+ });
+     canvas1.on('object:rotating', 
+       function (e) {
+        if(typeof e.target.lineText != "undefined"){
+            var newAngle = getCurrentAngle(e);
+            var theta = countAngle(newAngle);
+            var omega = countAngle(newAngle);
+            theta = parseInt(theta).toString() +'u';
+            omega = parseInt(omega).toString() +'°';
+            e.target.lineText.setText(theta);
+            e.target.lineText.setText(omega);
+            fill: 'white';
+            rotateText(e.target);
+          }
+ });
+}
+
+
+
+/*
 // attempt at line draw with measure
 
  var startLine
@@ -789,14 +1020,16 @@ var startAngle
                 fill: 'yellow'
             });
                   
-            line.lineText = text1;
-            canvas1.add(text1);
+            line.lineText = text;
+            canvas1.add(text);
             isDownAngle = false;
             rotateText(line);
-            rotateText(text1);
+            rotateText(text);
    }
  });
 }
+
+*/
 
 function createTriangle(left, top, line1, line2, line3, line4) {
       var c = new fabric.Triangle;       
@@ -1134,6 +1367,9 @@ $(document).on('click', '.btn-slow-motion', function(event) {
     else if (motion == 8) {
         configVideoPlaybackRates = 0.125
     }
+    else if (motion == 16) {
+        configVideoPlaybackRates = 0.0625
+    }
     else {
         configVideoPlaybackRates = 1
     }
@@ -1147,4 +1383,44 @@ $(document).on('click', '.btn-slow-motion', function(event) {
     $('.btn-slow-motion').removeClass('active');
     $(this).addClass("active");
 });
+
+
+$(document).on('click', '.btn-slow-motion2', function(event) {
+    event.preventDefault();
+    var motion = $(this).data("motion") || 1;
+    if(motion == 2) {
+        configVideoPlaybackRates = 0.5
+    }
+    else if (motion == 4) {
+        configVideoPlaybackRates = 0.25
+    }
+    else if (motion == 8) {
+        configVideoPlaybackRates = 0.125
+    }
+    else if (motion == 16) {
+        configVideoPlaybackRates = 0.0625
+    }
+    else {
+        configVideoPlaybackRates = 1
+    }
+
+    var currentplayer = $(this).data('playername');
+    if ( currentplayer == "player" ){
+        player.playbackRate(configVideoPlaybackRates);
+    }else {
+        otherPlayer.playbackRate(configVideoPlaybackRates);
+    }
+    $('.btn-slow-motion2').removeClass('active');
+    $(this).addClass("active");
+});
+
+
+
+
+
+
+
+
+
+
 });

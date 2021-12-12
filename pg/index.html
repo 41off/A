@@ -103,7 +103,7 @@
                                 </div>
                                 
                                 <div class="dropdown2">
-                                     <button class="dropbtn"onClick="multiStop()">Timer Reset<span class="box1">Click to Reset</span>
+                                     <button class="dropbtn" onClick="timeStop()">Timer Reset<span class="box1">Click to Reset</span>
                                      </button>
                                 </div>
                               </div>
@@ -116,63 +116,6 @@
             </div>
 
 	                
-    <script>
-	       //  close button
-           var close = document.getElementsByClassName('closebtn2');
-           var i;
-            for (i = 0; i < close.length; i++) {
-          close[i].onclick = function(){
-           var div = this.parentElement;
-            div.style.opacity = "4";
-            div.style.Color = 'red';
-           setTimeout(function(){ div.style.display = "none"; }, 1200);
-        }
-      }
-     </script>
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!-- 			    <left><div class="dropdown">
-                                     <button class="dropbtn">Upload Video Link<span class="box">Select your DropBox folder from the scrolling menu below. Click to open it in a new window. “Drag and Drop” the vide you choose to replace. It must be the same                                      
-                                            “name” exactly; either “v1.mp4” or “v2.mp4”. THEY CANNOT BE DELETED, then added. Using the DRAG and DROP method will keep the same URL for that video allowing it to remain viewable in your player.</span></button>
-                                       <div class="dropdown-content">
-                                       <a href="#" onclick='window.open("https://www.dropbox.com/sh/97fpvdrkmne42or/AABREWUct3ot4TjNEvCHSq15a?dl=0");return false;'>PG DropBox</a>
-                                       
-                                      </div>
-                                  </div></left>
-                                 
-                               <right><div class="dropdown">
-                                     <button class="dropbtn">Your Video Player<span class="box2">Choose your video player below to analyze the videos named v1.mp4 and v2.mp4 that you have uploaded to your DropBox folder.</span></button>
-                                       <div class="dropdown-content">
-                                        <a href="#" onclick="window.location.href='https://pg.video.41off.com';">PG Player</a>
-                                        </div>
-                                    </div></right>
-                              </div>
-              	
-    -->              
-              	  
-              	
-			
-  <!-- 			
-			<div class="bar">
-			  <div id="custom-seekbar">
-                      <span></span>
-                     </div>
-            
-           
-            <div id="custom-seekbar2"> 
-                       <span></span>
-                       </div>
-             </div>
- 	-->
  			
 			<div class="PGcol-sm-12">
 			
@@ -182,7 +125,7 @@
 		 			<center><div class="playbtninner">
 		 				<div class="playblock">
 		 					<button type="button" class="navbtn prebtn left-video-backward"><i class="preicon"></i></button>
-		 					<button type="button" class="playbtn playVideoLeftBtn" onClick="multiStart()" value="Play">Play Left</button>
+		 					<button type="button" class="playbtn playVideoLeftBtn" onClick="timerStart()" value="Play">Play Left</button>
 		 					<button type="button" class="navbtn nextbtn left-video-forward"><i class="nexticon"></i></button>
 		 				</div>
 		 				<div class="zoombtn">
@@ -210,9 +153,16 @@
 		 					  
 		 				<center>
 		 					<button type="button" class="navbtn prebtn both-backward"><i class="preicon"></i></button>
-		 					<button type="button" class="playbtn action-on-both" onClick="timerStart()">Play Both</button>
+		 					<button type="button" class="playbtn action-on-both" onClick="timerStart(80)">Play Both</button>
 		 					<button type="button" class="navbtn nextbtn both-forward"><i class="nexticon"></i></button>
 		 				 </center>
+		 				    <center><div class="slowmotionblock">
+		 				        <button class="slowmotionblock3 active" data-motion="1" data-playerslow='player'>&nbsp;1x</button>
+								<button class="slowmotionblock3" data-motion="2" data-playerslow='player'>-2x</button>
+								<button class="slowmotionblock3" data-motion="4" data-playerslow='player'>-4x</button>
+								<button class="slowmotionblock3" data-motion="8" data-playerslow='player'>-8x</button>
+								<button class="slowmotionblock3" data-motion="16" data-playerslow='player'>-16x</button>
+                             </div></center>
 		 				  </div>
 		 			 
 		 				<div class="play_block_center">
@@ -276,15 +226,13 @@
 		 			</div>
 					
 					<div class="playbtninner">
-		 			<center>	<div class="playblock">
+		 			<center>
+		 				<div class="playblock">
 		 					<button type="button" class="navbtn prebtn right-video-backward"><i class="preicon"></i></button>
-		 					<button type="button" class="playbtn playVideoRightBtn">Play Right</button>
+		 					<button type="button" class="playbtn playVideoRightBtn" onClick="timerStart()">Play Right</button>
 		 					<button type="button" class="navbtn nextbtn right-video-forward"><i class="nexticon"></i></button>
 		 				</div>
-		 				<div class="zoombtn">
-		 					<button type="button" class="right-video-zoom-in">Zoom In</button>
-		 					<button type="button" class="right-video-zoom-out">Zoom Out</button>
-		 				</div>
+		 				
 		 				<div class="slowmotion">
 							
 							<div class="slowmotionblock">
@@ -295,6 +243,11 @@
 								<button class="btn-slow-motion2" data-motion="16" data-playername='otherPlayer'>-16x</button>
 							</div>
 						  </div>
+						  
+						<div class="zoombtn">
+		 					<button type="button" class="right-video-zoom-in">Zoom In</button>
+		 					<button type="button" class="right-video-zoom-out">Zoom Out</button>
+		 				</div>
 					</center>
 		 			  </div>
 		 			</div>			    

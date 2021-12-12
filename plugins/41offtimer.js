@@ -122,8 +122,8 @@ $(document).ready(function(e)
 });
 
 
-   function timerStart() {
-      var btn = document.getElementsByClassName("dropbtn");
+function timerStart() {
+      var btn = document.getElementsByClassName("playbtn");
       
    /*   var w = window.open('','','width=300,height=30')
       
@@ -154,178 +154,25 @@ $(document).ready(function(e)
 }
 
 
-   function timerStart1() {
-      var btn = document.getElementsByClassName("btn-slow-motion");
-      
-   /*   var w = window.open('','','width=300,height=30')
-      
-      setTimeout(function() {w.close();}, 5000)
-    */   
-        if (btn.value == "1x") {
-            /*w.document.write('Use this button before each click on rewind buttons ("-1/8X or -1X")');
-              w.focus();  */
-             btn.value = "1x";
-             btn.innerHTML = "";
-             timer.start(10);
-             
-                }
-         else {
-             btn.value = "1x";
-             btn.innerHTML = "";
-             timer.stop();
-              }
-              
-     if(timer.stop){
-      
-      timer.start(10);
-      timer.mode(1);      
-     } 
-       else {
-            timer.stop();
-     }
+
+function timeStop() {
+    timer.reset(0);
+    
+    
+   
 }
 
-
- function timerStart2() {
-      var btn = document.getElementsByClassName("btn-slow-motion");
-      
-   /*   var w = window.open('','','width=300,height=30')
-      
-      setTimeout(function() {w.close();}, 5000)
-    */   
-        if (btn.value == "Timer Start") {
-            /*w.document.write('Use this button before each click on rewind buttons ("-1/8X or -1X")');
-              w.focus();  */
-             btn.value = "-2x";
-             btn.innerHTML = "-2x";
-             timer.start(20);
-             
-                }
-         else {
-             btn.value = "-2x";
-             btn.innerHTML = "S";
-             timer.stop();
-              }
-              
-     if(timer.stop){
-      
-      timer.start(20);
-      timer.mode(1);      
-     } 
-       else {
-            timer.stop();
+  //  close button
+     var close = document.getElementsByClassName('closebtn2');
+     var i;
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function(){
+         var div = this.parentElement;
+            div.style.opacity = "4";
+            div.style.Color = 'red';
+            setTimeout(function(){ div.style.display = "none"; }, 1200);
      }
- }
-
- function timerStart4() {
-      var btn = document.getElementsByClassName("btn-slow-motion");
-      
-   /*   var w = window.open('','','width=300,height=30')
-      
-      setTimeout(function() {w.close();}, 5000)
-    */   
-        if (btn.value == "Timer Start") {
-            /*w.document.write('Use this button before each click on rewind buttons ("-1/8X or -1X")');
-              w.focus();  */
-             btn.value = "-4x";
-             btn.innerHTML = "-4x";
-             timer.start(40);
-             
-                }
-         else {
-             btn.value = "-4x";
-             btn.innerHTML = "-4x";
-             timer.stop();
-              }
-              
-     if(timer.stop){
-      
-      timer.start(40);
-      timer.mode(1);      
-     } 
-       else {
-            timer.pause();
-     }
- }
-
- function timerStart8() {
-      var btn = document.getElementsByClassName("btn-slow-motion");
-      
-   /*   var w = window.open('','','width=300,height=30')
-      
-      setTimeout(function() {w.close();}, 5000)
-    */   
-        if (btn.value == "-8x") {
-            /*w.document.write('Use this button before each click on rewind buttons ("-1/8X or -1X")');
-              w.focus();  */
-             btn.value = "-8x";
-             btn.innerHTML = "-8x";
-             timer.start(80);
-             
-                }
-         else {
-             btn.value = "-8x";
-             btn.innerHTML = "-8x";
-             timer.stop();
-              }
-              
-     if(timer.stop){
-      
-      timer.start(80);
-      timer.mode(1);      
-     } 
-       else {
-            timer.stop();
-     }
- }
-
-
- function timerStart16() {
-      var btn = document.getElementsByClassName("btn-slow-motion");
-      
-   /*   var w = window.open('','','width=300,height=30')
-      
-      setTimeout(function() {w.close();}, 5000)
-    */   
-        if (btn.value == "-16x") {
-            /*w.document.write('Use this button before each click on rewind buttons ("-1/8X or -1X")');
-              w.focus();  */
-             btn.value = "-16x";
-             btn.innerHTML = "-16x";
-             timer.start(160);
-             
-                }
-         else {
-             btn.value = "-16x";
-             btn.innerHTML = "-16x";
-             timer.stop();
-              }
-              
-     if(timer.stop){
-      
-      timer.start(160);
-      timer.mode(1);      
-     } 
-       else {
-            timer.stop();
-     }
- }
-
-
-
-
-
-function multiStop() {
-    player.pause();
-    otherPlayer.pause();
-    timer.stop();
-    timer.reset(0000);
-    video_player.pause();
-    clearInterval(rewind);
-    timer.start();
 }
-
-
 
 
 

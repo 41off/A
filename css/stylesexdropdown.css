@@ -1,8 +1,6 @@
 ﻿body {
   background-color: silver;
   width:100%; height:100%;
-  object-fit: contain;
-  
 }
 
 canvas { display:block; 
@@ -43,54 +41,35 @@ h1 {
 .swap_video_btn .playbtninner {
     width: auto;
     margin: 0;
-    
 }
-
-.swap_video_btn .playbtninnerL {
-    width: auto;
-    margin: 0;
-    
-}
-
-
-.swap_video_btn .playbtninnerR {
-    width: auto;
-    margin: 0;
-    
-}
-
 
 .swap_video_btn .play_block_center {
-    width: auto;
+    width: 100%;
     overflow: hidden;
-    text-align: center;
-    margin-top: 2px;
-    
+    text-align: left;
+    margin-top: 15px;
 }
-
-
-.toolblock {
-   position:flex;
-   padding-top:33px;
-}
-
 
 
 .line-drawing-tools{
     position: flex;
-    background-color:transparent;
-    border:4px;
-    border-color: yellow;
+    font-size: 16px;
+    color: white;
+    background-color:black;
+    font-weight:600;
+    border:2px;
+    border-color: red;
     border-radius: 4px;
     bottom:2px;
-    
+    padding-top:2px
 }
 
 .line-drawing-tools:hover{
+    
     color: black;
-    background-color: lightgreen;
+    background-color: pink;
     border:4px;
-    border-color: yellow;
+    border-color: red;
     border-radius: 4px
 }
 
@@ -113,19 +92,18 @@ h1 {
     background-color:black;
     font-weight:600;
     border:6px;
-    border-color: yellow;
+    border-color: red;
     border-radius: 6px;
     padding-top:2px 2px;
 }
 
 .line-drawing-tools2btn:hover{
     color: black;
-    background-color: lightgreen;
+    background-color: pink;
     border-color: black;
 }
 
-	
-}
+
 
 .toolblock .inner_tool {
     width: 100%;
@@ -134,23 +112,22 @@ h1 {
 }
 
 .toolblock .inner_tool button {
-    height:38px;
-    width:38px;    
+    height:40px;
+    width:40px;    
     font-size: 28px;
     color:blue;
     line-height: 39px;
-    background: lightgreen;
-    border: 1px solid yellow;
+    background: pink;
+    border: 1px solid red;
     border-radius: 4px;
     float: left;
     padding:0px;
     margin:2px 2px;
     
-    
 }
 
 .toolblock .inner_tool button:last-child {
-     border-right: 3px dotted yellow;
+     border-right: 3px dotted red;
     }
 .toolblock .inner_tool button.active {
     background: #E9E9E9;
@@ -165,16 +142,16 @@ h1 {
     background-position: -610px -3px;
 }
 .toolblock .inner_tool button .toolicon4 {
-    background-position: -560px 0;
+    background-position: -559px 0;
 }
 .toolblock .inner_tool button .toolicon5 {
     background-position: -513px 0;
 }
 .toolblock .inner_tool button .toolicon6 {
-    background-position: -466px 0;
+    background-position: -465px 0;
 }
 .toolblock .inner_tool button .toolicon7 {
-    background-position: -416px 0;
+    background-position: -415px 0;
 }
 .toolblock .inner_tool button .toolicon8 {
     background-position: -375px 0;
@@ -189,7 +166,7 @@ h1 {
     background-position: -240px 0;
 }
 .toolblock .inner_tool button .toolicon12 {
-    background-position: -195px -1px;
+    background-position: -194px 0;
 }
 
 .toolblock .inner_tool button .toolicon13 {
@@ -197,11 +174,11 @@ h1 {
 }
 
 .toolblock .inner_tool button .toolicon14 {
-    background-position: -103px -2px;
+    background-position: -103px -1px;
 }
 
 .toolblock .inner_tool button .toolicon15 {
-    background-position: -57.5px -1px;
+    background-position: -57px 0;
 }
 
 .toolblock .inner_tool button .toolicon16 {
@@ -226,41 +203,41 @@ h1 {
 
 .inner_tool button .hint {
   visibility: hidden;
-  width: auto;
-  height:30px;
-  background-color: lightgreen;
-  border-color: yellow;
+  width: 40%;
+  height:28px;
+  background-color: pink;
+  border-color: silver;
   color: black;
   font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size:16px;
+  font-size:14px;
   text-decoration:blink;
-  padding-left: 5px;
-  padding-right:5px;
-  border-width:3px;
-  border-style:outset;
+  font-weight:bold;
+  text-align: center;
+  padding-left: 1px;
+  margin-left: 0px;
+  display: inline-block;
+  align-items: center;
+  border-width:2px;
+  border-style:inset;
   border-radius: 6px;
-  left: 31%;
+  line-height: 24px;
+  right: 30%;
   bottom: 35%;
   /* Position the tooltip */
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1;
 }
 
 .inner_tool button:hover .hint, .uploadbutton:focus .hint, .uploadbutton:focus-within .hint {
   visibility: visible;
-  overflow:hidden
 }
 
 
 
 .playblock {
-   
-   padding-bottom:2px;
-   bottom: 2px;
-  
+   padding-bottom:5px;
+   bottom: 2px:
+	
 }
 
 .bothplay .navbtn i {
@@ -269,97 +246,79 @@ h1 {
 }
 
 .playblock .navbtn {
-    width: 40px;
-    height: 40px;
-    top: 0px;
+    width: 36px;
+    height: 36px;
+    top: 2px;
     background-color:black
 }
-
 .playblock .navbtn:hover {
-    background: lightgreen;
-    position: relative;
-    top: 0px;
+    background: pink;
+    border:2px;
     border-color:black;
-      
+    border-radius: 2px;
+    position: relative;
+    top: 1px;
+    
 }
 
 .playblock button {
     border: none;
     padding: 0;
     background-color:black;
-    border: 2px solid yellow;
-    border-radius: 8px;
-
 }
 
 .playblock .playbtn {
     width: 120px;
-    height: 40px;
+    height: 37px;
     line-height: 37px;
     font-size: 20px;
     
 }
 
 .playbtninner .playblock .playbtn {
+   
     background: black;
     width: 140px;
     height: 40px;
-    
+    line-height: 40px;
     color: #fff;
     font-size: 20px;
     font-family: 'ralewaybold';
     color:white;
-    
-
 }
 
 .playbtninner .playblock .playbtn:hover {    
-    background:lightgreen;
+    background:pink;
     color:black;
     font-weight:bold;
-    font-style:italic;
-    border-color:black;
+    font-style:italic
 }
 
 .playblock .navbtn .nexticon {
     background: url("../images/next_arrow.png") no-repeat;
+    background-size: auto;
+    background-size: auto;
     background-size: 100% auto;
 }
-
 .playbtninner .playblock .navbtn i {
     margin: 0 auto;
     width: 18px;
     height: 15px;
     display: block;
-    
-
 }
-
-
-/*
 .playbtninner .playblock .navbtn i {
     width: 15px;
     height: 13px;
 }
-
-*/
-
 .playbtninner .playblock .navbtn .preicon {
     background: url("../images/previous_arrow.png") no-repeat;
     background-size: auto;
     background-size: 100% auto;
 }
-
 .video_palybtnblock{
     display: flex;
     justify-content: space-between;
-    margin-top: 2px;
-    display: flex;
-    align-items: center;
-    right:1%;
-    left:1%;
-    bottom:2px;
-    
+    margin-top: 10px;
 }
 
 .video_palybtnblock .zoombtn {
@@ -370,20 +329,20 @@ h1 {
     display:inline-block;
     align: center;
     background-color:black;
-    padding: 1px 7px;
+    padding: 1px 10px;
     cursor: pointer;
     font-size:16px;
     font-weight:600;
     color:white;
-    border:2px:yellow;
-    border-radius:6px;
-    border-color:yellow;
+    border:1px:red;
+    border-radius:4px;
+    border-color:red;
     height:30px;
     width:100px
 } 
 
 .video_palybtnblock .zoombtn button:hover{
-    background-color:lightgreen;
+    background-color:pink;
     border-color:black;
     color:black
      
@@ -395,8 +354,8 @@ h1 {
 }
 
 .slowmotionblock button{
-    background-color: lightgreen;
-    border:1px solid yellow;
+    background-color: pink;
+    border:1px solid red;
     border-radius: 4px;
     padding: 4px 10px;
     cursor: pointer;
@@ -404,127 +363,6 @@ h1 {
 .slowmotionblock button.active{
     background-color: black;
     color:white
-}
-
-.slowmotionblock2 button{
-    background-color: lightgreen;
-    border:1px solid yellow;
-    border-radius: 4px;
-    padding: 4px 10px;
-    cursor: pointer;
-}
-.slowmotionblock2 button.active{
-    background-color: black;
-    color:white
-}
-
-.btn-slow-motion2 {
-	
-}
-
-
-.timer {
-    position:absolute;
-    border-width: 12px;
-    border-radius: 6px;
-    border-color:yellow;
-    background-color: black;
-    line-height:34px;
-    font-size:24px;
-    font-family:"Verdana";
-    color:white;
-    text-align:left;    
-    height: 36px;
-    width:5%;
-    min-width:150px;    
-    padding-top: 2px;
-    padding-left: 5px;
-    padding-right:0px;
-    margin-bottom: 0px;
-    display: block;
-    right:46%;    
-    top: 500px;
-}
-
-.timer:hover {
-    border:12px black grooved;
-    border-radius: 8px;
-    background-color: lightgreen; 
-    
-}
-
-
-.closebtn2 {
-    margin-right:3px;
-    color: red;
-    font-weight: bold;
-    float: right;
-    font-size: 20px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 5s;
-}
-
-.closebtn2:hover {
-    color: yellow;
-}
-
-.closebtn2 .closebox {
-  visibility: hidden;
-  width: 180px;
-  height:35x;
-  background-color: black;
-  border-color: silver;
-  color: white;
-  font-size: 18px;
-  text-decoration:blink;
-  font-weight:normal;
-  text-align: center;
-  margin-left:5px;
-  display: inline-flex;
-  align-items: center;
-  border-width:2px;
-  border-style:inset;
-  border-radius: 6px;
-  line-height: 100%;
-  /* Position the tooltip */
-  position: absolute;
-  top: 105%;
-  right: 25%;
-  
-}
-
-.closebtn2:hover .closebox {
-  visibility: visible;
-}
-
-.closebtn2 .closeboxleft {
-  visibility: hidden;
-  width: 180px;
-  height:35x;
-  background-color: black;
-  border-color: silver;
-  color: white;
-  font-size: 18px;
-  text-decoration:blink;
-  font-weight:normal;
-  text-align: center;
-  margin-left:5px;
-  display: inline-flex;
-  align-items: center;
-  border-width:2px;
-  border-style:inset;
-  border-radius: 6px;
-  line-height: 100%;
-  /* Position the tooltip */
-  position: absolute;
-  top: 105%;
-  left: 25%;
-  
-}
-
-.closebtn2:hover .closeboxleft {
-  visibility: visible;
 }
 
 .PGcontain {

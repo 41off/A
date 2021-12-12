@@ -188,7 +188,7 @@
 
 .dropbtn:hover .box, .dropbtn:focus .box, .dropbtn:focus-within .box {
   visibility: visible;
-  background: url('../images/Dropbox.png') no-repeat;
+  background: url('../images/dropbox.png') no-repeat;
   background-color:lightgreen;
   background-position: -15px -18px;
  
@@ -306,22 +306,24 @@
   font-size:14px;
   text-decoration:blink;
   font-weight:bold;
-  padding-left: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
   padding-top: 0px;
   margin-left: 0px;
   border-width:6px;
   border-style:groove;
   border-radius: 6px;
   border-color:white;
-    left:103%;
+  left:103%;
   top: 4px;
-  /* Position the tooltip */
+ /* Position the tooltip */
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   z-index: 1;
 }
+
 
 
 .dropbtn:hover .box4, .dropbtn:focus .box4, .dropbtn:focus-within .box4 {

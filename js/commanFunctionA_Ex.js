@@ -1149,18 +1149,22 @@ var action = $(".action-on-both").data("action") || "play";
 if(action == "play") {
     playVideo("both");
     $(".action-on-both").data("action", "pause").text("Pause Both");
+    timer.start(10)
 }
 else {
     pauseVideo("both");
     $(".action-on-both").data("action", "play").text("Play Both");
+    timer.stop()
 }
 });
 $(".playVideoLeftBtn").click(function(event) {
 var action = $(this).data("action") || "play";
 if(action == "play") {
+    timer.start(10);
     playVideo("video1");
 }
 else {
+    timer.stop();
     pauseVideo("video1");
 }
 });
@@ -1170,9 +1174,11 @@ playVideo("video1");
 $(".playVideoRightBtn").click(function(event) {
 var action = $(this).data("action") || "play";
 if(action == "play") {
+    timer.start(10);
     playVideo("video2");
 }
 else {
+    timer.stop();
     pauseVideo("video2");
 }
 });
@@ -1359,19 +1365,29 @@ $(document).on('click', '.btn-slow-motion', function(event) {
     event.preventDefault();
     var motion = $(this).data("motion") || 1;
     if(motion == 2) {
-        configVideoPlaybackRates = 0.5
+        playVideo("video1");
+        configVideoPlaybackRates = 0.5;
+        timer.start(20)
     }
     else if (motion == 4) {
-        configVideoPlaybackRates = 0.25
+        playVideo("video1");
+        configVideoPlaybackRates = 0.25;
+        timer.start(40)
     }
     else if (motion == 8) {
-        configVideoPlaybackRates = 0.125
+        playVideo("video1");
+        configVideoPlaybackRates = 0.125;
+        timer.start(80)
     }
     else if (motion == 16) {
-        configVideoPlaybackRates = 0.0625
+        playVideo("video1");
+        configVideoPlaybackRates = 0.0625;
+        timer.start(160)
     }
     else {
-        configVideoPlaybackRates = 1
+        playVideo("video1");
+        configVideoPlaybackRates = 1;
+        timer.start(10)
     }
 
     var currentplayer = $(this).data('playername');
@@ -1389,19 +1405,29 @@ $(document).on('click', '.btn-slow-motion2', function(event) {
     event.preventDefault();
     var motion = $(this).data("motion") || 1;
     if(motion == 2) {
-        configVideoPlaybackRates = 0.5
+        playVideo("video2");
+        configVideoPlaybackRates = 0.5;
+        timer.start(20)
     }
     else if (motion == 4) {
-        configVideoPlaybackRates = 0.25
+        playVideo("video2");
+        configVideoPlaybackRates = 0.25;
+        timer.start(40)
     }
     else if (motion == 8) {
-        configVideoPlaybackRates = 0.125
+        playVideo("video2");
+        configVideoPlaybackRates = 0.125;
+        timer.start(80)
     }
     else if (motion == 16) {
-        configVideoPlaybackRates = 0.0625
+        playVideo("video2");
+        configVideoPlaybackRates = 0.0625;
+        timer.start(160)
     }
     else {
-        configVideoPlaybackRates = 1
+        playVideo("video2");
+        configVideoPlaybackRates = 1;
+        timer.start(10)
     }
 
     var currentplayer = $(this).data('playername');

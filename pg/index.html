@@ -101,12 +101,35 @@
                                      <span class="box1">Click to Recorder</span><span class="box4">Works best with Chrome browser</span>
                                      </button>
                                 </div>
-                      </div>
+                                
+                                <div class="dropdown2">
+                                     <button class="dropbtn"onClick="multiStop()">Timer Reset<span class="box1">Click to Reset</span>
+                                     </button>
+                                </div>
+                              </div>
 
 	
 	
-	
-	
+	       <div class="timer">
+	          <span class="closebtn2">&#11097;</span>
+              <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
+            </div>
+
+	                
+    <script>
+	       //  close button
+           var close = document.getElementsByClassName('closebtn2');
+           var i;
+            for (i = 0; i < close.length; i++) {
+          close[i].onclick = function(){
+           var div = this.parentElement;
+            div.style.opacity = "4";
+            div.style.Color = 'red';
+           setTimeout(function(){ div.style.display = "none"; }, 1200);
+        }
+      }
+     </script>
+
 	
 	
 	
@@ -159,7 +182,7 @@
 		 			<center><div class="playbtninner">
 		 				<div class="playblock">
 		 					<button type="button" class="navbtn prebtn left-video-backward"><i class="preicon"></i></button>
-		 					<button type="button" class="playbtn playVideoLeftBtn" data-action="play">Play Left</button>
+		 					<button type="button" class="playbtn playVideoLeftBtn" onClick="multiStart()" value="Play">Play Left</button>
 		 					<button type="button" class="navbtn nextbtn left-video-forward"><i class="nexticon"></i></button>
 		 				</div>
 		 				<div class="zoombtn">
@@ -187,7 +210,7 @@
 		 					  
 		 				<center>
 		 					<button type="button" class="navbtn prebtn both-backward"><i class="preicon"></i></button>
-		 					<button type="button" class="playbtn action-on-both" data-action="play">Play Both</button>
+		 					<button type="button" class="playbtn action-on-both" onClick="timerStart()">Play Both</button>
 		 					<button type="button" class="navbtn nextbtn both-forward"><i class="nexticon"></i></button>
 		 				 </center>
 		 				  </div>
@@ -255,7 +278,7 @@
 					<div class="playbtninner">
 		 			<center>	<div class="playblock">
 		 					<button type="button" class="navbtn prebtn right-video-backward"><i class="preicon"></i></button>
-		 					<button type="button" class="playbtn playVideoRightBtn" data-action="play">Play Right</button>
+		 					<button type="button" class="playbtn playVideoRightBtn">Play Right</button>
 		 					<button type="button" class="navbtn nextbtn right-video-forward"><i class="nexticon"></i></button>
 		 				</div>
 		 				<div class="zoombtn">
@@ -301,9 +324,11 @@
 	<script src="../plugins/videojs/js/video-5-15-1.js"></script>
 	<script src="../plugins/videojs/js/videojs.zoomrotate.js"></script>
 	<script src="../plugins/videojs/js/video.js"></script>
-
+	<script type="text/javascript" src="../plugins/41offtimer.js"></script>
+    <script type="text/javascript" src="../plugins/videojs/js/41offvideo.js"></script>
 	<script src="../plugins/fabric/fabric.min.js"></script>
 	<script src="../js/commanFunctionA_Ex.js"></script>
 	
+		
   </body>
 </html>

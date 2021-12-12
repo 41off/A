@@ -1137,6 +1137,9 @@ resizeVideoJS();
 window.onresize = resizeVideoJS;
 });
 
+
+
+
 player.bigPlayButton.hide();
 otherPlayer.bigPlayButton.hide();
 
@@ -1149,14 +1152,19 @@ var action = $(".action-on-both").data("action") || "play";
 if(action == "play") {
     playVideo("both");
     $(".action-on-both").data("action", "pause").text("Pause Both");
-    timer.start(10)
 }
 else {
     pauseVideo("both");
     $(".action-on-both").data("action", "play").text("Play Both");
     timer.stop()
 }
+
 });
+
+ 
+
+
+
 $(".playVideoLeftBtn").click(function(event) {
 var action = $(this).data("action") || "play";
 if(action == "play") {
@@ -1431,7 +1439,7 @@ $(document).on('click', '.btn-slow-motion2', function(event) {
     }
 
     var currentplayer = $(this).data('playername');
-    if ( currentplayer == "player" ){
+    if ( currentplayer == "otherplayer" ){
         player.playbackRate(configVideoPlaybackRates);
     }else {
         otherPlayer.playbackRate(configVideoPlaybackRates);
@@ -1441,12 +1449,67 @@ $(document).on('click', '.btn-slow-motion2', function(event) {
 });
 
 
+$(document).on('click', '.slowmotionblock3', function(event) {
+    event.preventDefault();
+    var motion = $(this).data("motion") || 1;
+    if(motion == 2) {
+        
+        playVideo("both");
+        configVideoPlaybackRates = 0.5;
+        timer.start(20)
+    }
+    else if (motion == 4) {
+        
+        playVideo("both");
+        configVideoPlaybackRates = 0.25;
+        timer.start(40)
+    }
+    else if (motion == 8) {
+        
+        playVideo("both");
+        configVideoPlaybackRates = 0.125;
+        timer.start(80)
+    }
+    else if (motion == 16) {
+        playVideo("both");
+        
+        configVideoPlaybackRates = 0.0625;
+        timer.start(160)
+    }
+    else {
+        playVideo("both");
+        configVideoPlaybackRates = 1;
+        timer.start(10)
+    }
 
+    var currentplayer = $(this).data('playerslow');
+      if ( currentplayer == "player" ){
+        player.playbackRate(configVideoPlaybackRates);
+        }
+       else {
+        otherPlayer.playbackRate(configVideoPlaybackRates);
+      }
+    
+     if ( currentplayer == "otherPlayer" ){
+        player.playbackRate(configVideoPlaybackRates);
+        } 
+       else {
+        otherPlayer.playbackRate(configVideoPlaybackRates);
+      }
 
-
+   $('.slowmotionblock3').removeClass('active');
+   $(this).addClass("active");
+});
 
 
 
 
 
 });
+
+
+
+   
+
+
+

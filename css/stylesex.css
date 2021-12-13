@@ -95,37 +95,9 @@ h1 {
 }
 
 
-.line-drawing-tools2{
-    position: absolute;
-    width: 410px;
-    right: 1%;
-    background-color:transparent;
-    bottom:4px;
-    padding-top:2px
-}
-
-.line-drawing-tools2btn{
-    display:inline-block;
-    width: 180px;
-    
-    font-size: 16px;
-    color: white;
-    background-color:black;
-    font-weight:600;
-    border:6px;
-    border-color: yellow;
-    border-radius: 6px;
-    padding-top:2px 2px;
-}
-
-.line-drawing-tools2btn:hover{
-    color: black;
-    background-color: lightgreen;
-    border-color: black;
-}
 
 	
-}
+
 
 .toolblock .inner_tool {
     width: 100%;

@@ -40,9 +40,13 @@ h1 {
 .swap_video_btn {
     width: 100%;
 }
+
+
+
 .swap_video_btn .playbtninner {
     width: auto;
     margin: 0;
+    
     
 }
 
@@ -64,14 +68,14 @@ h1 {
     width: auto;
     overflow: hidden;
     text-align: center;
-    margin-top: 2px;
+    margin-top: 0px;
     
 }
 
 
 .toolblock {
    position:flex;
-   padding-top:33px;
+   padding-top:2px;
 }
 
 
@@ -82,7 +86,7 @@ h1 {
     border:4px;
     border-color: yellow;
     border-radius: 4px;
-    bottom:2px;
+    
     
 }
 
@@ -199,7 +203,7 @@ h1 {
 .inner_tool button .hint {
   visibility: hidden;
   width: auto;
-  height:30px;
+  height:34px;
   background-color: lightgreen;
   border-color: yellow;
   color: black;
@@ -212,7 +216,7 @@ h1 {
   border-style:outset;
   border-radius: 6px;
   left: 30%;
-  bottom: 29%;
+  bottom: 37%;
   /* Position the tooltip */
   position: absolute;
   display: flex;
@@ -229,9 +233,8 @@ h1 {
 
 
 .playblock {
-   
    padding-bottom:2px;
-   bottom: 2px;
+   bottom: 0%;
   
 }
 
@@ -336,6 +339,7 @@ h1 {
 
 .video_palybtnblock .zoombtn {
     margin: 6px 0;
+    bottom:5px;
 }
 
 .video_palybtnblock .zoombtn button{

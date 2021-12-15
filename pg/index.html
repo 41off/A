@@ -14,15 +14,12 @@
 
     <title>PG Video Analysis</title>
   </head>
-  <body background="silver">
+  <body onload="onload()" background="silver">
   
     	<div class="PGcontain">
     	
+     	
     	
-    	
-    	
-
-
 <!--    	
     	   	<h6 class="text-center"><button href="#" onclick='window.open("https://www.dropbox.com/sh/flg6ij5664lodmt/AADyWNB2LpL0Vt4HZ3wH7Zkfa?dl=0");return false;'>Open DropBox</button></h6>
     	   	
@@ -39,86 +36,104 @@
 	 					<center><h6 id="swaptitle-for-video1">Video 1</h6></center>
 	 				</div>
 	 				
-	 				<div class="overlayvideo canvas_videoblock">
-	 				  
-	 				 <div id="custom-seekbar">
-                      <span></span>
-                     </div>	
-                     
-                      <canvas id="video-canvas" height="400" width="800" style="background: transparent;">
-	 			  	  </canvas>					 
-                       <video height="440" width="800" overflow="hidden" preload="auto"  controls muted loop 
-						       id="sidebyside-video_1" class="video-js vjs-default-skin vjs-big-play-centered side-by-side-videos"
-		                 	   data-setup='{"customControlsOnMobile": true}'>
-                               <source src="https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1" type="video/mp4">
-                       </video>
-                    </div>
-                    
-                                  
-                 </div>
-
-	 			<div class="swapvideo">
-	 				<div class="swaptitle">
-	 					<center><h6 id="swaptitle-for-video1">Video 2</h6></center>
-	 				
-	 				</div>	 				
-	 				<div class="overlayvideo canvas_videoblock1">
-	 				
-	 				<div id="custom-seekbar2"> 
+	 				 <div class="overlayvideo canvas_videoblock">
+	 				 <div id="custom-seekbar"> 
                        <span></span>
                        </div>
                        
-                       	<canvas id="video-canvas1" height="400" width="800">
+                       	<canvas id="video-canvas" height="420" width="800">
 						</canvas>
+						
+						
 
-						<video height="440" width="800" overflow="hidden" preload="auto" controls muted loop
-						       id="sidebyside-video_2" class="video-js vjs-default-skin vjs-big-play-centered side-by-side-videos"
-		                 	   data-setup='{"customControlsOnMobile": true}'>
-                               <source src="https://www.dropbox.com/s/43ewvwpf48p1qos/v2.mp4?raw=1" type="video/mp4">
+						<video height="460" width="800" overflow="hidden"  controls muted loop
+						       id="video1" class="video-js vjs-default-skin vjs-big-play-centered side-by-side-videos"
+		                 	   
+                               source src="https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1" type="video/mp4">
+                               
                          </video>
-                     
-	 				</div>
-	 				        
+	 				  
+	<input id="fileL" type="file" single onchange="localVideoL()">
+     
+               </div>
+                       
+           </div>
+               
+                
+	 			<div class="swapvideo2">
+	 				<div class="swaptitle">
+	 					<center><h6 id="swaptitle2-for-video2">Video 2</h6></center>
+	 					
 	 				
-	 			</div>
-	 			
-	 			
-	 			             <div class="dropdown2">
+	 				</div>	 				
+	 				<div class="overlayvideo canvas_videoblock">
+	 				
+	 				<div id="custom-seekbar2">
+                      <span></span>
+                     </div>	
+                     
+                      <canvas id="video-canvas1" height="420" width="800" style="background: transparent;">
+	 			  	  </canvas>					 
+                       <video height="460" width="800" overflow="hidden"   controls muted loop
+                               id="video" class="video-js vjs-default-skin vjs-big-play-centered side-by-side-videos"
+		                 	   
+                               source src="https://www.dropbox.com/s/43ewvwpf48p1qos/v2.mp4?raw=1" type="video/mp4">
+                       </video>
+	 				
+	 			<input id="fileR" type="file" single onchange="localVideoR()"> 	
+                      
+               </div>
+                
+	 		</div>
+	 	
+			                  <div class="dropdown2">
                                     <button class="dropbtn" href="#" onclick='window.open("https://www.dropbox.com/sh/97fpvdrkmne42or/AABREWUct3ot4TjNEvCHSq15a?dl=0");return false;'>PG DropBox
                                     <span class="box"></span><span class="box2">"Drag and Drop" "V1.mp4" and/or "V2.mp4" (do not delete) to your folder in order to replace the video clips. This will retain the URL links for this Video Side-by-Side 
                                       Player.</span> 
                                     </button>
                               </div>
                       
-                                <div class="dropdown2">
-                                     <button class="dropbtn" href="#" onclick="window.location.href='https://pg.41off.com';">Your Video Player
+                              <div class="dropdown2">
+                                     <button class="dropbtn" href="#" onclick="window.location.href='https://pg.41off.com';">Video Player
                                      <span class="box1">Click to Player</span><span class="box3">This will open your Video Player</span>
                                      </button>
-                                </div>
+                               </div>
                                 
-                                <div class="dropdown2">
-                                     <button class="dropbtn" href="#" onclick='window.open("https://rec.41off.com");return false;'>Screen Recorder
+                               <div class="dropdown2"> 
+                                     <button class="dropbtn" href="#" onclick='window.open("https://rec.41off.com");return false;'>Recorder
                                      <span class="box1">Click to Recorder</span><span class="box4">Works best with Chrome browser</span>
                                      </button>
-                                </div>
-                                
-                                <div class="dropdown2">
+                               </div>
+                               
+                                <div class="dropdown2"> 
+                                     <button class="dropbtn" onClick="onVideoNext()">Next                                     
+                                     </button>
+                               </div>
+
+                               
+                               <div class="dropdown2">
                                      <button class="dropbtn" onClick="timeStop()">Timer Reset<span class="box1">Click to Reset</span>
                                      </button>
                                 </div>
-                              </div>
+                 
+                      <div class="dropdown2">           
+                        <button class="dropbtn">
+	                       <span class="closebtn2">&nbsp;&#11097;</span>
+                           <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
+                         </button>
+                       </div>
 
-	
-	
-	       <div class="timer">
-		 <span class="closebtn2">&#11097;</span>
-                 <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
-		</div>
 
-	       	
-			<div class="PGcol-sm-12">
-			
-			
+
+             </div>
+               
+                         
+
+
+
+		                  
+	       <div class="PGcol-sm-12">
+						
 			  <div class="col-sm-12">
 				<div class="video_palybtnblock swap_video_btn">
 		 			<center><div class="playbtninner">
@@ -147,9 +162,7 @@
 		 			</center>
 		 			<div class="playbtninner">
 		 			
-		 				     <div class="playblock bothplay">
-		 				      
-		 					  
+		 			 <div class="playblock bothplay">
 		 				<center>
 		 					<button type="button" class="navbtn prebtn both-backward"><i class="preicon"></i></button>
 		 					<button type="button" class="playbtn action-on-both" onClick="timerStart(80)">Play Both</button>
@@ -272,12 +285,12 @@
 
 	
 	<!-- Video JS -->
-	
+ <!--	<script type="text/javascript" src="../plugins/videojs/js/41offvideo-s-b-s.js"></script> -->
 	<script src="../plugins/videojs/js/video-5-15-1.js"></script>
 	<script src="../plugins/videojs/js/videojs.zoomrotate.js"></script>
 	<script src="../plugins/videojs/js/video.js"></script>
 	<script type="text/javascript" src="../plugins/41offtimer.js"></script>
-    <script type="text/javascript" src="../plugins/videojs/js/41offvideo.js"></script>
+    
 	<script src="../plugins/fabric/fabric.min.js"></script>
 	<script src="../js/commanFunctionA_Ex.js"></script>
 	

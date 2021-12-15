@@ -22,15 +22,19 @@ h1 {
     padding-right: 3px;
 }
 .swapvideo .swaptitle {
-	margin-bottom: 20px;
+	margin-bottom: 5px;
+	height:12px;
 }
 .swapvideo .overlayvideo {
-    position:inherit
+    position:inherit;
+    
 }
+
 .canvas-container {
     position: absolute !important;
-    width:50%;
+    width:100%;
 }
+
 .swapvideo .overlayvideo .video-js {
     width: 100%;
 }
@@ -71,6 +75,79 @@ h1 {
     margin-top: 0px;
     
 }
+
+
+
+.swapvideo2 {
+	width: 50%;
+    float: right;
+    padding-right: 3px;
+}
+
+.swapvideo2 .swaptitle {
+	margin-bottom: 5px;
+	height:12px;
+}
+.swapvideo2 .overlayvideo {
+    position:inherit
+}
+
+.swapvideo2 .canvas-container {
+    position: absolute !important;
+    width:100%;
+}
+
+.swapvideo2 .overlayvideo .video-js {
+    width: 100%;
+}
+.swaptitle2 h2 {
+	text-align: center;
+}
+.swap_video2_btn {
+    width: 100%;
+}
+
+
+
+.swap_video2_btn .playbtninner {
+    width: auto;
+    margin: 0;
+    
+    
+}
+
+.swap_video2_btn .playbtninnerL {
+    width: auto;
+    margin: 0;
+    
+}
+
+
+.swap_video2_btn .playbtninnerR {
+    width: auto;
+    margin: 0;
+    
+}
+
+
+.swap_video2_btn .play_block_center {
+    width: auto;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 0px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 .toolblock {
@@ -422,23 +499,22 @@ h1 {
 }
 
 
-
 .timer {
     position:absolute;
     border-width: 12px;
     border-radius: 6px;
     border-color:yellow;
     background-color: black;
-    line-height:34px;
+    line-height:28px;
     font-size:24px;
     font-family:"Verdana";
     color:white;
     text-align:left;    
     height: 36px;
-    width:5%;
-    min-width:150px;    
-    padding-top: 2px;
-    padding-left: 5px;
+    width:auto;
+        
+    padding-top: 4px;
+    padding-left: 8px;
     padding-right:0px;
     margin-bottom: 0px;
     display: block;
@@ -544,22 +620,37 @@ h1 {
 }
 
 
-#video-canvas {
+#video-canvas1 {
     top:0%;
     left:  0%;
-    left: 0%;
     bottom:0%;
     background-color:transparent;
     overflow:hidden;
     
 }
 
-#video-canvas1 {
+#video1 {
     top:0%;
     left:  0%;
-    right: 0%;
+    bottom:0%;
+    background-color:black;
+    overflow:hidden;
+}
+
+
+#video-canvas2 {
+    top:0%;
+    left: 50%;
     bottom:0%;
     background-color:transparent;
+    overflow:hidden;
+}
+
+#video2 {
+    top:0%;
+    left:  0%;
+    bottom:0%;
+    background-color:black;
     overflow:hidden;
 }
 

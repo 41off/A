@@ -1,5 +1,3 @@
-
-
 function countAngle(theta){
     if (theta < 0.0) {
         theta += 360.0;
@@ -487,7 +485,7 @@ var startAngle
             theta *= 180 / Math.PI;
             line.startAngle = theta;
             var angle = countAngle(theta);
-            var angl = parseInt(angle).toString() +'Â°';
+            var angl = parseInt(angle).toString() +'°';
             var top = line.top;
             var left = line.left;
             if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
@@ -521,7 +519,7 @@ var startAngle
             var theta = countAngle(newAngle);
             var omega = countAngle(newAngle);
             theta = parseInt(theta).toString() +'u';
-            omega = parseInt(omega).toString() +'Â°';
+            omega = parseInt(omega).toString() +'°';
             e.target.lineText.setText(theta);
             e.target.lineText.setText(omega);
             fill: 'white';
@@ -600,7 +598,7 @@ var startAngle
             theta *= 180 / Math.PI;
             line.startAngle = theta;
             var angle = countAngle(theta);
-            var angl = parseInt(angle).toString() +'Â°';
+            var angl = parseInt(angle).toString() +'°';
             var top = line.top;
             var left = line.left;
             if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
@@ -634,7 +632,7 @@ var startAngle
             var theta = countAngle(newAngle);
             var omega = countAngle(newAngle);
             theta = parseInt(theta).toString() +'u';
-            omega = parseInt(omega).toString() +'Â°';
+            omega = parseInt(omega).toString() +'°';
             e.target.lineText.setText(theta);
             e.target.lineText.setText(omega);
             fill: 'white';
@@ -720,7 +718,7 @@ var startLine
             theta *= 180 / Math.PI;
             line.startAngle = theta;
             var angle = countAngle(theta);
-            var angl = parseInt(angle).toString() +'Â°';
+            var angl = parseInt(angle).toString() +'°';
             var top = line.top;
             var left = line.left;
             if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
@@ -754,7 +752,7 @@ var startLine
             var theta = countAngle(newAngle);
             var omega = countAngle(newAngle);
             theta = parseInt(theta).toString() +'u';
-            omega = parseInt(omega).toString() +'Â°';
+            omega = parseInt(omega).toString() +'°';
             e.target.lineText.setText(theta);
             e.target.lineText.setText(omega);
             fill: 'white';
@@ -831,7 +829,7 @@ var startLine
             theta *= 180 / Math.PI;
             line.startAngle = theta;
             var angle = countAngle(theta);
-            var angl = parseInt(angle).toString() +'Â°';
+            var angl = parseInt(angle).toString() +'°';
             var top = line.top;
             var left = line.left;
             if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
@@ -865,7 +863,7 @@ var startLine
             var theta = countAngle(newAngle);
             var omega = countAngle(newAngle);
             theta = parseInt(theta).toString() +'u';
-            omega = parseInt(omega).toString() +'Â°';
+            omega = parseInt(omega).toString() +'°';
             e.target.lineText.setText(theta);
             e.target.lineText.setText(omega);
             fill: 'white';
@@ -878,9 +876,7 @@ var startLine
 
 /*
 // attempt at line draw with measure
-
  var startLine
-
  function drawLine() {
  
     //draw line measure in canvas 0
@@ -891,7 +887,6 @@ var startLine
             isDownAngle = true;
             var pointer = canvas.getPointer(o.e);
             var points = [pointer.x, pointer.y, pointer.x, pointer.y];
-
             line = new fabric.Line(points, {
                 strokeWidth: 2,
                 fill: 'yellow',
@@ -903,7 +898,6 @@ var startLine
             canvas.add(line);
         }
     });
-
     canvas.on('mouse:move', function (o) {
         if (!isDownAngle)
             return;
@@ -914,7 +908,6 @@ var startLine
         }
     });
     canvas.on('mouse:up', function (o) {
-
         if (isLineDrawing == "1") {
             y11 = line.get('y1');
             y12 = line.get('y2');
@@ -946,7 +939,6 @@ var startLine
                 fontFamily: 'Arial', top: top, left:left,
                 fill: 'yellow'
             });
-
             line.lineText = text;
             canvas.add(text);
             isDownAngle = false;
@@ -957,14 +949,12 @@ var startLine
    
    
      //draw line measure in canvas 1
-
     canvas1.on('mouse:down', function (o) {
         if (isLineDrawing == "1") {
             canvas1.selection = false;
             isDownAngle = true;
             var pointer = canvas1.getPointer(o.e);
             var points = [pointer.x, pointer.y, pointer.x, pointer.y];
-
             line = new fabric.Line(points, {
                 strokeWidth: 2,
                 fill: 'yellow',
@@ -976,7 +966,6 @@ var startLine
             canvas1.add(line);
         }
     });
-
     canvas1.on('mouse:move', function (o) {
         if (!isDownAngle)
             return;
@@ -987,7 +976,6 @@ var startLine
         }
     });
     canvas1.on('mouse:up', function (o) {
-
         if (isLineDrawing == "1") {
             y11 = line.get('y1');
             y12 = line.get('y2');
@@ -1028,7 +1016,6 @@ var startLine
    }
  });
 }
-
 */
 
 function createTriangle(left, top, line1, line2, line3, line4) {
@@ -1093,12 +1080,41 @@ function deleteObjects() {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 jQuery(document).ready(function($) {
     
-var player = videojs("sidebyside-video_1").ready(function() {
+var player = videojs("video1").ready(function() {
     var myPlayer = this, id = myPlayer.id();
     //var aspectRatio = 1;
     var aspectRatio = 300/640;
+    
+    
+    (function localVideoL() {
+	'use strict'
+    var URL = window.URL || window.webkitURL
+    var playSelectedFile = function (event) {
+    var fileL = this.files[0]
+    var type = fileL.type
+    var videoNode = document.querySelector('video')
+    var fileURL = URL.createObjectURL(fileL)
+    videoNode.src = fileURL;
+   
+  }
+  var inputNode = document.querySelector('input')
+  inputNode.addEventListener('change', playSelectedFile, false)
+})()
+   
+  
+
 
 
     function resizeVideoJS(){
@@ -1116,10 +1132,28 @@ var player = videojs("sidebyside-video_1").ready(function() {
     window.onresize = resizeVideoJS;
 });
 
-var otherPlayer = videojs("sidebyside-video_2").ready(function() {
+
+
+var otherPlayer = videojs("video").ready(function() {
 var myPlayer = this, id = myPlayer.id();
 var aspectRatio = 300/640;
-
+ 
+  (function localVideoR() {
+	'use strict'
+    var URL = window.URL || window.webkitURL
+    var playSelectedFile = function (event) {
+    var fileR = this.files[0]
+    var type = fileR.type
+    var videoNode = document.querySelector('video')
+    var fileURL = URL.createObjectURL(fileR)
+    videoNode.src = fileURL;
+    
+  }
+  var inputNode = document.querySelector('input')
+  inputNode.addEventListener('change', playSelectedFile, false)
+})()
+  
+ 
 function resizeVideoJS(){
     var controlsHeight = 30;
     var width = document.getElementById(id).parentElement.offsetWidth;
@@ -1506,10 +1540,3 @@ $(document).on('click', '.slowmotionblock3', function(event) {
 
 
 });
-
-
-
-   
-
-
-

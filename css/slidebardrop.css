@@ -130,7 +130,9 @@
 
 
 .dropdown2 {
-  position:relative;
+  position:absolute;
+  bottom: 5px;
+  left:50px;
   display:inline-block;
   width:150px;height:45px;
   padding-top:4px;

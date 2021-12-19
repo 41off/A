@@ -1,0 +1,84 @@
+﻿#cnv1 {
+position:absolute;
+border: 3px;
+border-color: lime;
+border-radius: 12px;
+border-style: double;
+padding-top: 2px;
+padding-bottom:2px;
+margin:3px auto;
+background:#fefefe;
+color:yellow
+}
+
+#btn_drawar {
+position:absolute;
+width:85px;
+border: 3px;
+border-color: lime;
+border-radius: 12px;
+border-style: double;
+padding-top: 2px;
+padding-bottom:2px;
+margin:2px auto;
+background:#dadafb;
+color:yellow
+}
+
+#btn_delar {
+position:absolute;
+width:85px;
+border: 3px;
+border-color: lime;
+border-radius: 12px;
+border-style: double;
+padding-top: 2px;
+padding-bottom:2px;
+margin:2px auto;
+background:#dadafb;
+color:yellow
+}
+
+
+.arrowbox{
+    position:absolute;
+    display:block;
+    left: 5px;
+    padding-top: 3px;
+    padding-bottom:2px;
+    padding-left: 2px;
+    background-color: transparent;
+    border: 3px;
+    border-color: lime;
+    border-radius: 12px;
+    border-style: double;
+    height:90px;
+    width: 90px;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 18px;
+    color: red;
+    line-height:22px;
+    opacity: .15;
+    transition: opacity 10s;
+    top: 5px;
+   
+-webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 15s; /* Firefox < 16 */
+        -ms-animation: fadeout 15s; /* Internet Explorer */
+         -o-animation: fadeout 15s; /* Opera < 12.1 */
+            animation: fadeout 15s;  
+  
+-webkit-animation: fadein 15s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 15s; /* Firefox < 16 */
+        -ms-animation: fadein 15s; /* Internet Explorer */
+         -o-animation: fadein 15s; /* Opera < 12.1 */
+            animation: fadein 15s;
+}
+
+.arrowbox:hover {
+ background-color: #C0C0C0;
+ border-color: white;
+ opacity: 1;
+ color: red;
+ transition: opacity 2s;
+}

@@ -1,0 +1,117 @@
+﻿#colorButtonBox{
+  display:block;
+  position:absolute;
+  background-color: transparent;
+  border: 3px;
+  border-color: lime;
+  border-radius: 12px;
+  border-style: double;
+  padding:2px;
+  margin:3px;
+  width:90px;
+  top:100px;
+  left:5px;
+  text-align:right;
+  color: red;
+  opacity: .15;
+  transition: opacity 15s;
+}
+
+#colorButtonBox:hover{
+  display:block;
+  position:absolute;
+  background-color: #C0C0C0;
+  border-color: white;
+  opacity: 1;
+  color: red;
+  transition: opacity 2s;
+  padding:2px;
+  margin:3px;
+  border-radius:10px;
+}
+
+#colorButton {
+  transition: .25s linear;
+  position: relative;
+  float:left;
+  margin:7px;
+  border-radius:5px;
+  width: 20px;
+  height: 20px;
+  z-index: 3;
+}
+#eraserButton {
+  transition: .25s linear;
+  position: relative;
+  float:left;
+  margin:7px;
+  border-radius:50%;
+  width: 20px;
+  height: 20px;
+  z-index: 3;
+  background:white;
+}
+#eraserButton:hover {
+  width:30px;
+  height:30px;
+  margin:2px;
+}
+#colorButton:hover {
+  transition: .25s linear;
+  width:30px;
+  height:30px;
+  margin:2px;
+}
+
+#video-canvas {
+    top:0%;
+    left:  0%;
+    right: 20%;
+    bottom:0%;
+    background-color:transparent;
+    overflow:hidden
+}
+
+#video-canvas1 {
+    top:0%;
+    left:  0%;
+    right: 20%;
+    bottom:0%;
+    background-color:transparent;
+    overflow:hidden
+}
+
+
+#colorcnv1 {
+    top:0%;
+    left:  0%;
+    right: 20%;
+    bottom:0%;
+    background-color:transparent;
+    overflow:hidden
+}
+
+#arrowcnv {
+    top:0%;
+    left:  0%;
+    right: 20%;
+    bottom:0%;
+    background-color:yellow;
+    overflow:hidden
+}
+
+.black {
+  background:black;
+}
+.blue {
+  background:blue;
+}
+.red {
+  background:red;
+}
+.green {
+  background:green;
+}
+.yellow {
+  background:yellow;
+}

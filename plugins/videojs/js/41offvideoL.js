@@ -1,20 +1,226 @@
-﻿ function ClickStart() {
+﻿ 
+ 
+  function multiStartB() {
+      var btn = document.getElementById("timerbutton5");
+      
+        if (btn.value == "Play Both") {
+            /*w.document.write('Use this button before each click on rewind buttons ("-1/8X or -1X")');
+              w.focus();  */
+             btn.value = "Pause";
+             btn.innerHTML = "Play Both";
+             video_player.play();
+             videoR_player.play();
+                }
+         else {
+             btn.value = "Play Both";
+             btn.innerHTML = "Pause";
+             video_player.pause();
+             videoR_player.pause();
+              }
+              
+     if(video_player.paused){
+      
+      timer.start(10);
+      timer.mode(1);      
+      video_player.play();
+      video.playbackRate = 1.0;
+      videoR_player.play();
+      videoR.playbackRate = 1.0;
+
+     } 
+       else {
+            timer.stop();
+            video_player.pause();
+            videoR_player.pause();
+            
+            clearInterval(rewind);
+         }
+         
+      /*  right player */   
+      
+
+ }
+ 
+ 
+  function multiResetB() {
+    timer.reset(0000)
+   }
+   
+   
+   function multiFwdB() {
+    var btn = document.getElementById("speed4x");
+        if (btn.value == "+4X") {
+             btn.value = "Pause";
+             btn.innerHTML = "+4X";
+             video_player.play();
+             videoR_player.play();
+                }
+         else {
+             btn.value = "+4X";
+             btn.innerHTML = "Pause";
+             video_player.pause();
+             videoR_player.pause();
+                }
+     if(video_player.paused){
+      timer.start(2);
+      timer.mode(1);
+      video_player.play();
+      video.playbackRate = 4.0;
+      videoR_player.play();
+      videoR.playbackRate = 4.0;
+      } 
+       else {
+            timer.stop();
+            video_player.pause();
+            videoR_player.pause();
+         }   
+  }
+  
+   
+   function multiSupFwdB() {
+    var btn = document.getElementById("speed16x");
+        if (btn.value == "+16X") {
+             btn.value = "Pause";
+             btn.innerHTML = "+16X";
+             video_player.play();
+             videoR_player.play();
+                }
+         else {
+             btn.value = "+16X";
+             btn.innerHTML = "Pause";
+             video_player.pause();
+             videoR_player.pause();
+                }
+     if(video_player.paused){
+      timer.start(0.3125);
+      timer.mode(1);
+      video_player.play();
+      video.playbackRate = 16.0;
+      videoR_player.play();
+      videoR.playbackRate = 16.0;
+
+      } 
+       else {
+            timer.stop();
+            video_player.pause();
+            videoR_player.pause();
+         }   
+   }
+  
+  
+   function multiSlowB() {
+      var btn = document.getElementById("timerbutt1_8");
+        if (btn.value == "+1/8X") {
+             btn.value = "Pause";
+             btn.innerHTML = "+1/8X";
+             video_player.play();
+             videoR_player.play();
+                }
+         else {
+             btn.value = "+1/8X";
+             btn.innerHTML = "Pause";
+             video_player.pause();
+             videoR_player.pause();
+                }
+     if(video_player.paused){
+      timer.start(80);
+      timer.mode(1);
+      video_player.play();
+      video.playbackRate = .125;
+      videoR_player.play();
+      videoR.playbackRate = .125;
+      } 
+       else {
+            timer.stop();
+            video_player.pause();
+            videoR_player.pause();
+         }
+ }
+ 
+ 
+   function multiSuperSlowB() {
+      var btn = document.getElementById("timerbutt1_16");
+        if (btn.value == "+1/16X") {
+             btn.value = "Pause";
+             btn.innerHTML = "+1/16X";
+             video_player.play();
+             videoR_player.play();
+                }
+         else {
+             btn.value = "+1/16X";
+             btn.innerHTML = "Pause";
+             video_player.pause();
+             videoR_player.pause();
+                }
+     if(video_player.paused){
+      timer.start(160);
+      timer.mode(1);
+      video_player.play();
+      video.playbackRate = .0625;
+      videoR_player.play();
+      videoR.playbackRate = .0625;
+
+      } 
+       else {
+            timer.stop();
+            video_player.pause();
+            videoR_player.pause();
+         }
+ }
+ 
+ 
+ function on0B(){
+            console.log("0 ended");
+            video_index = 0;
+            videoR_index = 0;
+            video_player.setAttribute("src", video_directory[video_index]);
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+                       
+        var btn = document.getElementById("modal");
+      
+            if (btn.value == "Latest") {
+              btn.value = "Latest";
+              btn.innerHTML = '<button id="modtext">Latest</button>';              
+              timer.reset();
+              video_player.play();
+              videoR_player.play();
+              timer.start(10);
+              timer.mode(1);
+              }
+            else {
+              btn.value = "Latest";
+              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              timer.stop();
+              video_player.pause();
+              videoR_player.pause();
+              }
+          }
+ 
+ 
+ 
+ // everything above is for "both" players //
+ 
+ 
+ 
+ 
+ 
+ function ClickStartL() {
     timer.stop();
     timer.mode(1);
     video_player.play();
     video.playbackRate = 1.0; 
    }
    
-  function ClickPause(){
+  function ClickPauseL(){
     timer.start(10);
     video_player.pause();
    }
-  function onPause(){
+  function onPauseL(){
     timer.stop();
     video_player.pause();
    }
   
-  function on1X(){
+  function on1XL(){
     timer.stop();
     video_player.pause();
     video.pause();
@@ -22,27 +228,27 @@
     video.playbackRate = 1.0;
    }
  
-  function onFastFwd(){
+  function onFastFwdL(){
     video.playbackRate = 4.0;
     video_player.play();
    }
    
-  function onSupFwd(){
+  function onSupFwdL(){
     video.playbackRate = 16.0;
     video_player.play();
    }
    
-  function onSlow(){
+  function onSlowL(){
     video.playbackRate = 0.125;
     video_player.play();
    }
    
-  function onSuperSlow(){
+  function onSuperSlowL(){
     video.playbackRate = 0.0625;
     video_player.play();
    }
    
-  function multiStop() {
+  function multiStopL() {
     timer.stop();
     timer.reset(0000);
     video_player.pause();
@@ -50,7 +256,7 @@
    }
  
  
-  function multiStart() {
+  function multiStartL() {
       var btn = document.getElementById("timerbutton5");
       
    /*   var w = window.open('','','width=300,height=30')
@@ -84,11 +290,11 @@
             clearInterval(rewind);
          }
  }
-  function multiReset() {
+  function multiResetL() {
     timer.reset(0000)
    }
    
-   function multiFwd() {
+   function multiFwdL() {
     var btn = document.getElementById("speed4x");
         if (btn.value == "+4X") {
              btn.value = "Pause";
@@ -112,7 +318,7 @@
          }   
   }
    
-   function multiSupFwd() {
+   function multiSupFwdL() {
     var btn = document.getElementById("speed16x");
         if (btn.value == "+16X") {
              btn.value = "Pause";
@@ -135,17 +341,8 @@
             video_player.pause();
          }   
    }
-/*   
-    function multiSlow() {
-    timer.start(80);
-    timer.mode(1);
-    video.pause();
-    clearInterval(intervalRewind);
-    onSlow();
-   }
-*/
   
-   function multiSlow() {
+   function multiSlowL() {
       var btn = document.getElementById("timerbutt1_8");
         if (btn.value == "+1/8X") {
              btn.value = "Pause";
@@ -168,7 +365,7 @@
             video_player.pause();
          }
  }
-   function multiSuperSlow() {
+   function multiSuperSlowL() {
       var btn = document.getElementById("timerbutt1_16");
         if (btn.value == "+1/16X") {
              btn.value = "Pause";
@@ -191,17 +388,8 @@
             video_player.pause();
          }
  }
-/*   
-    function multiSuperSlow() {
-    timer.start(160);
-    timer.mode(1);
-    video.pause();
-    clearInterval(intervalRewind);
-    onSuperSlow();
-   }
-*/
   
-   function multiRev() {
+   function multiRevL() {
     timer.start(80);
     timer.mode(0);    
    }
@@ -231,7 +419,7 @@
         var video = document.getElementById('video');  
        
                           
-      function onload(){
+      function onloadL(){
             console.log("body loaded");
             video_player = document.getElementById("video");
             video_player.setAttribute("src", video_directory[video_index]);
@@ -241,7 +429,7 @@
             timer.start(10)
         }
         
-       function onVideoEnded(){
+       function onvideoEndedL(){
             console.log("video ended");
             if(video_index < video_directory.length - 1){
                 video_index++;
@@ -253,7 +441,7 @@
             video_player.play();
         }
         
-       function onVideoNext(){
+       function onvideoNextL(){
             console.log("video next");
             if(video_index < video_directory.length - 1){
                 video_index++;
@@ -266,7 +454,7 @@
             video_player.play();
         }
         
-       function onVideoBack(){
+       function onvideoBackL(){
             console.log("video back");
             if(video_index < video_directory.length - 1){
                 video_index--;
@@ -280,7 +468,7 @@
         }
         
    //rewind below  
-$("#negative").click(function() { // button function for rewind
+$("#negativeL").click(function() { // button function for rewind
     video_player.pause();
      
      rewind = setInterval(function() {
@@ -303,7 +491,7 @@ $("#negative").click(function() { // button function for rewind
         timer.stop();
         }, 20000);
 });
-$("#negative2").click(function() { // button function for rewind
+$("#negative2L").click(function() { // button function for rewind
     video_player.pause();
       
      rewind = setInterval(function() {
@@ -329,7 +517,7 @@ $("#negative2").click(function() { // button function for rewind
                timer.stop();
                }, 20500);
 });
-$("#negative3").click(function() { // button function for rewind
+$("#negative3L").click(function() { // button function for rewind
     video_player.pause();
       
     rewind = setInterval(function() {
@@ -367,7 +555,7 @@ $("#negative3").click(function() { // button function for rewind
 });
 */
             
-       function on0(){
+       function on0L(){
             console.log("0 ended");
             video_index = 0;
             video_player.setAttribute("src", video_directory[video_index]);
@@ -390,7 +578,7 @@ $("#negative3").click(function() { // button function for rewind
               }
           }
         
-        function on1(){
+        function on1L(){
             console.log("1 ended");
             video_index = 1;
             video_player.setAttribute("src", video_directory[video_index]);
@@ -413,7 +601,7 @@ $("#negative3").click(function() { // button function for rewind
               }
         }
            
-          function on2(){
+          function on2L(){
             console.log("2 ended");
             video_index = 2;
             video_player.setAttribute("src", video_directory[video_index]);
@@ -436,7 +624,7 @@ $("#negative3").click(function() { // button function for rewind
               }
         }
                       
-          function on3(){
+          function on3L(){
             console.log("3 ended");
             video_index = 3;
             video_player.setAttribute("src", video_directory[video_index]);
@@ -459,7 +647,7 @@ $("#negative3").click(function() { // button function for rewind
               }
         }
         
-          function on4(){
+          function on4L(){
             console.log("4 ended");
             video_index = 4;
             video_player.setAttribute("src", video_directory[video_index]);
@@ -482,7 +670,7 @@ $("#negative3").click(function() { // button function for rewind
               }
         }
            
-         function on5(){
+         function on5L(){
             console.log("5 ended");
             video_index = 5;            
             video_player.setAttribute("src", video_directory[video_index]);
@@ -505,7 +693,7 @@ $("#negative3").click(function() { // button function for rewind
               }
         }
         
-         function on6(){
+         function on6L(){
             console.log("6 ended");
             video_index = 6;
             video_player.setAttribute("src", video_directory[video_index]);
@@ -528,7 +716,7 @@ $("#negative3").click(function() { // button function for rewind
               }
         }
          
-          function on7(){
+          function on7L(){
             console.log("7 ended");
             video_index = 7;
             video_player.setAttribute("src", video_directory[video_index]);
@@ -551,7 +739,7 @@ $("#negative3").click(function() { // button function for rewind
               }
         }
         
-          function on8(){
+          function on8L(){
             console.log("8 ended");
             video_index = 8;
             video_player.setAttribute("src", video_directory[video_index]);
@@ -575,7 +763,7 @@ $("#negative3").click(function() { // button function for rewind
               }
         }
         
-          function on9(){
+          function on9L(){
            console.log("9 ended");
            video_index = 9;
            video_player.setAttribute("src", video_directory[video_index]);
@@ -599,7 +787,7 @@ $("#negative3").click(function() { // button function for rewind
               }
        }
        
-          function on10(){
+          function on10L(){
            console.log("10 ended");
            video_index = 10;
            video_player.setAttribute("src", video_directory[video_index]);
@@ -622,7 +810,7 @@ $("#negative3").click(function() { // button function for rewind
               }
        }
        
-          function on11(){
+          function on11L(){
             console.log("11 ended");
              if(video_index = 10){
                 video_index++;
@@ -653,7 +841,7 @@ $("#negative3").click(function() { // button function for rewind
         }
         
         
-          function on12(){
+          function on12L(){
             console.log("12 ended");
              if(video_index = 11){
                 video_index++;
@@ -682,4 +870,5 @@ $("#negative3").click(function() { // button function for rewind
               video_player.pause();
               }
         }
+
 

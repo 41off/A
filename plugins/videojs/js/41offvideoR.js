@@ -1,56 +1,70 @@
-﻿ function ClickStart() {
+﻿  function onloadR(){
+            console.log("body loaded");
+            videoR_player = document.getElementById("videoR");
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+            videoR_player.volume = 0.2;
+            videoR_player.currentSrc();
+            videoR_player.currentTime();
+            timer.start(10)
+        }
+ 
+ 
+ 
+ 
+ 
+ function ClickStartR() {
     timer.stop();
     timer.mode(1);
-    video_player.play();
-    video.playbackRate = 1.0; 
+    videoR_player.play();
+    videoR.playbackRate = 1.0; 
    }
    
-  function ClickPause(){
+  function ClickPauseR(){
     timer.start(10);
-    video_player.pause();
+    videoR_player.pause();
    }
-  function onPause(){
+  function onPauseR(){
     timer.stop();
-    video_player.pause();
+    videoR_player.pause();
    }
   
-  function on1X(){
+  function on1XR(){
     timer.stop();
-    video_player.pause();
-    video.pause();
+    videoR_player.pause();
+    videoR.pause();
     clearInterval(rewind);
-    video.playbackRate = 1.0;
+    videoR.playbackRate = 1.0;
    }
  
-  function onFastFwd(){
-    video.playbackRate = 4.0;
-    video_player.play();
+  function onFastFwdR(){
+    videoR.playbackRate = 4.0;
+    videoR_player.play();
    }
    
-  function onSupFwd(){
-    video.playbackRate = 16.0;
-    video_player.play();
+  function onSupFwdR(){
+    videoR.playbackRate = 16.0;
+    videoR_player.play();
    }
    
-  function onSlow(){
-    video.playbackRate = 0.125;
-    video_player.play();
+  function onSlowR(){
+    videoR.playbackRate = 0.125;
+    videoR_player.play();
    }
    
-  function onSuperSlow(){
-    video.playbackRate = 0.0625;
-    video_player.play();
+  function onSuperSlowR(){
+    videoR.playbackRate = 0.0625;
+    videoR_player.play();
    }
    
-  function multiStop() {
+  function multiStopR() {
     timer.stop();
     timer.reset(0000);
-    video_player.pause();
+    videoR_player.pause();
     clearInterval(rewind);
    }
  
  
-  function multiStart() {
+  function multiStartR() {
       var btn = document.getElementById("timerbutton5");
       
    /*   var w = window.open('','','width=300,height=30')
@@ -62,152 +76,152 @@
               w.focus();  */
              btn.value = "Pause";
              btn.innerHTML = "Play";
-             video_player.play();
+             videoR_player.play();
              
                 }
          else {
              btn.value = "Play";
              btn.innerHTML = "Pause";
-             video_player.pause();
+             videoR_player.pause();
               }
               
-     if(video_player.paused){
+     if(videoR_player.paused){
       
       timer.start(10);
       timer.mode(1);      
-      video_player.play();
-      video.playbackRate = 1.0;
+      videoR_player.play();
+      videoR.playbackRate = 1.0;
      } 
        else {
             timer.stop();
-            video_player.pause();
+            videoR_player.pause();
             clearInterval(rewind);
          }
  }
-  function multiReset() {
+  function multiResetR() {
     timer.reset(0000)
    }
    
-   function multiFwd() {
+   function multiFwdR() {
     var btn = document.getElementById("speed4x");
         if (btn.value == "+4X") {
              btn.value = "Pause";
              btn.innerHTML = "+4X";
-             video_player.play();
+             videoR_player.play();
                 }
          else {
              btn.value = "+4X";
              btn.innerHTML = "Pause";
-             video_player.pause();
+             videoR_player.pause();
                 }
-     if(video_player.paused){
+     if(videoR_player.paused){
       timer.start(2);
       timer.mode(1);
-      video_player.play();
-      video.playbackRate = 4.0;
+      videoR_player.play();
+      videoR.playbackRate = 4.0;
       } 
        else {
             timer.stop();
-            video_player.pause();
+            videoR_player.pause();
          }   
   }
    
-   function multiSupFwd() {
+   function multiSupFwdR() {
     var btn = document.getElementById("speed16x");
         if (btn.value == "+16X") {
              btn.value = "Pause";
              btn.innerHTML = "+16X";
-             video_player.play();
+             videoR_player.play();
                 }
          else {
              btn.value = "+16X";
              btn.innerHTML = "Pause";
-             video_player.pause();
+             videoR_player.pause();
                 }
-     if(video_player.paused){
+     if(videoR_player.paused){
       timer.start(0.3125);
       timer.mode(1);
-      video_player.play();
-      video.playbackRate = 16.0;
+      videoR_player.play();
+      videoR.playbackRate = 16.0;
       } 
        else {
             timer.stop();
-            video_player.pause();
+            videoR_player.pause();
          }   
    }
 /*   
     function multiSlow() {
     timer.start(80);
     timer.mode(1);
-    video.pause();
+    videoR.pause();
     clearInterval(intervalRewind);
     onSlow();
    }
 */
   
-   function multiSlow() {
+   function multiSlowR() {
       var btn = document.getElementById("timerbutt1_8");
         if (btn.value == "+1/8X") {
              btn.value = "Pause";
              btn.innerHTML = "+1/8X";
-             video_player.play();
+             videoR_player.play();
                 }
          else {
              btn.value = "+1/8X";
              btn.innerHTML = "Pause";
-             video_player.pause();
+             videoR_player.pause();
                 }
-     if(video_player.paused){
+     if(videoR_player.paused){
       timer.start(80);
       timer.mode(1);
-      video_player.play();
-      video.playbackRate = .125;
+      videoR_player.play();
+      videoR.playbackRate = .125;
       } 
        else {
             timer.stop();
-            video_player.pause();
+            videoR_player.pause();
          }
  }
-   function multiSuperSlow() {
+   function multiSuperSlowR() {
       var btn = document.getElementById("timerbutt1_16");
         if (btn.value == "+1/16X") {
              btn.value = "Pause";
              btn.innerHTML = "+1/16X";
-             video_player.play();
+             videoR_player.play();
                 }
          else {
              btn.value = "+1/16X";
              btn.innerHTML = "Pause";
-             video_player.pause();
+             videoR_player.pause();
                 }
-     if(video_player.paused){
+     if(videoR_player.paused){
       timer.start(160);
       timer.mode(1);
-      video_player.play();
-      video.playbackRate = .0625;
+      videoR_player.play();
+      videoR.playbackRate = .0625;
       } 
        else {
             timer.stop();
-            video_player.pause();
+            videoR_player.pause();
          }
  }
 /*   
     function multiSuperSlow() {
     timer.start(160);
     timer.mode(1);
-    video.pause();
+    videoR.pause();
     clearInterval(intervalRewind);
     onSuperSlow();
    }
 */
   
-   function multiRev() {
+   function multiRevR() {
     timer.start(80);
     timer.mode(0);    
    }
    
   
-        var video_directory = ['https://www.dropbox.com/s/gbylnf22v2y9z2p/PG-08-22-2021.mp4?raw=1',
+        var videoR_directory = ['https://www.dropbox.com/s/gbylnf22v2y9z2p/PG-08-22-2021.mp4?raw=1',
                                'https://www.dropbox.com/s/fwvj14n1kbis4c5/XPG-08-15-2021.mp4?raw=1',
                                'https://www.dropbox.com/s/gw1298kfmmob2aq/XPG-08-14-2021b.mp4?raw=1',
                                'https://www.dropbox.com/s/um8jz1a2p63idxe/10-10-2021-14_52.mp4?raw=1',
@@ -226,74 +240,66 @@
                                ];                      
  
   
-        var video_index = 0;
-        var video_player = null;
-        var video = document.getElementById('video');  
+        var videoR_index = 0;
+        var videoR_player = null;
+        var videoR = document.getElementById('videoR');  
        
                           
-      function onload(){
-            console.log("body loaded");
-            video_player = document.getElementById("video");
-            video_player.setAttribute("src", video_directory[video_index]);
-            video_player.volume = 0.2;
-            video_player.currentSrc();
-            video_player.currentTime();
-            timer.start(10)
-        }
+     
         
-       function onVideoEnded(){
-            console.log("video ended");
-            if(video_index < video_directory.length - 1){
-                video_index++;
+       function onvideoEndedR(){
+            console.log("videoR ended");
+            if(videoR_index < videoR_directory.length - 1){
+                videoR_index++;
             }
             else{
-                video_index = 1;
+                videoR_index = 1;
             }
-            video_player.setAttribute("src", video_directory[video_index]);
-            video_player.play();
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+            videoR_player.play();
         }
         
-       function onVideoNext(){
-            console.log("video next");
-            if(video_index < video_directory.length - 1){
-                video_index++;
+       function onvideoNextR(){
+            console.log("videoR next");
+            if(videoR_index < videoR_directory.length - 1){
+                videoR_index++;
             }
             else{
-                video_index = 1;
+                videoR_index = 1;
             }
-            video_player = document.getElementById("video");
-            video_player.setAttribute("src", video_directory[video_index]);
-            video_player.play();
+            videoR_player = document.getElementById("videoR");
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+            videoR_player.play();
         }
         
-       function onVideoBack(){
-            console.log("video back");
-            if(video_index < video_directory.length - 1){
-                video_index--;
+       function onvideoBackR(){
+            console.log("videoR back");
+            if(videoR_index < videoR_directory.length - 1){
+                videoR_index--;
             }
             else{
-                video_index--;
+                videoR_index--;
             }
-            video_player = document.getElementById("video");
-            video_player.setAttribute("src", video_directory[video_index]);
-            video_player.play();
+            videoR_player = document.getElementById("videoR");
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+            videoR_player.play();
         }
         
    //rewind below  
-$("#negative").click(function() { // button function for rewind
-    video_player.pause();
+$("#negativeR").click(function() { // button function for rewind
+    videoR_player.pause();
      
      rewind = setInterval(function() {
                
-       if (video_player.currentTime == 0) {
+       if (videoR_player.currentTime == 0) {
           clearInterval(rewind);
-          video_player.pause();
+          videoR_player.pause();
           }
           
        else{
            timer.start(10);
            timer.mode(0);
-           video_player.currentTime += -.3;
+           videoR_player.currentTime += -.3;
              }
                 },300);
         
@@ -303,14 +309,14 @@ $("#negative").click(function() { // button function for rewind
         timer.stop();
         }, 20000);
 });
-$("#negative2").click(function() { // button function for rewind
-    video_player.pause();
+$("#negative2R").click(function() { // button function for rewind
+    videoR_player.pause();
       
      rewind = setInterval(function() {
               
-       if (video_player.currentTime == 0) {
+       if (videoR_player.currentTime == 0) {
           clearInterval(rewind);
-          video_player.pause();
+          videoR_player.pause();
           
           
           }
@@ -318,7 +324,7 @@ $("#negative2").click(function() { // button function for rewind
        else{
            timer.start(80);
            timer.mode(0);
-           video_player.currentTime += -.05;
+           videoR_player.currentTime += -.05;
              }
                 },400);
            
@@ -329,19 +335,19 @@ $("#negative2").click(function() { // button function for rewind
                timer.stop();
                }, 20500);
 });
-$("#negative3").click(function() { // button function for rewind
-    video_player.pause();
+$("#negative3R").click(function() { // button function for rewind
+    videoR_player.pause();
       
     rewind = setInterval(function() {
                
-       if (video_player.currentTime == 0) {
+       if (videoR_player.currentTime == 0) {
           clearInterval(rewind);
-          video_player.pause();
+          videoR_player.pause();
           }
        else{
            timer.start(2.5);
            timer.mode(0);
-           video_player.currentTime += -1;
+           videoR_player.currentTime += -1;
              }
                 },250);
            
@@ -351,335 +357,314 @@ $("#negative3").click(function() { // button function for rewind
         timer.stop();
         }, 8000);
 });
-/*  
-$("#negative3").click(function() { // button function for rewind
-       intervalRewind = setInterval(function(){
-       timer.start(2.5);
-       timer.mode(0);
-       video.playbackRate = 4.0;
-       if(video.currentTime == 0){
-          clearInterval(intervalRewind);
-       }
-       else{
-           video.currentTime += -.0083;
-       }
-                },10);
-});
-*/
             
-       function on0(){
+       function on0R(){
             console.log("0 ended");
-            video_index = 0;
-            video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 0;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
                        
-        var btn = document.getElementById("modal");
+        var btn = document.getElementById("modalR");
       
             if (btn.value == "Latest") {
               btn.value = "Latest";
-              btn.innerHTML = '<button id="modtext">Latest</button>';              
+              btn.innerHTML = '<button id="modtextR">Latest</button>';              
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "Latest";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
           }
         
-        function on1(){
+        function on1R(){
             console.log("1 ended");
-            video_index = 1;
-            video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 1;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
            
-         var btn = document.getElementById("modal");
+         var btn = document.getElementById("modalR");
               
             if (btn.value == "V1.mp4") {
               btn.value = "V1.mp4";
-              btn.innerHTML = '<button id="modtext">V1.mp4</button>';             
+              btn.innerHTML = '<button id="modtextR">V1.mp4</button>';             
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "V1.mp4";
-              btn.innerHTML =  '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML =  '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();              
+              videoR_player.pause();              
               }
         }
            
-          function on2(){
+          function on2R(){
             console.log("2 ended");
-            video_index = 2;
-            video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 2;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
             
-          var btn = document.getElementById("modal");
+          var btn = document.getElementById("modalR");
       
             if (btn.value == "V2.mp4") {
               btn.value = "V2.mp4";
-              btn.innerHTML = '<button id="modtext">V2.mp4</button>';
+              btn.innerHTML = '<button id="modtextR">V2.mp4</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "V2.mp4";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
         }
                       
-          function on3(){
+          function on3R(){
             console.log("3 ended");
-            video_index = 3;
-            video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 3;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
             
-           var btn = document.getElementById("modal");
+           var btn = document.getElementById("modalR");
       
             if (btn.value == "V3.mp4") {
               btn.value = "V3.mp4";
-              btn.innerHTML = '<button id="modtext">V3.mp4</button>';
+              btn.innerHTML = '<button id="modtextR">V3.mp4</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "V3.mp4";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
         }
         
-          function on4(){
+          function on4R(){
             console.log("4 ended");
-            video_index = 4;
-            video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 4;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
                         
-           var btn = document.getElementById("modal");
+           var btn = document.getElementById("modalR");
       
             if (btn.value == "V4.mp4") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">V4.mp4</button>';
+              btn.innerHTML = '<button id="modtextR">V4.mp4</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "Clip 5";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();              
+              videoR_player.pause();              
               }
         }
            
-         function on5(){
+         function on5R(){
             console.log("5 ended");
-            video_index = 5;            
-            video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 5;            
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
                         
-          var btn = document.getElementById("modal");
+          var btn = document.getElementById("modalR");
       
             if (btn.value == "V5.mp4") {
               btn.value = "V5.mp4";
-              btn.innerHTML = '<button id="modtext">V5.mp4</button>';
+              btn.innerHTML = '<button id="modtextR">V5.mp4</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "V5.mp4";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
         }
         
-         function on6(){
+         function on6R(){
             console.log("6 ended");
-            video_index = 6;
-            video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 6;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
                         
-          var btn = document.getElementById("modal");
+          var btn = document.getElementById("modalR");
       
             if (btn.value == "Clip 7") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 7</button>';
+              btn.innerHTML = '<button id="modtextR">Clip 7</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "Clip 7";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
         }
          
-          function on7(){
+          function on7R(){
             console.log("7 ended");
-            video_index = 7;
-            video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 7;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
                         
-           var btn = document.getElementById("modal");
+           var btn = document.getElementById("modalR");
       
             if (btn.value == "Clip 8") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 8</button>';
+              btn.innerHTML = '<button id="modtextR">Clip 8</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "Clip 8";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
         }
         
-          function on8(){
+          function on8R(){
             console.log("8 ended");
-            video_index = 8;
-            video_player.setAttribute("src", video_directory[video_index]);
-            video_player.play();
+            videoR_index = 8;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+            videoR_player.play();
             
-           var btn = document.getElementById("modal");
+           var btn = document.getElementById("modalR");
       
             if (btn.value == "Clip 9") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 9</button>';              
+              btn.innerHTML = '<button id="modtextR">Clip 9</button>';              
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "Clip 9";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
         }
         
-          function on9(){
+          function on9R(){
            console.log("9 ended");
-           video_index = 9;
-           video_player.setAttribute("src", video_directory[video_index]);
-           video_player.play();
+           videoR_index = 9;
+           videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+           videoR_player.play();
            
-          var btn = document.getElementById("modal");
+          var btn = document.getElementById("modalR");
       
             if (btn.value == "Clip 10") {
               btn.value = "";
               btn.innerHTML = '<button id="modtext">Clip 10</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "Clip 10";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
        }
        
-          function on10(){
+          function on10R(){
            console.log("10 ended");
-           video_index = 10;
-           video_player.setAttribute("src", video_directory[video_index]);
+           videoR_index = 10;
+           videoR_player.setAttribute("src", videoR_directory[videoR_index]);
                       
-          var btn = document.getElementById("modal");
+          var btn = document.getElementById("modalR");
       
             if (btn.value == "Clip 11") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 11</button>';
+              btn.innerHTML = '<button id="modtextR">Clip 11</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
               btn.value = "Clip 11";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
        }
        
-          function on11(){
+          function on11R(){
             console.log("11 ended");
-             if(video_index = 10){
-                video_index++;
-           }
-            else{
-                video_index = 0;
-            }
-            video_player = document.getElementById("video");
-            video_player.setAttribute("src", video_directory[video_index]);
-            video_player.play();
-           
-           var btn = document.getElementById("modal");
+            videoR_index = 11;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+                        
+          var btn = document.getElementById("modalR");
       
-            if (btn.value == "V11.mp4") {
-              btn.value = "Play";
-              btn.innerHTML = '<button id="modtext">V11.mp4</button>';              
+            if (btn.value == "Clip 12") {
+              btn.value = "";
+              btn.innerHTML = '<button id="modtextR">Clip 12</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
-              btn.value = "V11.mp4";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "Clip 12";
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
         }
         
         
-          function on12(){
+           function on12R(){
             console.log("12 ended");
-             if(video_index = 11){
-                video_index++;
-           }
-            else{
-                video_index = 0;
-            }
-            video_player = document.getElementById("video");
-            video_player.setAttribute("src", video_directory[video_index]);
-            video_player.play();
-           
-           var btn = document.getElementById("modal");
+            videoR_index = 12;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+                        
+          var btn = document.getElementById("modalR");
       
-            if (btn.value == "V12.mp4") {
-              btn.value = "Play";
-              btn.innerHTML = '<button id="modtext">V12.mp4</button>';              
+            if (btn.value == "Clip 13") {
+              btn.value = "";
+              btn.innerHTML = '<button id="modtextR">Clip 13</button>';
               timer.reset();
-              video_player.play();
+              videoR_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
-              btn.value = "V12.mp4";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "Clip 13";
+              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              videoR_player.pause();
               }
         }
+
+
+
+
+
+
+
+
 

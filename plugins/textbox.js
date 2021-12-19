@@ -5,46 +5,22 @@
   var $ = function(id){return document.getElementById(id)};
 
 
-  var canvas = this.__canvas = new fabric.Canvas('canvas');
-  	  canvas.setHeight(75);
-	  canvas.setWidth(300);
+  var canvas1 = this.__canvas = new fabric.Canvas('canvas1');
+  	    canvas1.setHeight(75);
+		canvas1.setWidth(300);
    
 
 function Addtext() { 
-canvas.add(new fabric.IText('Tap and Type Over', { 
-      left: 50,
-      top: 100,
-      fontFamily: 'Verdana',
-      fill: 'orange',
-	  fontSize: 18
-}));
-}
-
-
-  fabric.Object.prototype.transparentCorners = false;
-    fabric.Object.prototype.padding = 5;
-    
-     
-  var $ = function(id){return document.getElementById(id)};
-
-
-  var canvas1 = this.__canvas = new fabric.Canvas('canvas1');
-  	  canvas1.setHeight(75);
-	  canvas1.setWidth(300);
-   
-
-function Addtext1() { 
 canvas1.add(new fabric.IText('Tap and Type Over', { 
       left: 50,
       top: 100,
       fontFamily: 'Verdana',
       fill: 'yellow',
-	  fontSize: 18
+	    fontSize: 30
 }));
 }
-
     
-  document.getElementById('text-color').onchange = function() {
+   document.getElementById('text-color').onchange = function() {
             canvas.getActiveObject().setFill(this.value);
             canvas.renderAll();
         };
@@ -140,6 +116,10 @@ canvas1.add(new fabric.IText('Tap and Type Over', {
         }
     }
  
+
+
+  
+
 let color = "black";
 let strokeSize = 10;
 function changeColorAndSize(data, width) {

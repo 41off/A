@@ -5206,10 +5206,8 @@ var PlayToggle = (function (_Button) {
   PlayToggle.prototype.handleClick = function handleClick() {
     if (this.player_.paused()) {
       this.player_.play();
-    } 
-      else {
+    } else {
       this.player_.pause();
-     
     }
   };
 

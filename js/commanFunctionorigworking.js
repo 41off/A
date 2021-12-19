@@ -366,23 +366,6 @@ function drawLine() {
             isDownAngle = false;
             rotateText(line2);
        }
-       
-     /*  
-        var btn = document.getElementById("modal");
-      
-            if (btn.value == "line") {
-              btn.value = "line";
-              btn.innerHTML = '<button id="modtext">Draw Line</button>';              
-            
-              }
-            else {
-              btn.value = "line";
-              btn.innerHTML = '<button id="modtext">Line Draw&#8665;</button>';
-              
-              }
-        */
-       
-       
     });
     canvas1.on('object:rotating', function (e) {
         if(typeof e.target.lineText != "undefined"){
@@ -394,6 +377,76 @@ function drawLine() {
         }
     });
 }
+
+/*
+function drawAngle(center, vector, label) {
+	var radius = 25, threshold = 10;
+	if (vector.length < radius + threshold || Math.abs(vector.angle) < 15)
+		return;
+	var from = new Point(radius, 0);
+	var through = from.rotate(vector.angle / 2);
+	var to = from.rotate(vector.angle);
+	var end = center + to;
+	dashedItems.push(new Path.Line(center,
+			center + new Point(radius + threshold, 0)));
+	dashedItems.push(new Path.Arc(center + from, center + through, end));
+	var arrowVector = to.normalize(7.5).rotate(vector.angle < 0 ? -90 : 90);
+	dashedItems.push(new Path([
+			end + arrowVector.rotate(135),
+			end,
+			end + arrowVector.rotate(-135)
+	]));
+	if (label) {
+		// Angle Label
+		var text = new PointText(center
+				+ through.normalize(radius + 10) + new Point(0, 3));
+		text.content = Math.floor(vector.angle * 100) / 100 + '�';
+		text.fillColor = 'yellow';
+		items.push(text);
+	}
+}
+
+
+function drawLength(from, to, sign, label, value, prefix) {
+	var lengthSize = 5;
+	if ((to - from).length < lengthSize * 4)
+		return;
+	var vector = to - from;
+	var awayVector = vector.normalize(lengthSize).rotate(90 * sign);
+	var upVector = vector.normalize(lengthSize).rotate(45 * sign);
+	var downVector = upVector.rotate(-90 * sign);
+	var lengthVector = vector.normalize(
+			vector.length / 2 - lengthSize * Math.sqrt(2));
+	var line = new Path();
+	line.add(from + awayVector);
+	line.lineBy(upVector);
+	line.lineBy(lengthVector);
+	line.lineBy(upVector);
+	var middle = line.lastSegment.point;
+	line.lineBy(downVector);
+	line.lineBy(lengthVector);
+	line.lineBy(downVector);
+	dashedItems.push(line);
+	if (label) {
+		// Length Label
+		var textAngle = Math.abs(vector.angle) > 90
+				? textAngle = 180 + vector.angle : vector.angle;
+		// Label needs to move away by different amounts based on the
+		// vector's quadrant:
+		var away = (sign >= 0 ? [1, 4] : [2, 3]).indexOf(vector.quadrant) != -1
+				? 8 : 0;
+		value = value || vector.length;
+		var text = new PointText({
+			point: middle + awayVector.normalize(away + lengthSize),
+			content: (prefix || '') + Math.floor(value * 1000) / 1000,
+			fillColor: 'black',
+			justification: 'center'
+		});
+		text.rotate(textAngle);
+		items.push(text);
+	}
+}
+*/
 
 function paintY(){
            if (isPaintY == "1") {
@@ -503,21 +556,6 @@ function drawCircle() {
     canvas1.on('mouse:up', function (o) {
         isDown = false;
     });
-    
-    
-   /* var btn = document.getElementById("modal");
-      
-            if (btn.value == "circle") {
-              btn.value = "circle";
-              btn.innerHTML = '<button id="modtext">Draw Circle</button>';              
-            
-              }
-            else {
-              btn.value = "circle";
-              btn.innerHTML = '<button id="modal">Circle Draw&#8665;</button>';
-              
-              }
-  */
 
 }
 
@@ -536,15 +574,15 @@ var startAngle
             var pointer = canvas1.getPointer(o.e);
             var points = [pointer.x, pointer.y, pointer.x, pointer.y];
 
-            line = new fabric.Line(points, {
+            line2 = new fabric.Line(points, {
                 strokeWidth: 2,
                 fill: 'yellow',
                 stroke: 'red',
                 originX: 'center',
                 originY: 'center'
             });
-       //     line.line1 = line;
-            canvas1.add(line);
+            line2.line1 = line2;
+            canvas1.add(line2);
         }
     });
 
@@ -553,54 +591,29 @@ var startAngle
             return;
         if (isAngleDrawing == "1") {
             var pointer = canvas1.getPointer(o.e);
-            line.set({x2: pointer.x, y2: pointer.y});
+            line2.set({x2: pointer.x, y2: pointer.y});
             canvas1.renderAll();
         }
     });
     canvas1.on('mouse:up', function (o) {
 
         if (isAngleDrawing == "1") {
-            y11 = line.get('y1');
-            y12 = line.get('y2');
-            x11 = line.get('x1');
-            x12 = line.get('x2');
-                        
+            y11 = line2.get('y1');
+            y12 = line2.get('y2');
+            x11 = line2.get('x1');
+            x12 = line2.get('x2');
+            
             var dy = y12 - y11;
             var dx = x12 - x11;
-            
-            var omega = Math.hypot(dy, dx); // range (-PI, PI]
-            omega *= 180 / Math.PI;
-            line.startAngle = omega;
-            var angle = countAngle(omega);
-            var leng = parseInt(angle).toString() +' u ---     ' + '                        ';
-            var top = line.top;
-            var left = line.left;
-            if((omega >45 && omega < 75) || (omega >-180 && omega < -165)){
-                left += 11;
-            }
-            if((omega >76 && omega < 90) || (omega >-166 && omega < -145)){
-                left += 08;
-            }
-            if((omega >0 && omega < 46) || (omega >-146 && omega < -90)){
-                left += 20;
-            }
-            var text3 = new fabric.Text(leng, {
-                fontSize: 14,
-                fontWeight: 500,
-                fontFamily: 'Arial', top: top, left:left,
-                fill: 'yellow'
-            });
-
-            
             
 
             var theta = Math.atan2(dy, dx); // range (-PI, PI]
             theta *= 180 / Math.PI;
-            line.startAngle = theta;
+            line2.startAngle = theta;
             var angle = countAngle(theta);
             var angl = parseInt(angle).toString() +'°';
-            var top = line.top;
-            var left = line.left;
+            var top = line2.top;
+            var left = line2.left;
             if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
                 left += 11;
             }
@@ -611,34 +624,25 @@ var startAngle
                 left += 20;
             }
             var text2 = new fabric.Text(angl, {
-                fontSize: 18,
+                fontSize: 20,
                 fontFamily: 'Verdana', top: top, left:left,
-                fill: 'lime'
+                fill: 'yellow'
             });
-            
-            line.lineText = text3;
-            canvas1.add(text3);
-            line.lineText = text2;
+            line2.lineText = text2;
             canvas1.add(text2);
             isDownAngle = false;
-            rotateText(line);
-
-   }
- });
-     canvas1.on('object:rotating', 
-       function (e) {
+            rotateText(line2);
+        }
+    });
+    canvas1.on('object:rotating', function (e) {
         if(typeof e.target.lineText != "undefined"){
             var newAngle = getCurrentAngle(e);
             var theta = countAngle(newAngle);
-            var omega = countAngle(newAngle);
-            theta = parseInt(theta).toString() +'u';
-            omega = parseInt(omega).toString() +'°';
+            theta = parseInt(theta).toString() +'°';
             e.target.lineText.setText(theta);
-            e.target.lineText.setText(omega);
-            fill: 'white';
             rotateText(e.target);
-          }
- });
+         }
+    });
 }
 
 
@@ -647,8 +651,8 @@ function createTriangle(left, top, line1, line2, line3, line4) {
       ({left: left,
         top: top,
         strokeWidth: 3,
-        fill: 'white',
-        stroke: 'red',
+        fill: 'black',
+        stroke: 'black',
         angle: -180,
         width: 5,
         height: 5
@@ -666,7 +670,7 @@ function createTriangle(left, top, line1, line2, line3, line4) {
 
 function makeLineForTriangle(coords) {
       return new fabric.Line(coords, {
-        fill: 'white',
+        fill: 'red',
         stroke: 'red',
         strokeWidth: 2,
         selectable: false

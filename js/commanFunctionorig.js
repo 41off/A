@@ -188,6 +188,7 @@ function changeDrawing() {
     })
 }
 
+
 function drawLine() {
     canvas.on('mouse:down', function (o) {
         if (isLineDrawing == "1") {
@@ -195,7 +196,7 @@ function drawLine() {
             isDown = true;
             var pointer = canvas.getPointer(o.e);
             var points = [pointer.x, pointer.y, pointer.x, pointer.y];
-
+                        
             line = new fabric.Line(points, {
                 strokeWidth: 2,
                 fill: 'yellow',
@@ -220,11 +221,13 @@ function drawLine() {
     canvas.on('mouse:up', function (o) {
         isDown = false;
     });
-
+    
+    
     canvas1.on('mouse:down', function (o) {
         if (isLineDrawing == "1") {
             canvas1.selection = false;
             isDown = true;
+            
             var pointer = canvas1.getPointer(o.e);
             var points = [pointer.x, pointer.y, pointer.x, pointer.y];
 
@@ -254,6 +257,7 @@ function drawLine() {
     });
 }
 
+    
 function drawCircle() {
     canvas.on('mouse:down', function (o) {
         if (isCircleDrawing == "1") {
@@ -327,6 +331,9 @@ function drawCircle() {
             });
             canvas1.add(circle);
         }
+        
+        
+        
     });
 
     canvas1.on('mouse:move', function (o) {

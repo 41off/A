@@ -94,10 +94,10 @@
         minute = (minute < 10) ? '&nbsp;0'+minute : minute;
         hour = (hour < 10) ? '0'+hour : hour;
         
-        $('div.dropdown2 span.milli').html(milli);
-        $('div.dropdown2 span.second').html(second);
-        $('div.dropdown2 span.minute').html(minute);
-        $('div.dropdown2 span.hour').html(hour);
+        $('div.timer span.milli').html(milli);
+        $('div.timer span.second').html(second);
+        $('div.timer span.minute').html(minute);
+        $('div.timer span.hour').html(hour);
     }
 }
  
@@ -123,7 +123,7 @@ $(document).ready(function(e)
 
 
 function timerStart() {
-      var btn = document.getElementsByClassName("dropdown2");
+      var btn = document.getElementsByClassName("timer");
       
    /*   var w = window.open('','','width=300,height=30')
       

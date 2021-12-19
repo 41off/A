@@ -1,0 +1,68 @@
+﻿<script>
+
+function readURL(input,output){
+   var file = document.getElementById(input.id).files[0];
+   var reader = new FileReader();
+   reader.onloadend = function(e){
+      document.getElementById(output).style.backgroundImage = "url('" + reader.result + "')";        
+   }
+   if(file){
+      reader.readAsDataURL(file);
+    }else{
+    }
+}
+
+</script>
+
+
+
+<style>
+
+h2 {
+font-size: 14px;
+margin: 14px 0 3px;
+}
+
+#adXL{
+   background-image:url('');
+   background-size:cover;
+   background-position: center;
+   min-height: 200px;
+   width: 100%;
+   min-width: 0;
+   border: 0px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 0 0;
+  background-color: #eee;
+  object-fit:resize;
+}
+
+
+#logo{
+   background-image:url('');
+   background-size:cover;
+   background-position: center;
+  min-width: 0;
+  width: 150px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  background-color: #ccc;
+}
+</style>
+
+
+<h2>Background Image</h2>
+<input type='file' id='getval' onchange="readURL(this, 'adXL')" name="background-image" />
+<h2>logo</h2>
+<input type='file' id='getval' onchange="readURL(this, 'logo')" name="background-image" />
+
+<div id='adXL'>
+<div id='logo'>
+</div>
+</div>
+
+
+

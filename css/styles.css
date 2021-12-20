@@ -78,8 +78,8 @@ body {
     display:inline-block;
     padding-top:0px;
     margin: 0 auto;
-    left:33%;
-    bottom: 15%;
+    left:32%;
+    bottom: 10%;
     height: 32px;
     width:auto;
     min-width:400px;
@@ -110,9 +110,9 @@ body {
     position: absolute;
     display:inline-block;
     padding-top:0px;
-    left:5%;
+    left:1%;
     float:left;
-    bottom: 20%;
+    bottom: 17%;
     height: 32px;
     width:auto;
     min-width:400px;
@@ -143,13 +143,13 @@ body {
     position: absolute;
     display:inline-block;
     padding-top:0px;
-    bottom: 20%;
+    bottom: 17%;
     height: 32px;
     width:auto;
     min-width:350px;
     padding:auto;
     margin: auto 0;
-    right:5%;
+    right:1%;
     float:right;
     opacity: 1.0;
     transition: opacity 50s;
@@ -424,7 +424,7 @@ body {
     position:absolute;
     display:inline-block;
     text-align:center;
-    left: 2%;
+    left: 1%;
     margin-top:1px;
     padding-top: 0px;
     padding-bottom:1px;
@@ -442,7 +442,7 @@ body {
     color: white;
     opacity: 1.0;
     transition: opacity 30s;
-    bottom: 14%;
+    bottom: 5%;
 }
 
 .controlsL:hover {
@@ -457,25 +457,25 @@ body {
     position:absolute;
     display:inline-block;
     text-align:center;
-    right: 2%;
+    right: 1%;
     margin-top:4px;
     padding-top: 0px;
-    padding-bottom:0px;
+    padding-bottom:1px;
     padding-left: 6px;
     padding-right: 6px;
     background-color: transparent;
-    border: 3px;
+    border: 2px;
     border-color: white;
-    border-radius: 12px;
-    border-style: double;
-    height:40px;
-    width: 400px;
+    border-radius: 6px;
+    border-style: groove;
+    height:36px;
+    width: auto;
     font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 18px;
     color: white;
-    opacity: .15;
-    transition: opacity 10s;
-    bottom: 14%;
+    opacity: .25;
+    transition: opacity 30s;
+    bottom: 5%;
    
 }
 
@@ -886,7 +886,7 @@ body {
     text-align:left;
     display:inline-block;
     left: 33%;
-    padding-top: 6px;
+    padding-top: 2px;
     padding-bottom:2px;
     padding-left: 4px;
     padding-right: 4px;
@@ -897,7 +897,7 @@ body {
     border-color: white;
     border-radius: 6px;
     border-style: groove;
-    height:45px;
+    height:40px;
     min-width: 350px;
     font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 20px;
@@ -905,7 +905,7 @@ body {
     color: white;
     opacity: .25;
     transition: opacity 5s;
-    bottom: 5%;
+    bottom: 0.5%;
     
 -webkit-animation: fadeout 45s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 45s; /* Firefox < 16 */

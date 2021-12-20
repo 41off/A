@@ -184,38 +184,43 @@
 }
 
 .dropbtn .box {
-  position:relative;
+  position:absolute;
   visibility: hidden;
  
-  display:inline-block;  
-  
-  /* Position the tooltip */
-  right: 1%;
-  bottom:100%;
-  position: absolute;
-  z-index: 1;
-  overflow:visible
-  
-}
-
-
-.dropbtn:hover .box, .dropbtn:focus .box, .dropbtn:focus-within .box {
-  visibility: visible;
-  color:black;
-  border-color: black;
-  background: -webkit-linear-gradient(top, lightyellow, lightpink);
-  text-shadow: 1px 1px silver;
+ /* Position the tooltip */
+  right:90%;
+  bottom:0%;
   font-weight:500;
-  min-width: 150px;
-  max-height:20px;
+  
+  padding-left:6px;
+  width: 300px;
+  height:250px;
+  line-height:250px;
   color: black;
   font-size:16px;
-  line-height:18px;
   text-decoration:blink;
   margin-left: 0px;
   border-width:6px;
   border-radius: 6px;
   border-style:groove;
+  
+  z-index: 1;
+  overflow-wrap: break-word;
+
+  
+  
+}
+
+
+.dropbtn:hover .box, .dropbtn:focus .box, .dropbtn:focus-within .box {
+  visibility: hidden;
+  color:black;
+  border-color: black;
+  background: -webkit-linear-gradient(top, lightyellow, lightpink);
+  text-shadow: 1px 1px silver;
+  
+  
+
  
 }
 
@@ -229,14 +234,17 @@
   font-size:16px;
   text-decoration:blink;
   font-weight:bold;
-  align-items: center;
   margin-left: 0px;
   border-width:6px;
   border-radius: 6px;
   border-style:groove;
-  display:inline-table;  
+  
   right: 0%;
   bottom:1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
@@ -365,9 +373,9 @@
 .dropdown {  
   position:relative;
   display: inline-block;
-  right: 0.5%;
+  right: 1%;
   float:right;
-  bottom:4%;
+  top:0%;
   color:black;
   text-align: center;
   padding-top:4px;
@@ -387,20 +395,15 @@
 .dropdown-content {
   position:absolute;
   display: none;  
-  background-color: black;
+  background: -webkit-linear-gradient(top, black, silver);  
   width:auto;
   min-width: 150px;
-  
-  height:200px;
+  height:175px;
   overflow:scroll;
   border: 2px;
   border-radius: 4px;
-  
   padding:4px;
   margin: 4px;
-  
- 
- 
 }
   
   

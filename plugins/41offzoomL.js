@@ -1,6 +1,6 @@
 ﻿
 
-(function(){
+(function zoomL(){
 /* predefine zoom and rotate */
   var zoom = 1,
       rotate = 0;

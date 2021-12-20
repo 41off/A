@@ -24,6 +24,8 @@
 
 window.addEventListener("load", function B() { onloadL() })
 window.addEventListener("load", function B() { onloadR() })
+window.addEventListener("load", function B() { zoomR() })
+
 
 
 </script>
@@ -71,7 +73,14 @@ window.addEventListener("load", function B() { onloadR() })
                     <source type='video/webm; codecs="vp8, vorbis"'>
                </video>
  
-       <input type="file" class="custom-file-input" accept="video/mp4"/>
+       
+
+   
+           
+     
+   </div>
+   
+  <input type="file" class="custom-file-input" accept="video/mp4"/>
          <div id="message" display="inline-block"></div> 
    
    <script>
@@ -105,14 +114,7 @@ window.addEventListener("load", function B() { onloadR() })
   inputNode.addEventListener('change', playSelectedFile, false)
 })()
 
-</script>
-
-   
-           
-     
-   </div>
-   
-      
+</script>    
            
          
          <div class="menubarL" style="text-align:center">
@@ -127,7 +129,7 @@ window.addEventListener("load", function B() { onloadR() })
             <button class="timerbutton" id="timerbuttonreset" onclick="on0L()">Repeat</button> 
        <!-- <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNextL()">Next</button>  
             <button class="timerbutton timerbutton3" id ="negative2" onClick="onVideoBackL()">Prior</button>   -->
-            <button class="timerbutton" id="timerbuttonreset" onClick="onvideoNextL()">Reset&nbsp;&#11008;</button>             
+            <button class="timerbutton" id="timerbuttonreset" onClick="multiResetL()">Reset&nbsp;&#11008;</button>             
            </div> 
                 
         <div class="controlsL"></div>
@@ -157,10 +159,9 @@ window.addEventListener("load", function B() { onloadR() })
               
    </div>
           
-       
-   
-      <right><div class="dropdown">
-                                     <button class="dropbtn">Select a Pro Skier<span class="box">Choose a Pro Skier from the scrolling dropdown menu.</span></button>
+       <right><div class="dropdown">
+                                     <button class="dropbtn">Select a Pro Skier<span class="box">Choose a Pro Skier from the scrolling dropdown menu. Practical rope lenghts are chosen. Clips are recorded at proportionally reduced rates (i.e., 52/58) to                  
+                                                                                                  emulate slower speeds.</span></button>
                                        <div class="dropdown-content">
                                         <a href="#" onclick=on0R()">41off Viewer</a>
                                         <a href="#" onclick="on1R()">JM Viewer</a>
@@ -178,10 +179,13 @@ window.addEventListener("load", function B() { onloadR() })
                                         <a href="#" onclick="on13R()">RB Viewer</a>
                                         <a href="#" onclick="on14R()">ET Viewer</a>
                                         <a href="#" onclick="on15R()">HM Viewer</a>
-                                        <a href="#" onclick="onvideoPriorR()">Prior</a>
+                                        <a href="#" onclick="onvideoBackR()">Prior</a>
                                         <a href="#">Link 3</a>
                                        </div>
                                     </div></right>
+        
+   
+      
 
   
 	 			
@@ -207,6 +211,8 @@ window.addEventListener("load", function B() { onloadR() })
           </div>
 
         </div>
+        
+        
         
         
         

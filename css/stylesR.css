@@ -62,8 +62,8 @@ body {
     margin:auto;
     display: block;
     min-width: 100px;
-    left:20%;   
-    bottom:33%;
+    left:47%;   
+    bottom:30%;
 }
 .timer:hover {
     border:2px red solid;
@@ -90,10 +90,10 @@ body {
     margin:auto;
     display: block;
     min-width: 100px;
-    right:20%;   
-    bottom:33%;
+    left:30%;   
+    bottom:28%;
 }
-.timer:hover {
+.timerR:hover {
     border:2px red solid;
     border-radius: 4px;
     background-color: #555555; 
@@ -1259,8 +1259,8 @@ body {
 
 #wrapR{
   background:transparent;
-  width:50%;
-  height:80%;
+  width:99%;
+  height:92%;
   margin:0;
   overflow:hidden;
   right:50%;

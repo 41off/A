@@ -12,8 +12,8 @@
 
  <link rel='icon' href='favicon.ico' type='image/x-icon'/ > 
  <link href="plugins/videojs/css/video-js.css" rel="stylesheet" type="text/css">
- <link href="css/styles.css" rel="stylesheet" type="text/css">
- <link href="css/slidebardrop.css" rel="stylesheet" type="text/css">
+ <link href="css/stylesR.css" rel="stylesheet" type="text/css">
+ <link href="css/slidebardropR.css" rel="stylesheet" type="text/css">
  
   
 
@@ -24,10 +24,11 @@
 
 window.addEventListener("load", function B() { onloadL() })
 window.addEventListener("load", function B() { onloadR() })
-window.addEventListener("load", function B() { localFilePlayerR() })
+window.addEventListener("load", function B() { zoomR() })
+
+
 
 </script>
-
 
 
 
@@ -40,12 +41,6 @@ window.addEventListener("load", function B() { localFilePlayerR() })
          
 
 <div id="wrap">
-
- <div class="timer">
-             <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
-             <span class="closebtn2">&nbsp;&nbsp;&#11097;</span>
-         </div> 
-
 
 <div class="timerR">
              <span class="minuteR">00</span>:<span class="secondR">00</span>.<span class="milliR">00</span>
@@ -63,52 +58,6 @@ window.addEventListener("load", function B() { localFilePlayerR() })
     
 
 
-  <div id="wrapL">
-  
-      
-
-         <div id="stageL">
-         
-               
-  
-             <video id="video" controls muted loop
-                     onclick="this.paused? ClickPauseL():ClickStartL(); this.paused? timer.start(10):timer.stop(0)" onended="onVideoEndedL();">
-                    <source type="video/mp4">
-                    <source type="video/ogg">
-                    <source type='video/webm; codecs="vp8, vorbis"'>
-               </video>
-          
-     <input type="file" class="custom-file-input" accept="video/mp4"/>
-         <div id="message" display="inline-block"></div> 
-       
-     <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
-
-  </div>
-   
- 
- 
-           
-         
-           <div class="menubarL" style="text-align:center">
-            <button id="timerbutton5" class="timerbutton" onClick="multiStartL()" value="Play">Play/Pause</button>
-            <button class="timerbutton" id="timerbutt1_8" onClick="multiSlowL()" value="+1/8X">+1/8X</button>
-            <button class="timerbutton" id="timerbutt1_16" onClick="multiSuperSlowL()" value="+1/16x">+1/16X</button> 
-            <button class="timerbutton timerbutton1" id="negative2L">-1/8X</button>
-            <button class="timerbutton timerbutton1" id="negativeL" >-1X</button >
-            <button class="timerbutton timerbutton1" id="negative3L">-4X</button> 
-            <button class="timerbutton" id="speed4x" onClick="multiFwdL()" value="4X">+4X</button>
-            <button class="timerbutton" id="speed16x" onClick="multiSupFwdL()" value="16X">+16X</button>               
-            <button class="timerbutton" id="timerbuttonreset" onclick="on0L()">Repeat</button> 
-       <!-- <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNextL()">Next</button>   -->
-            <button class="timerbutton timerbutton3" id ="negative2" onClick="onVideoBackL()">Prior</button>  
-            <button class="timerbutton" id="timerbuttonreset" onClick="onvideoNextL()">Next</button>             
-           </div> 
-                
-        <div class="controlsL"></div>
-        
-      
-     		        
-   </div>
 
 
 
@@ -187,22 +136,6 @@ window.addEventListener("load", function B() { localFilePlayerR() })
         
         
         
-        
-        <div class="menubarB" style="text-align:center">
-            <button class="timerbutton timerbutton6" href="#" onclick='window.open("https://rec.41off.com");return false;'>[\+/]</button>
-            <button id="timerbutton5" class="timerbutton" onClick="multiStartB();" value="Play Both">Play/Pause</button>
-            <button class="timerbutton" id="timerbutt1_8" onClick="multiSlowB();" value="+1/8X">+1/8X<span class="tbtext">&nbsp;Click twice to initiate.</span></button>
-            <button class="timerbutton" id="timerbutt1_16" onClick="multiSuperSlowB();" value="+1/16x">+1/16X</button> 
-            <button class="timerbutton timerbutton1" id="negative2B">-1/8X</button>
-            <button class="timerbutton timerbutton1" id="negativeB" >-1X</button >
-            <button class="timerbutton timerbutton1" id="negative3B">-4X</button> 
-            <button class="timerbutton" id="speed4x" onClick="multiFwdB()" value="4X">+4X</button>
-            <button class="timerbutton" id="speed16x" onClick="multiSupFwdB()" value="16X">+16X</button>               
-            <button class="timerbutton" id="timerbuttonreset" onclick="on0B()">Repeat</button> 
-       <!-- <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNextL()">Next</button>  
-            <button class="timerbutton timerbutton3" id ="negative2" onClick="onVideoBackL()">Prior</button>   -->
-                  
-           </div> 
          
 
       
@@ -279,16 +212,15 @@ window.addEventListener("load", function B() { localFilePlayerR() })
    
    
    <script type="text/javascript" src="js/jquery-1.7.js"></script>
-   <script type="text/javascript" src="plugins/videojs/js/41offvideoL.js"></script>
+   
    <script type="text/javascript" src="plugins/videojs/js/41offvideoR.js"></script>
    
-   <script type="text/javascript" src="plugins/41offtimerBoth.js"></script>
    <script type="text/javascript" src="plugins/41offtimerR.js"></script>
    
    
    <script type="text/javascript" src="plugins/41offzoomL.js"></script>
    
-   <script type="text/javascript" src="plugins/41offzoomBoth.js"></script>
+   <script type="text/javascript" src="plugins/41offzoomR.js"></script>
    
 
    

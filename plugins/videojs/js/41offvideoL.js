@@ -5,7 +5,8 @@
             video_player.volume = 0.2;
             video_player.currentSrc();
             video_player.currentTime();
-            timer.start(10)
+            timer.start(10);
+            timerR.start(10)
         }
  
  
@@ -37,7 +38,9 @@
      if(video_player.paused){
       
       timer.start(10);
-      timer.mode(1);      
+      timer.mode(1);
+      timerR.start(10);
+      timerR.mode(1);        
       video_player.play();
       video.playbackRate = 1.0;
       videoR_player.play();
@@ -46,6 +49,7 @@
      } 
        else {
             timer.stop();
+            timerR.stop();
             video_player.pause();
             videoR_player.pause();
             
@@ -59,7 +63,8 @@
  
  
   function multiResetB() {
-    timer.reset(0000)
+    timer.reset(0000);
+    timerR.reset(0000)
    }
    
    
@@ -80,6 +85,8 @@
      if(video_player.paused){
       timer.start(2);
       timer.mode(1);
+      timerR.start(2);
+      timerR.mode(1);
       video_player.play();
       video.playbackRate = 4.0;
       videoR_player.play();
@@ -87,6 +94,7 @@
       } 
        else {
             timer.stop();
+            timerR.stop();
             video_player.pause();
             videoR_player.pause();
          }   
@@ -110,6 +118,9 @@
      if(video_player.paused){
       timer.start(0.3125);
       timer.mode(1);
+      timerR.start(0.3125);
+      timerR.mode(1);
+
       video_player.play();
       video.playbackRate = 16.0;
       videoR_player.play();
@@ -118,6 +129,7 @@
       } 
        else {
             timer.stop();
+            timerR.stop();
             video_player.pause();
             videoR_player.pause();
          }   
@@ -141,6 +153,8 @@
      if(video_player.paused){
       timer.start(80);
       timer.mode(1);
+      timerR.start(80);
+      timerR.mode(1);
       video_player.play();
       video.playbackRate = .125;
       videoR_player.play();
@@ -148,6 +162,7 @@
       } 
        else {
             timer.stop();
+            timerR.stop();
             video_player.pause();
             videoR_player.pause();
          }
@@ -171,6 +186,9 @@
      if(video_player.paused){
       timer.start(160);
       timer.mode(1);
+      timerR.start(160);
+      timerR.mode(1);
+
       video_player.play();
       video.playbackRate = .0625;
       videoR_player.play();
@@ -179,6 +197,7 @@
       } 
        else {
             timer.stop();
+            timerR.stop();
             video_player.pause();
             videoR_player.pause();
          }
@@ -202,11 +221,15 @@
               videoR_player.play();
               timer.start(10);
               timer.mode(1);
+              timerR.start(10);
+              timerR.mode(1);
+
               }
             else {
               btn.value = "Latest";
               btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
+              timerR.stop();
               video_player.pause();
               videoR_player.pause();
               }

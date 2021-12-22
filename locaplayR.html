@@ -1,0 +1,90 @@
+﻿<h1>HTML5 local video file player example</h1>
+
+<!--    <div id="message"></div>  -->
+
+
+
+
+
+
+<div id="stageR">
+
+         <video id="video" width="600" height="480" controls muted loop scr=""
+                     onclick="this.paused? ClickPauseL():ClickStartL(); this.paused? timer.start(10):timer.stop(0)" onended="onVideoEndedL();">
+                    <source src="https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1" type="video/mp4">
+                    <source type="video/ogg">
+                    <source type="video/ts">
+                    <source type="video/mkv">
+                    <source type='video/webm; codecs="vp8, vorbis"'>
+               </video>
+
+
+
+<input type="file" accept="video/mp4"  name="video"/>
+         <div id="messageR" display="inline-block"></div> 
+
+
+<script>
+  
+  (function localFilePlayerR() {
+	        'use strict'
+             var R_URL = window.URL || window.webkitURL
+             var displayMessageR = function (messageR, isErrorR) {
+             var element = document.querySelector('#messageR');
+                 element.innerHTML = messageR
+                 element.className = isErrorR ? 'error' : 'info'
+     }
+             var playSelectedFileR = function (event) {
+             var fileR = this.files[0]
+             var typeR = fileR.type
+             var videoNodeR = document.querySelector('video');
+             var canPlayR = videoNodeR.canPlayType(typeR);
+             if (canPlayR === '') canPlayR = 'No'
+             var messageR = 'Can play type "' + typeR + '": Yes ' 
+             var isErrorR = canPlayR === 'No: .mp4 video files only'
+    displayMessageR(messageR, isErrorR)
+
+    if (isErrorR) {
+      return
+    }
+
+    var fileR_URL = R_URL.createObjectURL(fileR);
+    videoNodeR.src = fileR_URL
+  }
+  var inputNodeR = document.querySelector("div#stageR input[name='video']");
+  inputNodeR.addEventListener('change', playSelectedFileR, false)
+
+})()
+
+
+// experiment below
+
+//   Selectors can also be really powerful, as demonstrated in the following example. 
+//   Here, the first <input> element with the name "login" (<input name="login"/>) located inside a <div> whose class is "user-panel main" (<div class="user-panel main">)
+//   in the document is returned:
+
+//  var el = document.querySelector("div.user-panel.main input[name='login']");
+
+
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

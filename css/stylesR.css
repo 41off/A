@@ -778,6 +778,48 @@ body {
     color: black;}
 
 
+.ML {
+    background-color: black; 
+    color: white;
+    border:2px;
+    border-color: lime;
+    border-radius: 6px;
+    border-style:groove;
+    width: auto;
+    margin-left: 3px;
+    margin-right: 3px;
+    float:right
+   
+}
+
+.ML:hover {
+    border-color: blue;
+    background-color: white; 
+    color: red;
+}
+
+
+.MR {
+    background-color: black; 
+    color: white;
+    border:2px;
+    border-color: lime;
+    border-radius: 6px;
+    border-style:groove;
+    width: auto;
+    margin-left: 3px;
+    margin-right: 10px;
+    float:right
+   
+}
+
+.MR:hover {
+    border-color: blue;
+    background-color: white; 
+    color: red;
+}
+
+
 .M6 {
     background-color: black; 
     color: white;

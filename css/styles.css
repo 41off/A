@@ -29,6 +29,7 @@ body {
   font-weight: 700;
   font-size: 10pt;
   color:white;
+  float:left
 }
 .custom-file-input:hover::before {
   border-color: black;
@@ -44,13 +45,13 @@ body {
 
 
 
-.single::-webkit-file-upload-button {
+.L-file-input::-webkit-file-upload-button {
   visibility: hidden;
   
 }
 
-.single::before {
-  content: 'View this Player Only';
+.L-file-input::before {
+  content: 'View';
   display: inline-block;
   background: -webkit-linear-gradient(top, lightgray, black);
   border: 1px solid #999;
@@ -64,17 +65,18 @@ body {
   font-weight: 700;
   font-size: 10pt;
   color:white;
+  float:right
 
    
 }
-.single:hover::before {
+.L-file-input:hover::before {
   border-color: black;
   background: -webkit-linear-gradient(top, lightyellow, lightpink);
   text-shadow: 1px 1px silver;
   color:black;
 
 }
-.single:active::before {
+.L-file-input:active::before {
   background: -webkit-linear-gradient(top, pink, #f9f9f9);
 }
 
@@ -778,7 +780,7 @@ body {
     color: black;}
 
 
-.M6 {
+.ML {
     background-color: black; 
     color: white;
     border:2px;
@@ -788,12 +790,56 @@ body {
     width: auto;
     margin-left: 3px;
     margin-right: 3px;
+    float:right
+   
+}
+
+.ML:hover {
+    border-color: blue;
+    background-color: white; 
+    color: red;
+}
+
+
+.MR {
+    background-color: black; 
+    color: white;
+    border:2px;
+    border-color: lime;
+    border-radius: 6px;
+    border-style:groove;
+    width: auto;
+    margin-left: 3px;
+    margin-right: 3px;
+    float:right
+   
+}
+
+.MR:hover {
+    border-color: blue;
+    background-color: white; 
+    color: red;
+}
+
+
+
+.M6 {
+    background-image: url("../images/recsmall.png");
+    background-size: 100%;
+    background-color:transparent;
+    border-size: 2px;
+    border-radius: 6px;
+    border-style:groove;
+    height:24px;
+    width:24px;
+    margin-left: 4px;
+    margin-right: 4px;
    
 }
 
 .M6:hover {
-    border-color: blue;
-    background-color: white; 
+    border-color: lime;
+    background-color: yellow; 
     color: red;
 }
 

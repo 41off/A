@@ -557,3 +557,185 @@
 }
 
 
+
+
+/*// dropup ////*/
+
+
+
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropupL {  
+  position:relative;
+  display: inline-block;
+  width:auto;
+  float:right;
+  right: 1%;
+  top:0%;
+  text-align: center;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding-right:6px;
+  padding-left: 6px;
+  z-index: 1;
+  border: 4px;
+  border-radius: 6px;
+  border-color:yellow;
+  cursor:move;
+  color:red
+}
+
+
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropupL-content {
+  position:absolute;
+  display: none;  
+  background: -webkit-linear-gradient(top, black, silver);  
+  width:auto;
+  max-width: 150px;
+  height:100px;
+  overflow:scroll;
+  border: 2px;
+  border-radius: 4px;
+  padding:2px;
+  margin: 2px;
+  left:10%
+  
+}
+  
+  
+
+/* Links inside the dropdown */
+
+.dropupL-content a {
+  color: white;
+  padding: 4px 4px;
+  text-decoration: blink;
+  display: block;
+  border: 4px;
+  border-radius: 4px;
+  border-color:white
+
+  
+}
+
+/* Change color of dropdown links on hover */
+
+.dropupL-content a:hover {
+  color:black;
+  border-color: black;
+  background: -webkit-linear-gradient(top, lightyellow, lightpink);
+  text-shadow: 1px 1px silver;
+  font-weight:500;
+  border-color:yellow;
+  border-style:groove;
+
+
+}
+
+/* Show the dropdown menu on hover */
+
+.dropupL:hover .dropdownL-content {
+  display: block;
+  position:relative;
+
+}
+
+
+
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown  */
+
+.dropupL:hover .dropbtn {
+  background: -webkit-linear-gradient(top, lightyellow, lightpink);
+  text-shadow: 1px 1px silver;
+  min-width: 150px;
+  color: black;
+  border: 6px;
+  border-radius: 6px;
+  border-color:black;
+}
+
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropup {  
+  position: relative;
+  display: inline-block;
+  
+}
+
+
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  bottom: 50px;
+  z-index: 1;  
+}
+  
+  
+
+/* Links inside the dropdown */
+
+.dropup-content a {
+  color: white;
+  padding: 4px 4px;
+  text-decoration: blink;
+  display: block;
+  border: 4px;
+  border-radius: 4px;
+  border-color:white
+
+  
+}
+
+/* Change color of dropdown links on hover */
+
+.dropup-content a:hover {
+  color:black;
+  border-color: black;
+  background: -webkit-linear-gradient(top, lightyellow, lightpink);
+  text-shadow: 1px 1px silver;
+  font-weight:500;
+  border-color:yellow;
+  border-style:groove;
+
+
+}
+
+/* Show the dropdown menu on hover */
+
+.dropup:hover .dropdownR-content {
+  display: block;
+  position:relative;
+
+}
+
+
+
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown  */
+
+.dropup:hover .dropbtn {
+  background: -webkit-linear-gradient(top, lightyellow, lightpink);
+  text-shadow: 1px 1px silver;
+  min-width: 150px;
+  color: black;
+  border: 6px;
+  border-radius: 6px;
+  border-color:black;
+}
+
+

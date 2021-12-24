@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-    <title>Split Video Player</title>
+    <title>Left Video Player</title>
     
 <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -15,7 +15,8 @@
  <link href="css/stylesL.css" rel="stylesheet" type="text/css">
  <link href="css/slidebardropL.css" rel="stylesheet" type="text/css">
  
-  
+ <script src="js/jquery-3.6.0.js"></script>
+ <script src="js/jquery-ui.js"></script>
 
 </head>
 
@@ -23,10 +24,12 @@
 <script>
 
 window.addEventListener("load", function B() { onloadL() })
+window.addEventListener("load", function B() { onloadR() })
 
 
 
 </script>
+
 
 
 
@@ -36,77 +39,58 @@ window.addEventListener("load", function B() { onloadL() })
 
 
          
-         
+        
 
-<div class="wrap">
+<div id="wrap">
+
+ 
+
+ <div  class="timer">
+             <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
+             <span title="Drag Timer elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span>
+         </div> 
+         
 
          
 
 
    
     <div class="paperscriptL">
-         <canvas id="video-canvas1" height="1080" width="1920"></canvas>
+         <canvas id="video-canvas1" height="650" width="1960"></canvas>
          <canvas id="video-canvas"></canvas>
-    </div>  
+       </div>
 
     
 
 
   <div id="wrapL">
   
-      
-
-         <div id="stageL">
+   <div id="stageL">
          
-             
-  
-
-             <video id="video" controls muted loop
+               <video id="video" controls muted loop
                      onclick="this.paused? ClickPauseL():ClickStartL(); this.paused? timer.start(10):timer.stop(0)" onended="onVideoEndedL();">
                     <source type="video/mp4">
                     <source type="video/ogg">
                     <source type='video/webm; codecs="vp8, vorbis"'>
                </video>
-               
-         
-
-   <input type="file" class="custom-file-input" accept="video/mp4"/>
-           <div id="message" display="inline-block"></div>    
-
-
-                   
- </div>
-           
-           
-         
-
- 
- 
+          
+     <input type="file" class="custom-file-input" accept="video/mp4"/>
+         <div id="message" display="inline-block"></div> 
        
- <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
-           
-         
-           <div class="menubarL" style="text-align:center">
-            <button id="timerbutton5" class="timerbutton" onClick="multiStartL()" value="Play">Play/Pause</button>
-            <button class="timerbutton" id="timerbutt1_8" onClick="multiSlowL()" value="+1/8X">+1/8X</button>
-            <button class="timerbutton" id="timerbutt1_16" onClick="multiSuperSlowL()" value="+1/16x">+1/16X</button> 
-            <button class="timerbutton timerbutton1" id="negative2L">-1/8X</button>
-            <button class="timerbutton timerbutton1" id="negativeL" >-1X</button >
-            <button class="timerbutton timerbutton1" id="negative3L">-4X</button> 
-            <button class="timerbutton" id="speed4x" onClick="multiFwdL()" value="4X">+4X</button>
-            <button class="timerbutton" id="speed16x" onClick="multiSupFwdL()" value="16X">+16X</button>               
-            <button class="timerbutton" id="timerbuttonreset" onclick="on0L()">Repeat</button> 
-       <!-- <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNextL()">Next</button>   -->
-            <button class="timerbutton timerbutton3" id ="negative2" onClick="onVideoBackL()">Prior</button>  
-            <button class="timerbutton" id="timerbuttonreset" onClick="onvideoNextL()">Next</button>
-           </div> 
-                
-        <div class="controlsL"></div>
-        
-       <right><div class="dropdown">
-                                     <button class="dropbtn">Select a Pro Skier<span class="box">Choose a Pro Skier from the scrolling dropdown menu. Practical rope lenghts are chosen. Clips are recorded at proportionally reduced rates (i.e., 52/58) to                  
-                                                              emulate slower speeds.</span></button>
-                                       <div class="dropdown-content">
+     <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
+     
+  </div>
+  
+   <!--    <div class="double" onclick="window.location.href='player.html';"> 
+           </div>
+   --> 
+         <div class="dropdownL" title="Drag Menu to left as needed">
+                                     &#10016;
+                                     <button class="dropbtn">Select a Pro Skier
+                                      <span class="box">Choose a Pro Skier from the scrolling dropdown menu. Practical rope lenghts are chosen. Clips are recorded at proportionally reduced rates (i.e., 52/58) to                  
+                                                       emulate slower speeds.</span></button>
+                                       <div class="dropdownL-content">
+                                        <a href="#" onclick="window.location.href='player.html';">View Side-By-Side</a>
                                         <a href="#" onclick=on0L()">41off Viewer</a>
                                         <a href="#" onclick="on1L()">JM Viewer</a>
                                         <a href="#" onclick="on2L()">JE Viewer</a>
@@ -114,7 +98,7 @@ window.addEventListener("load", function B() { onloadL() })
                                         <a href="#" onclick="on4L()">BM Viewer</a>
                                         <a href="#" onclick="on5L()">TH Viewer</a>
                                         <a href="#" onclick="on6L()">Nate Smith 13/52</a>
-                                        <a href="#" onclick="on7L()">MC Viewer</a>
+                                        <a href="#" onclick="on7R()">MC Viewer</a>
                                         <a href="#" onclick="on8L()">NG Viewer</a>
                                         <a href="#" onclick="on9L()">PG Viewer</a>
                                         <a href="#" onclick="on10L()">TK Viewer</a>
@@ -125,21 +109,47 @@ window.addEventListener("load", function B() { onloadL() })
                                         <a href="#" onclick="on15L()">HM Viewer</a>
                                         <a href="#" onclick="onvideoBackL()">Prior</a>
                                         <a href="#">Link 3</a>
-                                       </div>
-                                 </div></right>
+                                         </div>
+                                    </div>
+
+          
+        
+    		        
+   </div>
+
+
+
+
+
   
         
+        
+        
+         <div class="menubarL" style="text-align:center">
+            <button id="L5" class="Lbtn" onClick="multiStartL()" value="Play">Play Left</button>
+            <button class="Lbtn" id="L1_8" onClick="multiSlowL()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
+            <button class="Lbtn" id="L1_16" onClick="multiSuperSlowL()" value="+1/16x">+1/16X</button> 
+            <button class="Lbtn Lbtn1" id="negative2L">-1/8X</button>
+            <button class="Lbtn Lbtn1" id="negativeL" >-1X</button >
+            <button class="Lbtn Lbtn1" id="negative3L">-4X</button> 
+            <button class="Lbtn" id="L4x" onClick="multiFwdL()" value="4X">+4X</button>
+            <button class="Lbtn" id="L16x" onClick="multiSupFwdL()" value="16X">+16X</button>               
+            <button class="Lbtn" id="Lreset" onclick="on0L()">Repeat</button> 
+       <!-- <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNextL()">Next</button>   -->
+            <button class="Lbtn" id ="Lnegative2" onClick="onvideoBackL()">Prior</button>  
+            <button class="Lbtn" id="Lreset" onClick="onvideoNextL()">Next</button>
+            <button class="Lbtn" id="Lreset" onClick="multiResetL()">&#11009;&nbsp;Reset</button>
+            <span class="drag" title="Drag Left Player Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span>             
+           </div> 
+                
+        <div class="controlsL"><span class="drag" title="Drag Left Zoom Controls elsewhere as needed">&nbsp;&nbsp;&nbsp;&#10016;</span></div> 
+        
        
-     
-     </div>
-
-
-      <div class="timer">
-             <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
-             <span class="closebtn2">&nbsp;&nbsp;&#11097;</span>
-         </div> 
-
+           
+           
        
+
+      
 					<div class="toolblock">
 															
 								 <div class="inner_tool">
@@ -188,34 +198,52 @@ window.addEventListener("load", function B() { onloadL() })
 							        <button href="javascript:void(0)" class="line-drawing-tools" data-value="clear">
 							            <i class="toolicon11"></i><span class="hint">Click to "delete" all drawn items on the canvas.</span>
 							        </button>
+							        <span class="drag" title="Drag Drawing Tools Bar elsewhere as needed">&nbsp;&nbsp;&#10016;</span>
 							</div>
-				
+				     
+				     
+				     
+				     
+				    
+				    
+				    
+				    
+				    
+				    
+		
              </div>  
-     
-
-  </div>
+             
+      <script type="text/javascript" src="plugins/41off-drag.js"></script> <!-- within wrap   -->
+        
+ </div>
       
        					
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
-   
+  
+  
+  
+  
   
    <!-- Text - Color Palette JS -->
    <script src="plugins/textbox.js"></script>
    
    
-   <script type="text/javascript" src="js/jquery-1.7.js"></script>
-   <script type="text/javascript" src="plugins/videojs/js/41offvideoL.js"></script>
-   <script type="text/javascript" src="plugins/videojs/js/41offvideoR.js"></script>
+  
+
+   <script type="text/javascript" src="plugins/videojs/js/41offvideoBothEX.js"></script>
+ <!--  <script type="text/javascript" src="plugins/videojs/js/41offvideoR.js"></script>  -->
    
-   <script type="text/javascript" src="plugins/41offtimerL.js"></script>
+   <script type="text/javascript" src="plugins/41offtimerBoth.js"></script>
+   <script type="text/javascript" src="plugins/41offtimerR.js"></script>
    
    
    <script type="text/javascript" src="plugins/41offzoomL.js"></script>
    
    <script type="text/javascript" src="plugins/41offzoomR.js"></script>
    
+   <script type="text/javascript" src="plugins/41off-drag.js"></script>
 
    
  <!-- Video JS -->
@@ -234,6 +262,9 @@ for (i = 0; i < close.length; i++) {
     }
 }
 </script>
+
+
+
 
 
 </body>

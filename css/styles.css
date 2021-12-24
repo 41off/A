@@ -44,6 +44,78 @@ body {
 
 
 
+.single::-webkit-file-upload-button {
+  visibility: hidden;
+  
+}
+
+.single::before {
+  content: 'View this Player Only';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, lightgray, black);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px black;
+  font-weight: 700;
+  font-size: 10pt;
+  color:white;
+
+   
+}
+.single:hover::before {
+  border-color: black;
+  background: -webkit-linear-gradient(top, lightyellow, lightpink);
+  text-shadow: 1px 1px silver;
+  color:black;
+
+}
+.single:active::before {
+  background: -webkit-linear-gradient(top, pink, #f9f9f9);
+}
+
+
+
+.double::-webkit-file-upload-button {
+  visibility: hidden;
+  
+}
+
+.double::before {
+  content: 'Go Back to Side-by-Side View';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, lightgray, black);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px black;
+  font-weight: 700;
+  font-size: 10pt;
+  color:white;
+}
+.double:hover::before {
+  border-color: black;
+  background: -webkit-linear-gradient(top, lightyellow, lightpink);
+  text-shadow: 1px 1px silver;
+  color:black;
+
+}
+.double:active::before {
+  background: -webkit-linear-gradient(top, pink, #f9f9f9);
+}
+
+
+
+
+
 .timer {
     position:absolute;
     border:2px #666666 solid;
@@ -63,14 +135,16 @@ body {
     display: block;
     min-width: 100px;
     left:20%;   
-    bottom:33%;
+    bottom:30%;
+    
 }
+
 .timer:hover {
     border:2px red solid;
     border-radius: 4px;
     background-color: #555555; 
-    
 }
+
 
 .timerR {
     position:absolute;
@@ -90,8 +164,8 @@ body {
     margin:auto;
     display: block;
     min-width: 100px;
-    right:20%;   
-    bottom:33%;
+    left:80%;   
+    bottom:30%;
 }
 .timer:hover {
     border:2px red solid;
@@ -105,13 +179,13 @@ body {
 .menubarB {
     position: absolute;
     display:inline-block;
-    padding-top:0px;
+    padding-top:4px;
     margin: 0 auto;
-    left:32%;
+    left:37%;
     bottom: 10%;
-    height: 32px;
+    height: 30px;
     width:auto;
-    min-width:400px;
+    min-width:300px;
     padding:auto;
     opacity: 1.0;
     transition: opacity 50s;
@@ -120,7 +194,7 @@ body {
     border-color: transparent;
     border-radius: 4px;
     border-style:groove;
-    overflow:visible;
+    overflow:hidden;
 }
 
 .menubarB:hover {
@@ -138,15 +212,14 @@ body {
 .menubarL {
     position: absolute;
     display:inline-block;
-    padding-top:0px;
+    padding-top: 4px;
     left:1%;
-    float:left;
     bottom: 17%;
-    height: 32px;
+    height: 30px;
     width:auto;
     min-width:400px;
     padding:auto;
-    margin: auto auto;
+    margin: 0 auto;
     opacity: 1.0;
     transition: opacity 50s;
     background-color: transparent;
@@ -171,15 +244,15 @@ body {
 .menubarR {
     position: absolute;
     display:inline-block;
-    padding-top:0px;
-    bottom: 17%;
-    height: 32px;
-    width:auto;
-    min-width:350px;
-    padding:auto;
-    margin: auto 0;
-    right:1%;
+    padding-top:4px;
     float:right;
+    left:55%;
+    bottom: 17%;
+    height: 30px;
+    width:auto;
+    min-width:400px;
+    padding:auto;
+    margin: 0 auto;;
     opacity: 1.0;
     transition: opacity 50s;
     background-color: transparent;
@@ -202,89 +275,201 @@ body {
 
 
 
-.timerbutton1 {
+#Mnegative2 {
     background-color: transparent;
     font-weight: normal;
     color: white; 
     border-color: transparent;
-    border-radius: 10px;
-    border-style:double;
+    border-radius: 4px;
+    border-style:grooved;
     position:relative;
 }
 
-.timerbutton1:hover {
+#Mnegative2:hover {
     border-color: lime;
-    background-color: #ff0000;
+    background: -webkit-linear-gradient(top, lightgray, red);
     color: white;
 }
 
-
-#negative2 {
+#Lnegative2 {
     background-color: transparent;
     font-weight: normal;
-    color: white; 
+    color: white;
+    width: auto; 
     border-color: transparent;
-    border-radius: 10px;
-    border-style:double;
+    border-radius: 6px;
+    border-style:groove;
     position:relative;
+    padding-left:4px;
+    padding-right:4px
+    
 }
 
-#negative2:hover {
-    border-color: lime;
-    background-color: #ff0000;
+#Lnegative2:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, red, black);
     color: white;
 }
 
-#timerbutt1_8 {
+#Rnegative2 {
     background-color: transparent;
     font-weight: normal;
-    width: 70px;
-    margin: 2px 2px;
-    color: white; 
+    color: white;
+    width: auto; 
     border-color: transparent;
-    border-radius: 10px;
-    border-style:double;
+    border-radius: 6px;
+    border-style:groove;
     position:relative;
+    padding-left:4px;
+    padding-right:4px
+    
 }
 
-#timerbutt1_8:hover {
-    border-color: lime;
-    background-color: #008CBA;
+#Rnegative2:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, red, black);
     color: white;
 }
 
-#timerbutt1_16 {
+
+#M1_8 {
     background-color: transparent;
-    font-weight: normal;
-    width: 77px;
-    margin: 2px 2px;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
     border-color: transparent;
-    border-radius: 10px;
-    border-style:double;
+    border-radius: 6px;
+    border-style:groove;
     position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
 }
 
-#timerbutt1_16:hover {
-    border-color: lime;
-    background-color: #008CBA;
-    color: white;
+#M1_8:hover {
+   border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
 }
 
-.timerbutton {
+#M1_16 {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
+}
+
+#M1_16:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
+}
+
+
+#L1_8 {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
+}
+
+#L1_8:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
+}
+
+#L1_16 {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
+
+}
+
+#L1_16:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
+}
+
+#R1_8 {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
+}
+
+#R1_8:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
+}
+
+#R1_16 {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
+}
+
+#R1_16:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
+}
+
+
+
+.Mbtn {
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     font-family:Verdana;
-    line-height:2px;
+    line-height:14px;
     margin: 2px 2px;
     margin-top: 2px;
     padding-top:1px;
-    padding-bottom:1px;
-    padding-left:3px;
-    padding-right:3px;
+    padding-bottom:2px;
+    padding-left:2px;
+    padding-right:2px;
     width: auto; 
-    height: 30px;
+    height: 24px;
     -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
     cursor: pointer;
     border: 4px;
@@ -293,7 +478,63 @@ body {
     
 }
 
-.timerbutton .tbtext {
+.Mbtn .tbtext {
+  visibility: hidden;
+  width: auto;
+  height:18px;
+  background-color: pink;
+  border-color: silver;
+  color: black;
+  font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size:14px;
+  text-decoration:blink;
+  font-weight:bold;
+  text-align: center;
+  padding-left: 1px;
+  margin-left: 0px;
+  display: inline-flex;
+  align-items: center;
+  border-width:2px;
+  border-style:inset;
+  border-radius: 6px;
+  line-height: 16px;
+  left: 0%;
+  top: -40%;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+
+.Mbtn:hover .tbtext, .Mbtn:focus .tbtext, .Mbtn:focus-within .tbtext {
+  visibility: visible;
+  
+}
+
+.Lbtn {
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-family:Verdana;
+    line-height:14px;
+    margin: 2px 2px;
+    margin-top: 2px;
+    padding-top:1px;
+    padding-bottom:1px;
+    padding-left:2px;
+    padding-right:2px;
+    width: auto; 
+    height: 24px;
+    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
+    cursor: pointer;
+    border: 4px;
+    float:left;
+    position:relative;
+    
+}
+
+
+.Lbtn .tbtext {
   visibility: hidden;
   width: auto;
   min-width:500px;
@@ -322,31 +563,125 @@ body {
   overflow:visible;
 }
 
-.timerbutton:hover .tbtext, .timerbutton:focus .tbtext, .timerbutton:focus-within .tbtext {
+.Lbtn:hover .tbtext, .Lbtn:focus .tbtext, .Lbtn:focus-within .tbtext {
   visibility: visible;
   
 }
 
 
-#timerbuttonreset {
+.Rbtn {
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-family:Verdana;
+    line-height:14px;
+    margin: 2px 2px;
+    margin-top: 2px;
+    padding-top:1px;
+    padding-bottom:1px;
+    padding-left:2px;
+    padding-right:2px;
+    width: auto; 
+    height: 24px;
+    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
+    cursor: pointer;
+    border: 4px;
+    float:left;
+    position:relative;
+    
+}
+
+
+.Rbtn .tbtext {
+  visibility: hidden;
+  width: auto;
+  min-width:500px;
+  height:16px;
+  background-color: pink;
+  border-color: silver;
+  color: black;
+  font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size:12px;
+  text-decoration:blink;
+  font-weight:bold;
+  text-align: center;
+  padding-left: 1px;
+  margin-left: 0px;
+  border-width:2px;
+  border-style:inset;
+  border-radius: 6px;
+  line-height: 14px;
+  left: 0%;
+  bottom: -35%;
+  /* Position the tooltip */
+  position: absolute;
+  z-index:1;
+  overflow:visible;
+}
+
+.Rbtn:hover .tbtext, .Rbtn:focus .tbtext, .Rbtn:focus-within .tbtext {
+  visibility: visible;
+  
+}
+
+
+.Mbtn1 {
     background-color: transparent;
     font-weight: normal;
     color: white; 
-    width: 75px;
-    margin: 2px 2px;
     border-color: transparent;
     border-radius: 10px;
     border-style:double;
     position:relative;
 }
 
-#timerbuttonreset:hover {
+.Mbtn1:hover {
     border-color: lime;
-    background-color: #008CBA;
+    background-color: #ff0000;
     color: white;
 }
 
-#timerbutton3 {
+
+.Lbtn1 {
+    background-color: transparent;
+    font-weight: normal;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding-left: 3px;
+    padding-right: 3px
+}
+
+.Lbtn1:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, red, #ff0000);
+    color: white;
+}
+
+
+
+.Rbtn1 {
+    background-color: transparent;
+    font-weight: normal;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding-left: 3px;
+    padding-right: 3px
+}
+
+.Rbtn1:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightblue, #ff0000);
+    color: white;
+}
+
+
+.L3 {
     background-color: transparent;
     font-weight: normal;
     color: white; 
@@ -355,103 +690,333 @@ body {
     border-style:double;
     width: 80px; 
     height: 30px;
-    position:relative;
 }
 
-#timerbutton3:hover {
+.L3:hover {
     border-color: lime;
     background-color: #f44336;
     color: white;
 }
 
-.timerbutton4 {
+.R3 {
     background-color: transparent;
     font-weight: normal;
     color: white; 
     border-color: transparent;
     border-radius: 10px;
     border-style:double;
-    position:relative;
+    width: 80px; 
+    height: 30px;
 }
 
-.timerbutton4:hover {
+.R3:hover {
     border-color: lime;
-    background-color: #e7e7e7; 
-    color: gray
-}
-
-#speed4x {
-    background-color: transparent;
-    font-weight: normal;
-    color: white; 
-    border-color: transparent;
-    border-radius: 10px;
-    border-style:double;
-    position:relative;
-}
-
-#speed4x:hover {
-    border-color: lime;
-    background-color: #e7e7e7; 
-    color: gray
-}
-
-#speed16x {
-    background-color: transparent;
-    font-weight: normal;
-    color: white; 
-    border-color: transparent;
-    border-radius: 10px;
-    border-style:double;
-    position:relative;
-}
-
-#speed16x:hover {
-    border-color: lime;
-    background-color: #e7e7e7; 
-    color: gray
-}
-
-#timerbutton5 {
-    background-color: transparent;
-    font-weight: normal;
-    color: white; 
-    border-color: transparent;
-    border-radius: 10px;
-    border-style:double;
-    width: 100px;
-    position:relative;
-}
-
-#timerbutton5:hover {
-    border-color: lime;
-    background-color: blue; 
+    background-color: #f44336;
     color: white;
 }
 
-.timerbutton6 {
-    background-color: transparent; 
-    color: white;
+
+#M5 {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
     border-color: transparent;
-    border-radius: 6x;
+    border-radius: 6px;
     border-style:groove;
-    width: 56px;
-    Margin: 3px 3px;
     position:relative;
+    padding: 3px 3px;
+    padding-bottom:4px;
 }
 
-.timerbutton6:hover {
+#M5:hover {
     border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, yellow);
+    color: black;
+
+}
+
+#L5 {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:4px;
+   
+}
+
+#L5:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, lime);
+    color: black;
+}
+
+#R5 {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:4px;
+}
+
+#R5:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, orange);
+    color: black;}
+
+
+.M6 {
     background-color: black; 
+    color: white;
+    border:2px;
+    border-color: lime;
+    border-radius: 6px;
+    border-style:groove;
+    width: auto;
+    margin-left: 3px;
+    margin-right: 3px;
+   
+}
+
+.M6:hover {
+    border-color: blue;
+    background-color: white; 
     color: red;
 }
-  
+
+
+.L6 {
+    background-color: black; 
+    color: white;
+    border-color: lime;
+    border-radius: 10px;
+    border-style:double;
+    width: 46x;
+    Margin: 3px 3px;
+}
+
+.L6:hover {
+    border-color: blue;
+    background-color: white; 
+    color: red;
+}
+
+
+.R6 {
+    background-color: black; 
+    color: white;
+    border-color: lime;
+    border-radius: 10px;
+    border-style:double;
+    width: 46x;
+    Margin: 3px 3px;
+}
+
+.R6:hover {
+    border-color: blue;
+    background-color: white; 
+    color: red;
+}
+
+
+
+
+#Mreset {
+    background-color: transparent;
+    font-weight: normal;
+    color: white; 
+    width: auto;
+    margin: 2px 2px;
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding-left:3px;
+    padding-right:3px
+}
+
+#Mreset:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgreen, black);
+    color: white;}
+
+#Lreset {
+    background-color: transparent;
+    font-weight: normal;
+    color: white; 
+    width: auto;
+    margin: 2px 2px;
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding-left:3px;
+    padding-right:3px
+}
+
+#Lreset:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgreen, black);
+    color: white;
+}
+
+
+#Rreset {
+   background-color: transparent;
+    font-weight: normal;
+    color: white; 
+    width: auto;
+    margin: 2px 2px;
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding-left:3px;
+    padding-right:3px
+}
+
+#Rreset:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgreen, black);
+    color: white;
+}
+
+
+
+#M4x {
+    background-color: transparent;
+    font-weight: normal;
+    color: white; 
+    border-color: transparent;
+    border-radius: 10px;
+    border-style:double;
+    position:relative;
+}
+
+#M4x:hover {
+    border-color: lime;
+    background-color: #e7e7e7; 
+    color: gray
+}
+
+#M16x {
+    background-color: transparent;
+    font-weight: normal;
+    color: white; 
+    border-color: transparent;
+    border-radius: 10px;
+    border-style:double;
+    position:relative;
+}
+
+#M16x:hover {
+    border-color: lime;
+    background-color: #e7e7e7; 
+    color: gray
+}
+
+
+#L4x {
+     background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
+}
+
+#L4x:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
+}
+
+#L16x {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
+}
+
+#L16x:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
+}
+
+#R4x {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
+}
+
+#R4x:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
+}
+
+#R16x {
+    background-color: transparent;
+    font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
+    color: white; 
+    border-color: transparent;
+    border-radius: 6px;
+    border-style:groove;
+    position:relative;
+    padding: 3px 3px;
+    padding-bottom:2px
+}
+
+#R16x:hover {
+    border-color: white;
+    background: -webkit-linear-gradient(top, lightgray, #008CBA);
+    color: black;
+}
+
+
+
 
 
 
 .controlsL{
     position:absolute;
-    display:inline-block;
+    display:block;
     text-align:center;
     left: 1%;
     margin-top:1px;
@@ -465,11 +1030,12 @@ body {
     border-radius: 6px;
     border-style: groove;
     height:36px;
-    width: auto;
+    width:400px;
     font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 18px;
+    line-height:36px;
     color: white;
-    opacity: 1.0;
+    opacity: 0.25;
     transition: opacity 30s;
     bottom: 5%;
 }
@@ -486,7 +1052,7 @@ body {
     position:absolute;
     display:inline-block;
     text-align:center;
-    right: 1%;
+    left: 78%;
     margin-top:4px;
     padding-top: 0px;
     padding-bottom:1px;
@@ -550,7 +1116,7 @@ body {
 
 
 
-.arrow-curved {
+.arrow-curvedL {
   position: relative;
   width: 0;
   height: 0;
@@ -574,7 +1140,7 @@ body {
 
 
 
-.zoomin {
+.zoominL {
     background-color: black; 
     color: white;
     border-color:  aqua;
@@ -596,13 +1162,13 @@ body {
     border: 4px;
 }
 
-.zoomin:hover {
+.zoominL:hover {
     border-color: gold;
     background-color:  lime; 
     color: black
 }
 
-.zoomout {
+.zoomoutL {
     background-color: black; 
     color: white;
     border-color:  aqua;
@@ -624,13 +1190,13 @@ body {
     border: 4px;
 }
 
-.zoomout:hover {
+.zoomoutL:hover {
     border-color: gold;
     background-color: lime; 
     color: black
 }
 
-.left {
+.leftL {
     background-color: black; 
     color: white;
     border-color:  aqua;
@@ -652,13 +1218,13 @@ body {
     border: 4px;
 }
 
-.left:hover {
+.leftL:hover {
     border-color: gold;
     background-color: lime; 
     color: black
 }
 
-.right {
+.rightL {
     background-color: black; 
     color: white;
     border-color:  aqua;
@@ -680,13 +1246,13 @@ body {
     border: 4px;
 }
 
-.right:hover {
+.rightL:hover {
     border-color: gold;
     background-color: lime; 
     color: black
 }
 
-.up {
+.upL {
     background-color: black; 
     color: white;
     border-color:  aqua;
@@ -708,13 +1274,13 @@ body {
     border: 4px;
 }
 
-.up:hover {
+.upL:hover {
     border-color: gold;
     background-color: lime; 
     color: black
 }
 
-.down {
+.downL {
     background-color: black; 
     color: white;
     border-color:  aqua;
@@ -736,13 +1302,13 @@ body {
     border: 4px;
 }
 
-.down:hover {
+.downL:hover {
     border-color: gold;
     background-color: lime; 
     color: black
 }
 
-.rotateleft {
+.rotateleftL {
     background-color: black; 
     color: white;
     border-color:  aqua;
@@ -764,13 +1330,13 @@ body {
     border: 4px;
 }
 
-.rotateleft:hover {
+.rotateleftL:hover {
     border-color: gold;
     background-color: lime; 
     color: black
 }
 
-.rotateright {
+.rotaterightL {
     background-color: black; 
     color: white;
     border-color:  aqua;
@@ -792,13 +1358,13 @@ body {
     border: 4px;
 }
 
-.rotateright:hover {
+.rotaterightL:hover {
     border-color: gold;
     background-color: lime; 
     color: black
 }
 
-.reset {
+.resetL {
     border-width: 4px;
     background-color: black; 
     color: white;
@@ -823,17 +1389,319 @@ body {
     margin-right: 0px;
 }
 
-.reset:hover {
+.resetL:hover {
     border-color: gold;
     background-color: lime; 
     color: black
 }
+
+
+
+/*  right zoom below  */
+
+
+.arrow-curvedR {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-right: 9px solid #32557f;
+  transform: rotate(10deg);
+
+  &:after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 3px solid #32557f;
+    border-radius: 20px 0 0 0;
+    top: -12px;
+    left: -9px;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+  }
+}
+
+
+
+.zoominR {
+    background-color: black; 
+    color: white;
+    border-color:  aqua;
+    border-radius: 10px;
+    border-style:double;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight:bold;
+    line-height:18px;
+    margin: 4px 4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    width: 30px; 
+    height: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 4px;
+}
+
+.zoominR:hover {
+    border-color: gold;
+    background-color:  lime; 
+    color: black
+}
+
+.zoomoutR {
+    background-color: black; 
+    color: white;
+    border-color:  aqua;
+    border-radius: 10px;
+    border-style:double;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight:bold;
+    line-height:18px;
+    margin: 4px 4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    width: 30px; 
+    height: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 4px;
+}
+
+.zoomoutR:hover {
+    border-color: gold;
+    background-color: lime; 
+    color: black
+}
+
+.leftR {
+    background-color: black; 
+    color: white;
+    border-color:  aqua;
+    border-radius: 10px;
+    border-style:double;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight:bold;
+    line-height:18px;
+    margin: 4px 4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    width: 30px; 
+    height: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 4px;
+}
+
+.leftR:hover {
+    border-color: gold;
+    background-color: lime; 
+    color: black
+}
+
+.rightR {
+    background-color: black; 
+    color: white;
+    border-color:  aqua;
+    border-radius: 10px;
+    border-style:double;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight:bold;
+    line-height:18px;
+    margin: 4px 4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    width: 30px; 
+    height: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 4px;
+}
+
+.rightR:hover {
+    border-color: gold;
+    background-color: lime; 
+    color: black
+}
+
+.upR {
+    background-color: black; 
+    color: white;
+    border-color:  aqua;
+    border-radius: 10px;
+    border-style:double;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight:bold;
+    line-height:18px;
+    margin: 4px 4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    width: 30px; 
+    height: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 4px;
+}
+
+.upR:hover {
+    border-color: gold;
+    background-color: lime; 
+    color: black
+}
+
+.downR {
+    background-color: black; 
+    color: white;
+    border-color:  aqua;
+    border-radius: 10px;
+    border-style:double;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight:bold;
+    line-height:18px;
+    margin: 4px 4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    width: 30px; 
+    height: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 4px;
+}
+
+.downR:hover {
+    border-color: gold;
+    background-color: lime; 
+    color: black
+}
+
+.rotateleftR {
+    background-color: black; 
+    color: white;
+    border-color:  aqua;
+    border-radius: 10px;
+    border-style:double;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight:bold;
+    line-height:15px;
+    margin: 4px 4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    width: 30px; 
+    height: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 4px;
+}
+
+.rotateleftR:hover {
+    border-color: gold;
+    background-color: lime; 
+    color: black
+}
+
+.rotaterightR {
+    background-color: black; 
+    color: white;
+    border-color:  aqua;
+    border-radius: 10px;
+    border-style:double;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight:bold;
+    line-height:15px;
+    margin: 4px 4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    width: 30px; 
+    height: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 4px;
+}
+
+.rotaterightR:hover {
+    border-color: gold;
+    background-color: lime; 
+    color: black
+}
+
+.resetR {
+    border-width: 4px;
+    background-color: black; 
+    color: white;
+    border-color:  inherit;
+    border-radius: 10px;
+    border-style:none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    line-height:26px;
+    margin-top:2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 60px;
+    height: 30px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-bottom: ;
+/* Safari */
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.resetR:hover {
+    border-color: gold;
+    background-color: lime; 
+    color: black
+}
+
 
 .active a{
       color :red;
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       font-size: 16px;
 }
+
+.drag {
+    background:transparent;
+    margin-right:3px;
+    margin-left:2px;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    cursor: move;
+    transition: 5s;
+}
+
+.drag:hover {
+    color: yellow;
+}
+
 
 .closebtn2 {
     margin-right:3px;
@@ -1251,7 +2119,8 @@ body {
   margin-bottom:0%;
   overflow:hidden;
   left:0%;
-  float:left
+  float:left;
+  display:inline-block;
 }
 
 #wrapL span{font-size:20px;color:#666;display:block;padding:2em;}

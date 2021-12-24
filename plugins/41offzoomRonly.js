@@ -6,7 +6,7 @@
       rotateR = 0;
 /* Grab the necessary DOM elements */
   var stageR = document.getElementById('stageR'),
-      vR = document.getElementsByTagName('video')[1],
+      vR = document.getElementsByTagName('video')[0],
       controlsR = document.getElementsByClassName('controlsR')[0];     
 
 /* Array of possible browser specific settings for transformation */

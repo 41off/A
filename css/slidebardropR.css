@@ -466,8 +466,8 @@
   display: inline-block;
   width:auto;
   float:right;
-  right: 1%;
-  bottom:0%;
+  right: 4%;
+  bottom:14%;
   text-align: center;
   padding-top:4px;
   padding-bottom:4px;
@@ -492,7 +492,7 @@
   background: -webkit-linear-gradient(top, black, silver);  
   width:auto;
   max-width: 150px;
-  height:55px;
+  height:150px;
   overflow:scroll;
   border: 2px;
   border-radius: 4px;
@@ -511,7 +511,7 @@
   padding: 4px 4px;
   text-decoration: blink;
   display: block;
-  border: 4px;
+  border: 2px;
   border-radius: 4px;
   border-color:white
 
@@ -526,7 +526,7 @@
   background: -webkit-linear-gradient(top, lightyellow, lightpink);
   text-shadow: 1px 1px silver;
   font-weight:500;
-  border-color:yellow;
+  border-color:lime;
   border-style:groove;
 
 

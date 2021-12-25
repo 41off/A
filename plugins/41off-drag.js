@@ -37,11 +37,18 @@
 /// dropdown drag option ///
 
    $( function() {
-    $(".dropdownL").draggable({axis:"x"});
+    $(".dropdownL").draggable();
 } );
 
    $( function() {
-    $(".dropdownR").draggable({axis:"x"});
+    $(".dropdownR").draggable();
 } );
 
+$( function() {
+    $( ".paperscriptL" ).resizable();
+  } );
+
+$( function() {
+    $( "#video" ).resizable();
+  } );
 

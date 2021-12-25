@@ -142,7 +142,7 @@ window.addEventListener("load", function B() { onloadR() })
   <div id="wrapR">
 
         <div id="stageR">
-               <video id="video" controls muted loop>
+               <video id="video" controls muted loop  onclick="this.paused? ClickPauseR():ClickStartR(); this.paused? timerR.start(10):timerR.stop(0)" onended="onVideoEndedR();">
                     <source type="video/mp4">
                     <source type='video/webm; codecs="vp8, vorbis"'>
                </video>

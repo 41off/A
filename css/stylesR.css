@@ -2006,7 +2006,7 @@ body {
     right:0%;
     bottom:0%;
     background-color:transparent;
-    resize:both;
+    resize:vertical;
     overflow:auto;    
 }
 

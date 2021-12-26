@@ -1753,10 +1753,10 @@ body {
     margin-right:3px;
     color: red;
     font-weight: bold;
-    float: right;
+    float: left;
     font-size: 20px;
     line-height: 20px;
-    cursor: pointer;
+    cursor:progress;
     transition: 5s;
 }
 
@@ -2006,7 +2006,7 @@ body {
     right:0%;
     bottom:1%;
     background-color:transparent;
-    resize:both;
+    resize:vertical;
     overflow:auto;
     
 }

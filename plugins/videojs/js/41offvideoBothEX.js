@@ -380,7 +380,7 @@
              video_player.pause();
                 }
      if(video_player.paused){
-      timer.start(0.3125);
+      timer.start(0.125);
       timer.mode(1);
       video_player.play();
       video.playbackRate = 16.0;
@@ -442,13 +442,14 @@
     timer.start(80);
     timer.mode(0);    
    }
-   
+
   
-        var video_directory = ['https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1',
-                               'https://www.dropbox.com/s/fwvj14n1kbis4c5/XPG-08-15-2021.mp4?raw=1',
-                               'https://www.dropbox.com/s/gw1298kfmmob2aq/XPG-08-14-2021b.mp4?raw=1',
-                               'https://www.dropbox.com/s/um8jz1a2p63idxe/10-10-2021-14_52.mp4?raw=1',
-                               'https://player.vimeo.com/external/584066585.hd.mp4?s=00dabd47c1679b596be9e53caa4bd57aacec8adb&profile_id=169',
+        var video_directory = ['https://www.dropbox.com/s/j4priqaxu1rgcdz/JM-08-27-2021-Rd2-S1-52-13.mp4?raw=1',
+                               'https://www.dropbox.com/s/7413essf1mxro6j/V1.mp4?raw=1',
+                               'https://www.dropbox.com/s/ih9se43lx6ixj02/JE-52-13.mp4?raw=1',
+                               'https://www.dropbox.com/s/75luo4kenawyp1o/BM-52-13.mp4?raw=1',
+                               'https://www.dropbox.com/s/919w2816y4wt7ld/EB-52-13.mp4?raw=1',
+                               'https://www.dropbox.com/s/1h8ofv23eexuu8u/TH-55-13b.mp4?raw=1',
                                'https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1',
                                'https://www.dropbox.com/s/43ewvwpf48p1qos/v2.mp4?raw=1',
                                'https://player.vimeo.com/external/578304012.hd.mp4?s=5f89a34632cb1c8ce3e7d217eeba1d31de923ee1&profile_id=175',
@@ -1138,9 +1139,9 @@ $("#negative3").click(function() { // button function for rewind
    }
    
   
-        var videoR_directory = ['https://www.dropbox.com/s/43ewvwpf48p1qos/v2.mp4?raw=1',
-                               'https://www.dropbox.com/s/fwvj14n1kbis4c5/XPG-08-15-2021.mp4?raw=1',
-                               'https://www.dropbox.com/s/gw1298kfmmob2aq/XPG-08-14-2021b.mp4?raw=1',
+        var videoR_directory = ['https://www.dropbox.com/s/f6fvnwe0qi7joyc/V2.mp4?raw=1',
+                               'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
+                               'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
                                'https://www.dropbox.com/s/um8jz1a2p63idxe/10-10-2021-14_52.mp4?raw=1',
                                'https://player.vimeo.com/external/584066585.hd.mp4?s=00dabd47c1679b596be9e53caa4bd57aacec8adb&profile_id=169',
                                'https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1',

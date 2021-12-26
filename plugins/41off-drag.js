@@ -45,10 +45,12 @@
 } );
 
 $( function() {
-    $( ".paperscriptL" ).resizable();
+    $( ".dirbtn" ).draggable();
   } );
 
+
 $( function() {
-    $( "#video" ).resizable();
+    $( ".paperscriptL" ).resizable({axis :"y"});
   } );
+
 

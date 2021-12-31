@@ -55,13 +55,54 @@ $( function() {
 
 
 //   popup modal script below //
-
+/*
 $(document).ready(function() {
    $('[data-toggle="popover"]').popover({
       placement: 'top',
       trigger: 'hover'
    });
 });
+*/
+
+
+/*$(".dropbtn").popover({
+        html : true,
+        placement: 'left',
+        trigger: 'click',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        
+}).data('bs.popover').tip().attr('id', 'mypop');
+
+*/
+
+///
+
+
+$(document).ready(function() {
+  $('[data-toggle="popover"]').popover({
+    placement: 'left',
+    html: true
+  });
+
+/*  $('[data-toggle="popover"]').on("mouseenter", function() {
+    $(this).popover('show');
+  });
+*/
+  
+  $('[data-toggle="popover"]').on("click", function() {
+    $(this).popover('show');
+  });
+
+  
+  $('body').on('click', function(e) {
+    $('[data-toggle=popover]').each(function() {
+      if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+        $(this).popover('hide');
+      }
+    });
+  });
+});
+
 
 
 //  closbnt2 script below //

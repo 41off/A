@@ -614,7 +614,7 @@ $("#negative3").click(function() { // button function for rewind
               }
             else {
               btn.value = "Latest";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtext">JM-52k-13m&nbsp;&nbsp;&#129093;</button>';
               timer.stop();
               video_player.pause();
               }
@@ -693,45 +693,45 @@ $("#negative3").click(function() { // button function for rewind
             console.log("4 ended");
             video_index = 4;
             video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 4;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+
                         
            var btn = document.getElementById("modal");
       
-            if (btn.value == "V4.mp4") {
+            if (btn.value == "EB-52k-13m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">V4.mp4</button>';
-              timer.reset();
-              video_player.play();
-              timer.start(10);
-              timer.mode(1);
+              btn.innerHTML = '<button id="modtext">EB-52k-13m</button>';
+              multiResetB();
               }
             else {
               btn.value = "Clip 5";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modtext">EB-52k-13m&nbsp;&nbsp;&#129093;</button>';
               timer.stop();
-              video_player.pause();              
+              timerR.stop();
+                           
               }
         }
            
          function on5L(){
             console.log("5 ended");
-            video_index = 5;            
+            video_index = 5;
             video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 5;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
                         
           var btn = document.getElementById("modal");
       
-            if (btn.value == "V5.mp4") {
+            if (btn.value == "TH-55k-13m") {
               btn.value = "V5.mp4";
-              btn.innerHTML = '<button id="modtext">V5.mp4</button>';
-              timer.reset();
-              video_player.play();
-              timer.start(10);
-              timer.mode(1);
+              btn.innerHTML = '<button id="modtext">TH-55k-13m</button>';
+              multiResetB();
               }
             else {
               btn.value = "V5.mp4";
               btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
-              video_player.pause();
+              timerR.stop();
               }
         }
         
@@ -1143,8 +1143,8 @@ $("#negative3").click(function() { // button function for rewind
                                'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
                                'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
                                'https://www.dropbox.com/s/um8jz1a2p63idxe/10-10-2021-14_52.mp4?raw=1',
-                               'https://player.vimeo.com/external/584066585.hd.mp4?s=00dabd47c1679b596be9e53caa4bd57aacec8adb&profile_id=169',
-                               'https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1',
+                               'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
+                               'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
                                'https://www.dropbox.com/s/gbylnf22v2y9z2p/PG-08-22-2021.mp4?raw=1',
                                'https://player.vimeo.com/external/578304012.hd.mp4?s=5f89a34632cb1c8ce3e7d217eeba1d31de923ee1&profile_id=175',
                                'https://player.vimeo.com/external/576991898.hd.mp4?s=1bb32accaba15577d4911f9d43a0b4792f891b3a&profile_id=175',

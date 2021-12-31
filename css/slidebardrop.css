@@ -103,8 +103,10 @@
   margin: 1px;
   border-radius: 4px;
   width:auto;
-  max-width:175px;
+  max-width:150px;
   height:28px;
+  
+  
 }
 
 .dropbtn.active {
@@ -335,15 +337,15 @@
   position:absolute;
   display: none;  
   background: -webkit-linear-gradient(top, black, silver);  
-  width:auto;
-  max-width: 150px;
-  height:100px;
-  overflow:scroll;
+  width:360px;
+  height:125px;
   border: 2px;
-  border-radius: 4px;
-  padding:2px;
-  margin: 2px;
-  left:10%
+  border-radius: 4px;  
+  left:-0%;
+  top: -10%;
+  overflow-y: scroll;
+  float:left
+  
   
 }
   
@@ -353,12 +355,14 @@
 
 .dropdownL-content a {
   color: white;
-  padding: 4px 4px;
+  padding: 1px 1px;
   text-decoration: blink;
-  display: block;
+  display:block;
   border: 2px;
   border-radius: 4px;
-  border-color:white
+  border-color:white;
+  width:135px;
+  padding:4px 4px;
 
   
 }
@@ -421,7 +425,9 @@
   border-radius: 6px;
   border-color:yellow;
   cursor:move;
-  color:red
+  color:red;
+
+ 
 }
 
 
@@ -433,15 +439,16 @@
   position:absolute;
   display: none;  
   background: -webkit-linear-gradient(top, black, silver);  
-  width:auto;
-  max-width: 150px;
+  width:360px;
   height:100px;
-  overflow:scroll;
   border: 2px;
   border-radius: 4px;
-  padding:2px;
-  margin: 2px;
-  left:10%;
+  
+  
+  left:-0%;
+  top: -10%;
+  overflow-y: scroll;
+  float:left
   
 }
   
@@ -451,12 +458,15 @@
 
 .dropdownR-content a {
   color: white;
-  padding: 4px 4px;
+  padding: 1px 1px;
   text-decoration: blink;
   display:block;
   border: 2px;
   border-radius: 4px;
-  border-color:white
+  border-color:white;
+  width:135px;
+  padding:4px 4px;
+  
 
   
 }
@@ -465,11 +475,10 @@
 
 .dropdownR-content a:hover {
   color:black;
-  border-color: black;
+  border-color: silver;
   background: -webkit-linear-gradient(top, lightyellow, lightpink);
   text-shadow: 1px 1px silver;
-  font-weight:500;
-  border-color:lime;
+  
   border-style:groove;
 
 
@@ -480,6 +489,7 @@
 .dropdownR:hover .dropdownR-content {
   display: block;
   position:relative;
+  
 
 }
 
@@ -494,8 +504,8 @@
   text-shadow: 1px 1px silver;
   min-width: 150px;
   color: black;
-  border: 6px;
-  border-radius: 6px;
+  border: 1px;
+  border-radius: 4px;
   border-color:black;
 }
 

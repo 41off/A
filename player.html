@@ -14,9 +14,16 @@
  <link href="plugins/videojs/css/video-js.css" rel="stylesheet" type="text/css">
  <link href="css/styles.css" rel="stylesheet" type="text/css">
  <link href="css/slidebardrop.css" rel="stylesheet" type="text/css">
+                
+ <link rel="stylesheet" href="css/popover.css">
+
+
  
  <script src="js/jquery-3.6.0.js"></script>
  <script src="js/jquery-ui.js"></script>
+ 
+ 
+ <script src="js/bootstrap_popup.min.js"></script> 
  
  
 
@@ -39,13 +46,22 @@ window.addEventListener("load", function B() { onloadR() })
 <body >
 
 
+<!--
 
+<a href="#" onClick={function(event){ func1(); func2()}}>Test Link</a>
+or ES6 equivalent:
+
+<a href="#" onClick={() => { func1(); func2();}}>Test Link</a>
+
+-->
          
         
 
 <div id="wrap">
 
- <div title="Click for Directions video" class="dirbtn" href="#" onclick="on0L()">
+
+
+ <div title="Click for Directions video" class="dirbtn" href="#" onClick="on5L()">
    <span title="Close Directions button if preferred"  class="closebtn2">&#11097;&nbsp;</span>Directions<span title="Drag Button elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span>
  </div>
 
@@ -60,10 +76,12 @@ window.addEventListener("load", function B() { onloadR() })
              <span title="Drag Timer elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span>
          </div> 
          
+         
+  
 
 
    
-    <div class="paperscriptL" title="Drag Drawing Canvas Up to Access Video Interface">
+    <div class="paperscriptL" title="Drag Drawing Canvas Up from SE corner to Access Video Interface&nbsp;&#129142;">
          <canvas id="video-canvas1" height="650" width="1880"></canvas>
          <canvas id="video-canvas"></canvas>
        </div>
@@ -81,14 +99,20 @@ window.addEventListener("load", function B() { onloadR() })
                     <source type="video/ogg">
                     <source type='video/webm; codecs="vp8, vorbis"'>
                </video>
+               
+         <div id="modal">
+         </div>
+       
       
       <button class="Mbtn ML" title="View Left Player Only" href="#" onclick="window.location.href='playerL.html';">[\+/]</button> 
            
-       <input type="file" class="custom-file-input" accept="video/mp4"/>
+       <input type="file" class="custom-file-input" accept="video/mp4">
         
           <div id="message" display="inline-block"></div> 
        
      <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
+     
+    
      
      
     
@@ -102,44 +126,34 @@ window.addEventListener("load", function B() { onloadR() })
   <!--  
      <div class="single" onclick="window.location.href='playerL.html';"></div>
    --> 
-         <div class="dropdownL" title="Drag Menu to left as needed">
-                                     &#10016;
-                                     <button class="dropbtn">Victory Lake Clips
-                                      <span class="box">Choose a Pro Skier from the scrolling dropdown menu. Practical rope lenghts are chosen. Clips are recorded at proportionally reduced rates (i.e., 52/58) to                  
-                                                       emulate slower speeds.</span></button>
+                               <div class="dropdownL" title="Drag Menu to left as needed">&#10016;
+                                     <button class="dropbtn" id="mypop" data-toggle="popover" data-placement="right" title="Victory Lake Skier Clip Menu" data-html="true" 
+                           data-content="pending" >Victory Lake Clips
+                                      </button>
                                        
                                        <div class="dropdownL-content">
-                                        
-                                        <a href="#" onclick="on0L()">JM 52k-13m</a>
-                                        <a href="#" onclick="on1L()">PG 52k-14m</a>
-                                        <a href="#" onclick="on2L()">JE 52k-13m</a>
-                                        <a href="#" onclick="on3L()">BM 52k-13m</a>
-                                        <a href="#" onclick="on4L()">EB 52k-13m</a>
-                                        <a href="#" onclick="on5L()">TH 55k-13m</a>
-                                        <a href="#" onclick="on6L()">Nate Smith 13/52</a>
-                                        <a href="#" onclick="on7R()">MC Viewer</a>
-                                        <a href="#" onclick="on8L()">NG Viewer</a>
-                                        <a href="#" onclick="on9L()">PG Viewer</a>
-                                        <a href="#" onclick="on10L()">TK Viewer</a>
-                                        <a href="#" onclick="on11L()">SK Viewer</a>
-                                        <a href="#" onclick="on12L()">MV Viewer</a>
-                                        <a href="#" onclick="on13L()">RB Viewer</a>
-                                        <a href="#" onclick="on14L()">ET Viewer</a>
-                                        <a href="#" onclick="on15L()">HM Viewer</a>
-                                        <a href="#" onclick="onvideoBackL()">Prior</a>
-                                        
+                                       <ul>
+                                        <li><a href="#" onclick="on0L()">JM-52k-13m</a></li>
+                                        <li><a href="#" onclick="on1L()">PG-52k-14m</a></li>
+                                        <li><a href="#" onclick="on2L()">JE-52k-13m</a></li>
+                                        <li><a href="#" onclick="on3L()">BM-52k-13m</a></li>
+                                        <li><a href="#" onclick="on4L()">EB-52k-13m</a></li>
+                                        <li><a href="#" onclick="on5L()">TH-55k-13m</a></li>
+                                        <li><a href="#" onclick="on6L()">ET 55k-13m</a></li>
+                                        <li><a href="#" onclick="on7R()">MC Viewer</a></li>
+                                        <li><a href="#" onclick="on8L()">NG Viewer</a></li>
+                                        <li><a href="#" onclick="on9L()">PG Viewer</a></li>
+                                        <li><a href="#" onclick="on10L()">TK Viewer</a></li>
+                                        <li><a href="#" onclick="on11L()">SK Viewer</a></li>
+                                        <li><a href="#" onclick="on12L()">MV Viewer</a></li>
+                                        <li><a href="#" onclick="on13L()">RB Viewer</a></li>
+                                        <li><a href="#" onclick="on14L()">ET Viewer</a></li>
+                                        <li><a href="#" onclick="on15L()">Directions</a></li>
+                                        <li><a href="#" onclick="onvideoBackL()">Prior</a></li>
+                                       </ul>
                                        </div>
-                                        
-                                    </div>
-
-          
-        
-    		        
-   </div>
-
-
-
-
+                               </div>
+                        </div>
 
   <div id="wrapR">
 
@@ -148,7 +162,7 @@ window.addEventListener("load", function B() { onloadR() })
                     <source type="video/mp4">
                     <source type='video/webm; codecs="vp8, vorbis"'>
                </video>
-          
+    
     <button class="Mbtn MR" title="View Right Player Only" href="#" onclick="window.location.href='playerR.html';">[\+/]</button>      
          
     <input type="file" class="custom-file-input" accept="video/mp4" name="video"/>
@@ -160,41 +174,43 @@ window.addEventListener("load", function B() { onloadR() })
          </div>
           
        
-                            <right><div class="dropdownR" title="Drag Menu to left as needed">
-                                       &#10016;
-                                     <button class="dropbtn">Select a Pro Skier
-                                       <span class="box">Choose a Pro Skier from the scrolling dropdown menu. Practical rope lengths are chosen. Clips are recorded at proportionally reduced rates (i.e., 52/58) to                  
-                                                       emulate slower speeds.</span></button>
-                                       <div class="dropdownR-content">
-                                        
-                                        <a href="#" onclick="on0R()">Nate Smith 52-13</a>
-                                        <a href="#" onclick="on1R()">Jamie Bull 52-13</a>
-                                        <a href="#" onclick="on2R()">Nate Smith 55-13</a>
-                                        <a href="#" onclick="on3R()">SM Viewer</a>
-                                        <a href="#" onclick="on4R()">BM Viewer</a>
-                                        <a href="#" onclick="on5R()">TH Viewer</a>
-                                        <a href="#" onclick="on6R()">Nate Smith 13/52</a>
-                                        <a href="#" onclick="on7R()">MC Viewer</a>
-                                        <a href="#" onclick="on8R()">NG Viewer</a>
-                                        <a href="#" onclick="on9R()">PG Viewer</a>
-                                        <a href="#" onclick="on10R()">TK Viewer</a>
-                                        <a href="#" onclick="on11R()">SK Viewer</a>
-                                        <a href="#" onclick="on12R()">MV Viewer</a>
-                                        <a href="#" onclick="on13R()">RB Viewer</a>
-                                        <a href="#" onclick="on14R()">ET Viewer</a>
-                                        <a href="#" onclick="on15R()">HM Viewer</a>
-                                        <a href="#" onclick="onvideoBackR()">Prior</a>
-                                        <a href="#">Link 3</a>
-                                         </div>
-                                    </div></right>
-				    
-      
-                         
-             
-         
+                            <div class="dropdownR" title="Drag Menu to relocate as needed">&#10016;                       
+                       
+                         <button class="dropbtn">Select a Pro Skier</button>
+
+                                      <div class="dropdownR-content">
+                                        <ul> 
+                                        <li><a href="#" onclick="on0R()">Nate Smith 52-13</a></li>
+                                        <li><a href="#" onclick="on1R()">Jamie Bull 52-13</a></li>
+                                        <li><a href="#" onclick="on2R()">Nate Smith 55-13</a></li>
+                                        <li><a href="#" onclick="on3R()">SM Viewer</a></li>
+                                        <li><a href="#" onclick="on4R()">BM Viewer</a></li>
+                                        <li><a href="#" onclick="on5R()">TH Viewer</a></li>
+                                        <li><a href="#" onclick="on6R()">Nate Smith 13/52</a></li>
+                                        <li><a href="#" onclick="on7R()">MC Viewer</a></li>
+                                        <li><a href="#" onclick="on8R()">NG Viewer</a></li>
+                                        <li><a href="#" onclick="on1R()">Jamie Bull 52-13</a></li>
+                                        <li><a href="#" onclick="on9R()">PG Viewer</a></li>
+                                        <li><a href="#" onclick="on10R()">TK Viewer</a></li>
+                                        <li><a href="#" onclick="on11R()">SK Viewer</a></li>
+                                        <li><a href="#" onclick="on12R()">MV Viewer</a></li>
+                                        <li><a href="#" onclick="on13R()">RB Viewer</a></li>
+                                        <li><a href="#" onclick="on14R()">ET Viewer</a></li>
+                                        <li><a href="#" onclick="on15R()">HM Viewer</a></li>
+                                        <li><a href="#" onclick="onvideoBackR()">Prior</a></li>
+                                        <li><a href="#">Link 3</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+
+               
+ 
+        
 
      </div>
-        
+       
+
+ 
         
         
         
@@ -233,7 +249,6 @@ window.addEventListener("load", function B() { onloadR() })
            
            
         <div class="menubarR" style="text-align:center">
-            
             <button class="Rbtn" id="Rreset" onClick="multiResetR()">Reset&nbsp;&#129149;</button>
             <button id="R5" class="Rbtn" onClick="multiStartR()" value="Play">Play Right</button>
             <button class="Rbtn" id="R1_8" onClick="multiSlowR()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
@@ -250,9 +265,7 @@ window.addEventListener("load", function B() { onloadR() })
            </div> 
                 
         <div class="controlsR"><span class="drag" title="Drag Right Zoom Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span></div>
-         
 
-      
 					<div class="toolblock">
 															
 								 <div class="inner_tool">
@@ -303,31 +316,20 @@ window.addEventListener("load", function B() { onloadR() })
 							        </button>
 							        <span class="drag" title="Drag Drawing Tools Bar elsewhere as needed">&nbsp;&nbsp;&#10016;</span>
 							</div>
-				     
-				     
-				     
-				     
-				    
-				    
-				    
-				    
-				    
-				    
-		
-             </div>  
-             
-      <script type="text/javascript" src="plugins/41off-drag.js"></script> <!-- within wrap   -->
+		     </div> 
+    
+   <!-- this script must be within wrap   -->
+   
+   <script type="text/javascript" src="plugins/41off-drag.popover.closebtn.js"></script>
         
- </div>
+           
+    
+        
+  </div>
       
        					
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
-  
-  
-  
-  
   
    <!-- Text - Color Palette JS -->
    <script src="plugins/textbox.js"></script>
@@ -352,23 +354,6 @@ window.addEventListener("load", function B() { onloadR() })
  <!-- Video JS -->
    <script src="plugins/fabric/fabric.min.js"></script>
    <script src="js/commonFunctionBoth.js"></script>
-  
- 
-<script>
-var close = document.getElementsByClassName('closebtn2');
-var i;
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function(){
-        var div = this.parentElement;
-        div.style.opacity = "0";
-        setTimeout(function(){ div.style.display = "none"; }, 1200);
-    }
-}
-</script>
-
-
-
-
 
 </body>
 </html>

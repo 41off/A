@@ -1,0 +1,58 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Untitled 1</title>
+
+<link rel="stylesheet" href="css/styles.css" type="text/css">
+<link rel="stylesheet" href="css/popover.css">
+
+
+<script src="js/jquery.min.js"></script>
+
+<script src="js/bootstrap_popup.min.js"></script>
+
+
+
+</head>
+
+
+
+
+<body>
+
+<div class="bs-example">
+   <button type="button" class="btn dropbtn" data-toggle="popover" title="Modal Short Text" data-content="You gotta go through it to see there ain't nothing to it. Listen to the silence.">Hover 1</button>
+   <button type="button" class="btn btn-success" data-toggle="popover" title="Modal Medium Text" data-content="The magic Indian is a mysterious spiritual force, and we're going to Cathedral Rock, and that's the vortex of the heart.">Hover 2</button>
+   <button type="button" class="btn btn-info" data-toggle="popover" title="Modal long Text" data-content="You gotta go through it to see there ain't nothing to it. Listen to the silence. And when the silence is deafening, you're in the center of your own universe.">Hover 3</button>
+</div>
+
+<style>
+
+
+.bs-example {
+   margin-top: 10%;
+  
+}
+
+
+
+</style>
+
+
+<script>
+$(document).ready(function() {
+   $('[data-toggle="popover"]').popover({
+      placement: 'top',
+      trigger: 'hover'
+   });
+});
+
+
+</script>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,104 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Untitled 1</title>
+
+
+ <link rel='icon' href='favicon.ico' type='image/x-icon'/ > 
+ <link href="plugins/videojs/css/video-js.css" rel="stylesheet" type="text/css">
+ <link href="css/styles.css" rel="stylesheet" type="text/css">
+ <link href="css/slidebardrop.css" rel="stylesheet" type="text/css">
+ <link rel="stylesheet" href="css/popover.css">
+
+
+ <script src="js/jquery-3.6.0.js"></script>
+ <script src="js/jquery-ui.js"></script>
+ 
+ 
+ <script src="js/bootstrap_popup.min.js"></script> 
+
+</head>
+
+<body>
+
+
+ 
+      
+         <a class="brand" href="#">You're the man</a>
+     
+     
+         <ul class="a">
+            
+               <button class="dropbtn" data-toggle="popover" title="Popover title" 
+               data-content="test content 
+               <li><a href='https://41off.com' title='test add link'>link on content</a></li>
+               <li><a href='https://41off.com' title='test add link'>link on content2</a></li>
+               <li><a href='https://41off.com' title='test add link'>link on content3</a></li>
+               <li><a href='https://video.41off.com' title='test add link'>link on content4</a></li>"
+     
+               
+               
+               
+               data-html="true">My Button</button>
+           
+         </ul>
+      
+
+   <!--/.container-fluid -->
+
+
+<style>
+
+ul.a {
+  list-style-type: circle;
+}
+
+ul.b {
+  list-style-type: square;
+}
+
+ul.pic {
+  list-style-image: url('sqpurple.gif');
+}
+
+ol.c {
+  list-style-type: upper-roman;
+}
+
+ol.d {
+  list-style-type: lower-alpha;
+}
+
+
+
+
+#mypop {
+    right: 150px!important;
+}
+
+#mypop .arrow {
+    left: 90%
+}
+
+</style>
+
+
+<script>
+
+$(".dropbtn").popover({
+        html : true,
+        placement: 'bottom',
+}).data('bs.popover').tip().attr('id', 'mypop');
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

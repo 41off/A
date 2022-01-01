@@ -18,11 +18,8 @@
 
 
 .popover {
-
+margin-left:36.25%;
 z-index:1;
-
-margin-right:-450px;
-margin-top:-20px;
 padding:4px;
 font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 font-size:12pt;
@@ -30,85 +27,74 @@ font-style:normal;
 font-weight:500;
 line-height:1.5;
 text-align:center;
-
 text-decoration:blink;
 text-shadow: 1px 1px silver;
 text-transform:bold;
 letter-spacing:normal;
-
 word-spacing:normal;
-
 white-space:normal;
 background-color:silver;
-
-
 border:1px solid #ccc;
 border:1px solid rgba(0,0,0,.2);
 border-radius:6px;
-height:250px;
-width:600px;
-
- 
+width:98%;
 
 }
 
 
-.popover.top{margin-top:-5px}
+.popover.top{margin-top:-25px}
 
-.popover.right{margin-right:-10px}
+.popover.right{margin-left:-10px}
 
-.popover.bottom{margin-top:10px}
+.popover.bottom{margin-top:5px}
 
 .popover.left{margin-left:-10px}
 
 
 .popover-title {
-  
-  padding:10px 10px;
-  margin:0;
-  font-size:14px;
+  display:inline-block;
+  padding: 10px 10px;
+  margin:0 auto;
+  width:98%;
+  font-size:16px;
   background-color:#f7f7f7;
   border-bottom:1px solid #ebebeb;
   border-radius:5px 5px 0 0;
   text-shadow: 1px 1px silver;
-  color:red
+  text-align:center;
+  color:red;
+  line-height:26px;
+  height:auto
 }
 
 .popover-body {
-    height: 150px;
-    overflow: scroll;
+    overflow-y: scroll;
     white-space:pre-wrap;
+    
 }
 
 .popover-content {
   width:auto;
-  
-  margin-left:15px;
-  padding-top:15px;
-  padding-bottom:10px;
-  padding-left:12px;
-  padding-right:0px;
-  color:black;
+  padding: 10px 10px;
   -webkit-background-clip:padding-box;
   background-clip:padding-box;
-  border:1px solid #999;border:1px solid rgba(0,0,0,.2);
+  border:2px solid #999;
   border-radius:6px;outline:0;
-  -webkit-box-shadow:0 3px 9px rgba(0,0,0,.5);
-  box-shadow:0 3px 9px rgba(0,0,0,.5); 
-  
-  column-count: 3;
-  column-gap: 12px;
-  column-rule-style: solid;
-  column-rule-width: 1px;
-  column-rule: 1px solid transparent; 
-  column-width: 90px; 
-  resize:horizontal;
-  overflow-y : scroll;
-  height: 200px;  
-  
  
-
-
+  column-count: 3;
+  column-gap: 24px;
+  column-rule-style: groove;
+  column-rule-width:2px;
+  column-rule: 2px solid red; 
+  column-width: 100px; 
+  overflow-y : scroll;
+  height: 75%;
+  text-align:left;
+  text-indent:12px;
+  text-shadow: 1px 1px white;
+  font-weight:800
+  
+  
   
 
 }
@@ -146,17 +132,31 @@ width:600px;
 
 .popover>.arrow,.popover>.arrow:after{position:absolute;display:block;width:0;height:0;border-color:transparent;border-style:solid}
 
-.popover>.arrow{border-width:11px}.popover>.arrow:after{content:"";border-width:10px}
+.popover>.arrow{border-width:15px}.popover>.arrow:after{content:"";border-width:10px}
 
-.popover.top>.arrow{bottom:-11px;left:50%;margin-left:-11px;border-top-color:#999;border-top-color:rgba(0,0,0,.25);border-bottom-width:0}
+.popover.top>.arrow {
+bottom:-27px; 
+left:1% !important;
+margin-left:0px;
+border-top-color:pink;
+border-style:groove;
+border-bottom-width:5px;
 
-.popover.top>.arrow:after{bottom:1px;margin-left:-10px;content:" ";border-top-color:#fff;border-bottom-width:0}
+}
+
+/*
+.popover.top>.arrow:after {
+
+border-top-color:#fff;
+border-bottom-width:0
+}
+*/
 
 .popover.right>.arrow{top:20%;left:-11px;margin-top:-11px;border-right-color:#999;border-right-color:rgba(0,0,0,.25);border-left-width:0}
 
 .popover.right>.arrow:after{bottom:-10px;left:1px;content:" ";border-right-color:#fff;border-left-width:0}
 
-.popover.bottom>.arrow{top:-11px;left:50%;margin-left:-11px;border-top-width:0;border-bottom-color:#999;border-bottom-color:rgba(0,0,0,.25)}
+.popover.bottom>.arrow{top:-11px;left:1%;margin-left:-11px;border-top-width:0;border-bottom-color:#999;border-bottom-color:rgba(0,0,0,.25)}
 
 .popover.bottom>.arrow:after{top:1px;margin-left:-10px;content:" ";border-top-width:0;border-bottom-color:#fff}
 
@@ -170,29 +170,25 @@ width:600px;
   border-left-color:#fff
 }
 
-
-               
-
-
 .bs-popover-top .arrow, 
 .bs-popover-bottom .arrow {
-    margin-left: -8px;
+    margin-left: 1px;
 }
 .bs-popover-left .arrow,
 .bs-popover-right .arrow {
-    margin-top: 100px;
+    margin-top: 1px;
 }   
 
 
-
+/*
 #mypop {
-    left: -5px!important;
-  
+    left: -800px!important;
+      
 }
 
 #mypop .arrow {
-    left: 5%;
-    bottom:30%
+    left: 2%;
+    bottom:10%
 }
 
 
@@ -222,75 +218,77 @@ li span {
   list-style-image: url('../images/bluesm.png');
 
 } 
-
+*/
 
 .dropdownL-content ul{
     list-style:none;
   /* list-style:none; */
-    margin-left:4px;
+    margin-left:0px;
     padding:0px;
     columns:2;
 }
+
 .dropdownL-content li{
     float:left;
     padding-left:6px;
     padding-right:6px;
     
 }
+
 .dropdownL-content li a{
     
     display:block;
-    line-height:30px;
-    margin:2px;
-    padding:2px 2px;
+    line-height:24px;
+   
+    
     text-align:center;
     text-decoration:none;
 }
+
 .dropdownL-content li a:hover, .menu ul li:hover a{
    
     text-decoration:none;
 }
+
 .dropdownL-content li ul{
    
     display:none;
     height:auto;
-    padding:2px;
-    margin-left:12px;
+    
+    
     border:0px;
     position:absolute;
-    width:270px;
+    width:250px;
     z-index:200;
     /*top:1em;
     /*left:0;*/
 }
+
 .dropdownL-content li:hover ul{
     display:block;
 }
+
 .dropdownL-content li li {
-    
     display:block;
     float:left;
-    margin-left:20px;
-    padding-left:8px;
-    width:135px;
+    width:120px;
 }
+
 .dropdownL-content li:hover li a{
     background:none;
 }
+
 .dropdownL-content li ul a{
     display:block;
-    height:26px;
-    font-size:12px;
-    font-style:normal;
-    margin:8px;
-    padding:8px 8px 8px 8px;
+    height:22px;
     text-align:left;
-    
 }
+
 .dropdownL-content li ul a:hover, .menu li ul li:hover a{
     
     text-decoration:none;
 }
+
 .dropdownL-content p{
     clear:left;
 }
@@ -301,7 +299,7 @@ li span {
 .dropdownR-content ul{
     list-style:none;
   /* list-style:none; */
-    margin-left:10px;
+    margin-left:0px;
     padding:0px;
     columns:2;
 }
@@ -311,30 +309,23 @@ li span {
     padding-right:6px;
 }
 .dropdownR-content li a{
-    
     display:block;
-    line-height:30px;
-    margin:2px;
-    padding:2px 2px;
+    line-height:24px;
     text-align:center;
     text-decoration:none;
-    
-   
-   
+  
 }
+
 .dropdownR-content li a:hover, .menu ul li:hover a{
    
     text-decoration:none;
 }
 .dropdownR-content li ul{
-   
     display:none;
     height:auto;
-    padding:2px;
-    margin-left:12px;
     border:0px;
     position:absolute;
-    width:270px;
+    width:250px;
     z-index:200;
     /*top:1em;
     /*left:0;*/
@@ -343,23 +334,16 @@ li span {
     display:block;
 }
 .dropdownR-content li li {
-    
     display:block;
     float:left;
-    margin-left:20px;
-    padding-left:8px;
-    width:135px;
+    width:120px;
 }
 .dropdownR-content li:hover li a{
     background:none;
 }
 .dropdownR-content li ul a{
     display:block;
-    height:26px;
-    font-size:12px;
-    font-style:normal;
-    margin:8px;
-    padding:8px 8px 8px 8px;
+    height:22px;
     text-align:left;
     
 }

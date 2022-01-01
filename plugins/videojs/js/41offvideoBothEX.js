@@ -444,7 +444,7 @@
    }
 
   
-        var video_directory = ['https://www.dropbox.com/s/j4priqaxu1rgcdz/JM-08-27-2021-Rd2-S1-52-13.mp4?raw=1',
+        var video_directory = ['https://www.dropbox.com/s/9kxq97lunb2xn9n/JM%2052k-11mb.mp4?raw=1',
                                'https://www.dropbox.com/s/7413essf1mxro6j/V1.mp4?raw=1',
                                'https://www.dropbox.com/s/ih9se43lx6ixj02/JE-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/75luo4kenawyp1o/BM-52-13.mp4?raw=1',
@@ -452,8 +452,8 @@
                                'https://www.dropbox.com/s/1h8ofv23eexuu8u/TH-55-13b.mp4?raw=1',
                                'https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1',
                                'https://www.dropbox.com/s/43ewvwpf48p1qos/v2.mp4?raw=1',
-                               'https://player.vimeo.com/external/578304012.hd.mp4?s=5f89a34632cb1c8ce3e7d217eeba1d31de923ee1&profile_id=175',
-                               'https://player.vimeo.com/external/576991898.hd.mp4?s=1bb32accaba15577d4911f9d43a0b4792f891b3a&profile_id=175',
+                               'https://www.dropbox.com/s/j4priqaxu1rgcdz/JM-08-27-2021-Rd2-S1-52-13.mp4?raw=1',
+                               'https://www.dropbox.com/s/dohzqvbggqrihbp/JE-52k-11mb.mp4?raw=1',
                                'https://player.vimeo.com/external/554033182.hd.mp4?s=c88df5d6ba1a17d9abcc34972021be24ed72164f&profile_id=175',
                                'https://player.vimeo.com/external/468376204.hd.mp4?s=ae32c4912bfba41349aecd4d9e38974dce7b64fe&profile_id=175',
                                'https://player.vimeo.com/external/384270451.hd.mp4?s=d712635e1dcc47fd9d2bff9f7eb62553499b8f83&profile_id=175',
@@ -601,22 +601,22 @@ $("#negative3").click(function() { // button function for rewind
             console.log("0 ended");
             video_index = 0;
             video_player.setAttribute("src", video_directory[video_index]);
+            videoR_index = 3;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+
                        
         var btn = document.getElementById("modal");
       
-            if (btn.value == "Latest") {
-              btn.value = "Latest";
-              btn.innerHTML = '<button id="modtext">Latest</button>';              
-              timer.reset();
-              video_player.play();
-              timer.start(10);
-              timer.mode(1);
+            if (btn.value == "JM-52k-11m") {
+              btn.value = "JM-52k-11m";
+              btn.innerHTML = '<button id="modtext">JM-52k-11m</button>';              
+              multiResetB();
               }
             else {
-              btn.value = "Latest";
-              btn.innerHTML = '<button id="modtext">JM-52k-13m&nbsp;&nbsp;&#129093;</button>';
+              btn.value = "JM-52k-11m";
+              btn.innerHTML = '<button id="modtext">JM-52k-11m&nbsp;&nbsp;&#129093;</button>';
               timer.stop();
-              video_player.pause();
+              timerR.stop();
               }
           }
         
@@ -705,7 +705,7 @@ $("#negative3").click(function() { // button function for rewind
               multiResetB();
               }
             else {
-              btn.value = "Clip 5";
+              btn.value = "EB-52k-13m";
               btn.innerHTML = '<button id="modtext">EB-52k-13m&nbsp;&nbsp;&#129093;</button>';
               timer.stop();
               timerR.stop();
@@ -723,13 +723,13 @@ $("#negative3").click(function() { // button function for rewind
           var btn = document.getElementById("modal");
       
             if (btn.value == "TH-55k-13m") {
-              btn.value = "V5.mp4";
+              btn.value = "";
               btn.innerHTML = '<button id="modtext">TH-55k-13m</button>';
               multiResetB();
               }
             else {
-              btn.value = "V5.mp4";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "TH-55k-13m";
+              btn.innerHTML = '<button id="modtext">TH-55k-13m&nbsp;&nbsp;&#129093;</button>';
               timer.stop();
               timerR.stop();
               }
@@ -789,17 +789,17 @@ $("#negative3").click(function() { // button function for rewind
             
            var btn = document.getElementById("modal");
       
-            if (btn.value == "Clip 9") {
+            if (btn.value == "JM-52k-13m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 9</button>';              
+              btn.innerHTML = '<button id="modtext">JM-52k-13m</button>';              
               timer.reset();
               video_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
-              btn.value = "Clip 9";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
+              btn.value = "JM-52k-13m";
+              btn.innerHTML = '<button id="modtext">JM-52k-13m&nbsp;&nbsp;&#129093;</button>';              
               timer.stop();
               video_player.pause();
               }
@@ -810,20 +810,23 @@ $("#negative3").click(function() { // button function for rewind
            video_index = 9;
            video_player.setAttribute("src", video_directory[video_index]);
            video_player.play();
+           videoR_index = 9;
+           videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+
            
           var btn = document.getElementById("modal");
       
-            if (btn.value == "Clip 10") {
+            if (btn.value == "JE 52k-11m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 10</button>';
+              btn.innerHTML = '<button id="modtext">JE 52k-11m</button>';
               timer.reset();
               video_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
-              btn.value = "Clip 10";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "JE 52k-11m";
+              btn.innerHTML = '<button id="modtext">JE 52k-11m&nbsp;&nbsp;&#129093;</button>';
               timer.stop();
               video_player.pause();
               }
@@ -1139,16 +1142,16 @@ $("#negative3").click(function() { // button function for rewind
    }
    
   
-        var videoR_directory = ['https://www.dropbox.com/s/f6fvnwe0qi7joyc/V2.mp4?raw=1',
+        var videoR_directory = ['https://www.dropbox.com/s/0xdysd8eszm4m5r/FWinter%2052k-11m.mp4?raw=1',
                                'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
                                'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
-                               'https://www.dropbox.com/s/um8jz1a2p63idxe/10-10-2021-14_52.mp4?raw=1',
+                               'https://www.dropbox.com/s/0xdysd8eszm4m5r/FWinter%2052k-11m.mp4?raw=1',
                                'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
                                'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
                                'https://www.dropbox.com/s/gbylnf22v2y9z2p/PG-08-22-2021.mp4?raw=1',
-                               'https://player.vimeo.com/external/578304012.hd.mp4?s=5f89a34632cb1c8ce3e7d217eeba1d31de923ee1&profile_id=175',
-                               'https://player.vimeo.com/external/576991898.hd.mp4?s=1bb32accaba15577d4911f9d43a0b4792f891b3a&profile_id=175',
-                               'https://player.vimeo.com/external/554033182.hd.mp4?s=c88df5d6ba1a17d9abcc34972021be24ed72164f&profile_id=175',
+                               'https://www.dropbox.com/s/gdnz5mdfxjq3hel/TWhisper-55k-13m.mp4?raw=1',
+                               'https://www.dropbox.com/s/f6fvnwe0qi7joyc/V2.mp4?raw=1',
+                               'https://www.dropbox.com/s/i76zs5g0snmmf1d/NateSmith-52k-11mb.mp4?raw=1',
                                'https://player.vimeo.com/external/468376204.hd.mp4?s=ae32c4912bfba41349aecd4d9e38974dce7b64fe&profile_id=175',
                                'https://player.vimeo.com/external/384270451.hd.mp4?s=d712635e1dcc47fd9d2bff9f7eb62553499b8f83&profile_id=175',
                                'https://player.vimeo.com/external/470756931.hd.mp4?s=e1898c446656131819fe8170eafc50d3e6b247bb&profile_id=175',
@@ -1353,17 +1356,17 @@ $("#negative3R").click(function() { // button function for rewind
             
            var btn = document.getElementById("modalR");
       
-            if (btn.value == "V3.mp4") {
-              btn.value = "V3.mp4";
-              btn.innerHTML = '<button id="modtextR">V3.mp4</button>';
+            if (btn.value == "F Winter-52-11") {
+              btn.value = "F Winter-52-11";
+              btn.innerHTML = '<button id="modtextR">F Winter-52-11</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "V3.mp4";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
+              btn.value = "F Winter-52-11";
+              btn.innerHTML = '<button id="modRtext">Fred Winter-52-11&nbsp;&nbsp;&#129093;</button>';              
               timerR.stop();
               videoR_player.pause();
               }
@@ -1445,19 +1448,16 @@ $("#negative3R").click(function() { // button function for rewind
                         
            var btn = document.getElementById("modalR");
       
-            if (btn.value == "Clip 8") {
+            if (btn.value == "TWhisper-55-13") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtextR">Clip 8</button>';
-              timerR.reset();
-              videoR_player.play();
-              timerR.start(10);
-              timerR.mode(1);
+              btn.innerHTML = '<button id="modtext">TWhisper-55k-13m</button>';
+              multiResetB();              
               }
             else {
-              btn.value = "Clip 8";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "TWhisper-55-13";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-13m&nbsp;&nbsp;&#129093;</button>';
+              timer.stop();
               timerR.stop();
-              videoR_player.pause();
               }
         }
         
@@ -1471,7 +1471,7 @@ $("#negative3R").click(function() { // button function for rewind
       
             if (btn.value == "Clip 9") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtextR">Clip 9</button>';              
+              btn.innerHTML = '<button id="modRtext">Clip 9</button>';              
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1479,7 +1479,7 @@ $("#negative3R").click(function() { // button function for rewind
               }
             else {
               btn.value = "Clip 9";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
+              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
               timerR.stop();
               videoR_player.pause();
               }
@@ -1493,17 +1493,17 @@ $("#negative3R").click(function() { // button function for rewind
            
           var btn = document.getElementById("modalR");
       
-            if (btn.value == "Clip 10") {
+            if (btn.value == "Nate Smith-52k-11m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 10</button>';
+              btn.innerHTML = '<button id="modRtext">Nate Smith-52k-11m</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "Clip 10";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "Nate Smith-52k-11m";
+              btn.innerHTML = '<button id="modRtext">Nate Smith-52k-11m&nbsp;&nbsp;&#129093;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1518,7 +1518,7 @@ $("#negative3R").click(function() { // button function for rewind
       
             if (btn.value == "Clip 11") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtextR">Clip 11</button>';
+              btn.innerHTML = '<button id="modRtext">Clip 11</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1526,7 +1526,7 @@ $("#negative3R").click(function() { // button function for rewind
               }
             else {
               btn.value = "Clip 11";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timerR.stop();
               videoR_player.pause();
               }

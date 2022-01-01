@@ -79,8 +79,9 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+   
   $('[data-toggle="popover"]').popover({
-    placement: 'left',
+    placement: 'top',
     html: true
   });
 
@@ -88,14 +89,25 @@ $(document).ready(function() {
     $(this).popover('show');
   });
 */
-  
   $('[data-toggle="popover"]').on("click", function() {
     $(this).popover('show');
+
+
+  $('[data-toggle="popover"]').on("mouseenter", function() {
+    $(this).popover('show');
+           
+    setTimeout(function () {
+            timeout = $('.popover').fadeOut(90000);
+        }, 5000);
+    
   });
 
   
   $('body').on('click', function(e) {
+       clearTimeout(timeout);
+   
     $('[data-toggle=popover]').each(function() {
+       
       if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
         $(this).popover('hide');
       }
@@ -113,6 +125,6 @@ for (i = 0; i < close.length; i++) {
     close[i].onclick = function(){
         var div = this.parentElement;
         div.style.opacity = "0";
-        setTimeout(function(){ div.style.display = "none"; }, 1200);
+        setTimeout(function(){ div.style.display = "none"; }, 1600);
     }
 }

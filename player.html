@@ -60,10 +60,10 @@ or ES6 equivalent:
 <div id="wrap">
 
 
-
  <div title="Click for Directions video" class="dirbtn" href="#" onClick="on5L()">
    <span title="Close Directions button if preferred"  class="closebtn2">&#11097;&nbsp;</span>Directions<span title="Drag Button elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span>
  </div>
+ 
 
  <div  class="timer">
              <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
@@ -71,7 +71,7 @@ or ES6 equivalent:
          </div> 
          
 
-<div class="timerR" >
+ <div class="timerR" >
              <span class="minuteR">00</span>:<span class="secondR">00</span>.<span class="milliR">00</span>
              <span title="Drag Timer elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span>
          </div> 
@@ -91,6 +91,8 @@ or ES6 equivalent:
 
   <div id="wrapL">
   
+  
+  
    <div id="stageL">
          
                <video id="video" controls muted loop
@@ -106,8 +108,23 @@ or ES6 equivalent:
       
       <button class="Mbtn ML" title="View Left Player Only" href="#" onclick="window.location.href='playerL.html';">[\+/]</button> 
            
-       <input type="file" class="custom-file-input" accept="video/mp4">
-        
+       <input type="file" class="custom-file-input" accept="video/mp4" data-toggle="popover" data-placement="right" title="Details Below. This popover will auto-destruct in 90 seconds!" data-html="true" 
+                           data-content="
+                           
+1.) Click “Choose your own .mp4” to play a video clip from your machine. The script in this player renders your .mp4 file (only .mp4 files are supported) as an URL object allowing the HTML5 features in your browser to stream the file locally. Chrome is the best browser, Mozilla is decent. Have not tried with Safari.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+2.)	Clips of Pro Skiers or Club members are found in the respective dropdown menus at bottom left of each screen.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+3.)	Some member clips are automatically “paired” to a Pro skier in the Right Side Player.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+4.)	Pro Skier clips labeled at speeds below their actually have been rendered with reduced rates accordingly. I.e.,  N. Smith clips at 52k were rendered at 52/58 rates. It may not be ideal with regard to edge change position, but is likely reasonable to study time from buoy to centerline.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+5.)	Click anywhere outside this menu to close it.
+">        
           <div id="message" display="inline-block"></div> 
        
      <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
@@ -127,13 +144,28 @@ or ES6 equivalent:
      <div class="single" onclick="window.location.href='playerL.html';"></div>
    --> 
                                <div class="dropdownL" title="Drag Menu to left as needed">&#10016;
-                                     <button class="dropbtn" id="mypop" data-toggle="popover" data-placement="right" title="Victory Lake Skier Clip Menu" data-html="true" 
-                           data-content="pending" >Victory Lake Clips
+                                     <button class="dropbtn">Victory Lake Clips
                                       </button>
                                        
                                        <div class="dropdownL-content">
                                        <ul>
-                                        <li><a href="#" onclick="on0L()">JM-52k-13m</a></li>
+                                        <li><a href="#" onclick="on0L()">JM-52k-11m</a></li>
+                                        <li><a href="#" onclick="on1L()">PG-52k-14m</a></li>
+                                        <li><a href="#" onclick="on2L()">JE-52k-13m</a></li>
+                                        <li><a href="#" onclick="on3L()">BM-52k-13m</a></li>
+                                        <li><a href="#" onclick="on4L()">EB-52k-13m</a></li>
+                                        <li><a href="#" onclick="on5L()">TH-55k-13m</a></li>
+                                        <li><a href="#" onclick="on6L()">ET 55k-13m</a></li>
+                                        <li><a href="#" onclick="on7L()">blank</a></li>
+                                        <li><a href="#" onclick="on8L()">JM-52k-13m</a></li>
+                                        <li><a href="#" onclick="on9L()">JE 52k-11m</a></li>
+                                        <li><a href="#" onclick="on10L()">TK Viewer</a></li>
+                                        <li><a href="#" onclick="on11L()">SK Viewer</a></li>
+                                        <li><a href="#" onclick="on12L()">MV Viewer</a></li>
+                                        <li><a href="#" onclick="on13L()">RB Viewer</a></li>
+                                        <li><a href="#" onclick="on14L()">ET Viewer</a></li>
+                                        <li><a href="#" onclick="on15L()">Directions</a></li>
+                                         <li><a href="#" onclick="on0L()">JM-52k-13m</a></li>
                                         <li><a href="#" onclick="on1L()">PG-52k-14m</a></li>
                                         <li><a href="#" onclick="on2L()">JE-52k-13m</a></li>
                                         <li><a href="#" onclick="on3L()">BM-52k-13m</a></li>
@@ -149,6 +181,7 @@ or ES6 equivalent:
                                         <li><a href="#" onclick="on13L()">RB Viewer</a></li>
                                         <li><a href="#" onclick="on14L()">ET Viewer</a></li>
                                         <li><a href="#" onclick="on15L()">Directions</a></li>
+
                                         <li><a href="#" onclick="onvideoBackL()">Prior</a></li>
                                        </ul>
                                        </div>
@@ -162,10 +195,30 @@ or ES6 equivalent:
                     <source type="video/mp4">
                     <source type='video/webm; codecs="vp8, vorbis"'>
                </video>
+     
+     <div id="modalR">
+         </div>
+
     
     <button class="Mbtn MR" title="View Right Player Only" href="#" onclick="window.location.href='playerR.html';">[\+/]</button>      
          
-    <input type="file" class="custom-file-input" accept="video/mp4" name="video"/>
+    <input type="file" class="custom-file-input" accept="video/mp4" name="video" data-toggle="popover" data-placement="right" title="Details Below. This popover will auto-destruct in 90 seconds!" data-html="true" 
+                           data-content="
+                           
+1.) Click “Choose your own .mp4” to play a video clip from your machine. The script in this player renders your .mp4 file (only .mp4 files are supported) as an URL object allowing the HTML5 features in your browser to stream the file locally. Chrome is the best browser, Mozilla is decent. Have not tried with Safari.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+2.)	Clips of Pro Skiers or Club members are found in the respective dropdown menus at bottom left of each screen.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+3.)	Some member clips are automatically “paired” to a Pro skier in the Right Side Player.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+4.)	Pro Skier clips labeled at speeds below their actually have been rendered with reduced rates accordingly. I.e.,  N. Smith clips at 52k were rendered at 52/58 rates. It may not be ideal with regard to edge change position, but is likely reasonable to study time from buoy to centerline.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+5.)	Click anywhere outside this menu to close it.
+">
     
     <div id="messageR" display="inline-block"></div> 
  
@@ -180,17 +233,17 @@ or ES6 equivalent:
 
                                       <div class="dropdownR-content">
                                         <ul> 
-                                        <li><a href="#" onclick="on0R()">Nate Smith 52-13</a></li>
+                                        <li><a href="#" onclick="on8R()">Nate Smith 52-13</a></li>
                                         <li><a href="#" onclick="on1R()">Jamie Bull 52-13</a></li>
                                         <li><a href="#" onclick="on2R()">Nate Smith 55-13</a></li>
-                                        <li><a href="#" onclick="on3R()">SM Viewer</a></li>
+                                        <li><a href="#" onclick="on3R()">Fred Winter 52-11</a></li>
                                         <li><a href="#" onclick="on4R()">BM Viewer</a></li>
                                         <li><a href="#" onclick="on5R()">TH Viewer</a></li>
                                         <li><a href="#" onclick="on6R()">Nate Smith 13/52</a></li>
-                                        <li><a href="#" onclick="on7R()">MC Viewer</a></li>
+                                        <li><a href="#" onclick="on7R()">TWhisper 55-13</a></li>
                                         <li><a href="#" onclick="on8R()">NG Viewer</a></li>
                                         <li><a href="#" onclick="on1R()">Jamie Bull 52-13</a></li>
-                                        <li><a href="#" onclick="on9R()">PG Viewer</a></li>
+                                        <li><a href="#" onclick="on9R()">Nate Smith 52k-11m</a></li>
                                         <li><a href="#" onclick="on10R()">TK Viewer</a></li>
                                         <li><a href="#" onclick="on11R()">SK Viewer</a></li>
                                         <li><a href="#" onclick="on12R()">MV Viewer</a></li>

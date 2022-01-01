@@ -229,9 +229,10 @@
    }
    
   
-        var videoR_directory = ['https://www.dropbox.com/s/gbylnf22v2y9z2p/PG-08-22-2021.mp4?raw=1',
-                               'https://www.dropbox.com/s/fwvj14n1kbis4c5/XPG-08-15-2021.mp4?raw=1',
-                               'https://www.dropbox.com/s/gw1298kfmmob2aq/XPG-08-14-2021b.mp4?raw=1',
+        var videoR_directory = ['https://www.dropbox.com/s/j9obcg0lomqi4wl/directions1.mp4?raw=1',
+                                'https://www.dropbox.com/s/gbylnf22v2y9z2p/PG-08-22-2021.mp4?raw=1',
+                                'https://www.dropbox.com/s/fwvj14n1kbis4c5/XPG-08-15-2021.mp4?raw=1',
+                                'https://www.dropbox.com/s/gw1298kfmmob2aq/XPG-08-14-2021b.mp4?raw=1',
                                'https://www.dropbox.com/s/um8jz1a2p63idxe/10-10-2021-14_52.mp4?raw=1',
                                'https://player.vimeo.com/external/584066585.hd.mp4?s=00dabd47c1679b596be9e53caa4bd57aacec8adb&profile_id=169',
                                'https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1',

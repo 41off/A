@@ -601,7 +601,7 @@ $("#negative3").click(function() { // button function for rewind
             console.log("0 ended");
             video_index = 0;
             video_player.setAttribute("src", video_directory[video_index]);
-            videoR_index = 3;
+            videoR_index = 0;
             videoR_player.setAttribute("src", videoR_directory[videoR_index]);
 
                        
@@ -1152,11 +1152,11 @@ $("#negative3").click(function() { // button function for rewind
                                'https://www.dropbox.com/s/gdnz5mdfxjq3hel/TWhisper-55k-13m.mp4?raw=1',
                                'https://www.dropbox.com/s/f6fvnwe0qi7joyc/V2.mp4?raw=1',
                                'https://www.dropbox.com/s/i76zs5g0snmmf1d/NateSmith-52k-11mb.mp4?raw=1',
-                               'https://player.vimeo.com/external/468376204.hd.mp4?s=ae32c4912bfba41349aecd4d9e38974dce7b64fe&profile_id=175',
-                               'https://player.vimeo.com/external/384270451.hd.mp4?s=d712635e1dcc47fd9d2bff9f7eb62553499b8f83&profile_id=175',
-                               'https://player.vimeo.com/external/470756931.hd.mp4?s=e1898c446656131819fe8170eafc50d3e6b247bb&profile_id=175',
-                               'https://player.vimeo.com/external/576318773.hd.mp4?s=860340a4527e90128a1852bcba3634f859386001&profile_id=175',
-                               'https://www.dropbox.com/s/afmg5cv1z94kfrg/XPG-08-09-2021.mkv.mp4?raw=1',
+                               'https://www.dropbox.com/s/ztqqdo8wyua0z28/TWhisper-52k-11m.mp4?raw=1',
+                               'https://www.dropbox.com/s/6i4c298r83sdezp/TWhisper-52k-13m.mp4?raw=1',
+                               'https://www.dropbox.com/s/x6xl9643twkar2v/TWhisper-55k-11m.mp4?raw=1',
+                               'https://www.dropbox.com/s/3yio8nq5xvxkcog/TWhisper-58k-11m.mp4?raw=1',
+                               'https://www.dropbox.com/s/dslnk6u6sxxbp1e/TWhsisper-58k-13m.mp4?raw=1',
                                'https://www.dropbox.com/s/spmsl2jlhgjyhfi/PG.mp4?raw=1'
                                ];                      
  
@@ -1289,7 +1289,7 @@ $("#negative3R").click(function() { // button function for rewind
       
             if (btn.value == "Latest") {
               btn.value = "Latest";
-              btn.innerHTML = '<button id="modtextR">Latest</button>';              
+              btn.innerHTML = '<button id="modRtext">Latest</button>';              
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1297,7 +1297,7 @@ $("#negative3R").click(function() { // button function for rewind
               }
             else {
               btn.value = "Latest";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1310,17 +1310,17 @@ $("#negative3R").click(function() { // button function for rewind
            
          var btn = document.getElementById("modalR");
               
-            if (btn.value == "V1.mp4") {
-              btn.value = "V1.mp4";
-              btn.innerHTML = '<button id="modtextR">V1.mp4</button>';             
+            if (btn.value == "JamieBull-52k-13m") {
+              btn.value = "JamieBull-52k-13m";
+              btn.innerHTML = '<button id="modRtext">JamieBull-52k-13m</button>';             
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "V1.mp4";
-              btn.innerHTML =  '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "JamieBull-52k-13m4";
+              btn.innerHTML =  '<button id="modRtext">JamieBull-52k-13m&#129093;</button>';
               timerR.stop();
               videoR_player.pause();              
               }
@@ -1335,7 +1335,7 @@ $("#negative3R").click(function() { // button function for rewind
       
             if (btn.value == "V2.mp4") {
               btn.value = "V2.mp4";
-              btn.innerHTML = '<button id="modtextR">V2.mp4</button>';
+              btn.innerHTML = '<button id="modRtext">V2.mp4</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1343,7 +1343,7 @@ $("#negative3R").click(function() { // button function for rewind
               }
             else {
               btn.value = "V2.mp4";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1358,7 +1358,7 @@ $("#negative3R").click(function() { // button function for rewind
       
             if (btn.value == "F Winter-52-11") {
               btn.value = "F Winter-52-11";
-              btn.innerHTML = '<button id="modtextR">F Winter-52-11</button>';
+              btn.innerHTML = '<button id="modRtext">F Winter-52-11</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1381,7 +1381,7 @@ $("#negative3R").click(function() { // button function for rewind
       
             if (btn.value == "V4.mp4") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtextR">V4.mp4</button>';
+              btn.innerHTML = '<button id="modRtext">V4.mp4</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1389,7 +1389,7 @@ $("#negative3R").click(function() { // button function for rewind
               }
             else {
               btn.value = "Clip 5";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timerR.stop();
               videoR_player.pause();              
               }
@@ -1404,7 +1404,7 @@ $("#negative3R").click(function() { // button function for rewind
       
             if (btn.value == "V5.mp4") {
               btn.value = "V5.mp4";
-              btn.innerHTML = '<button id="modtextR">V5.mp4</button>';
+              btn.innerHTML = '<button id="modRtext">V5.mp4</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1412,7 +1412,7 @@ $("#negative3R").click(function() { // button function for rewind
               }
             else {
               btn.value = "V5.mp4";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1427,7 +1427,7 @@ $("#negative3R").click(function() { // button function for rewind
       
             if (btn.value == "Clip 7") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtextR">Clip 7</button>';
+              btn.innerHTML = '<button id="modRtext">Clip 7</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1435,7 +1435,7 @@ $("#negative3R").click(function() { // button function for rewind
               }
             else {
               btn.value = "Clip 7";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1450,7 +1450,7 @@ $("#negative3R").click(function() { // button function for rewind
       
             if (btn.value == "TWhisper-55-13") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">TWhisper-55k-13m</button>';
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-13m</button>';
               multiResetB();              
               }
             else {
@@ -1516,17 +1516,17 @@ $("#negative3R").click(function() { // button function for rewind
                       
           var btn = document.getElementById("modalR");
       
-            if (btn.value == "Clip 11") {
+            if (btn.value == "TWhisper-52k-11m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modRtext">Clip 11</button>';
+              btn.innerHTML = '<button id="modRtext">TWhisper-52k-11m</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "Clip 11";
-              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "TWhisper-52k-11m";
+              btn.innerHTML = '<button id="modRtext">TWhisper-52k-11m&#129093;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1539,17 +1539,17 @@ $("#negative3R").click(function() { // button function for rewind
                         
           var btn = document.getElementById("modalR");
       
-            if (btn.value == "Clip 12") {
+            if (btn.value == "TWhisper-52k-13m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtextR">Clip 12</button>';
+              btn.innerHTML = '<button id="modRtext">TWhisper-52k-13m</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "Clip 12";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "TWhisper-52k-13m";
+              btn.innerHTML = '<button id="modRtext">TWhisper-52k-13m&#129093;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1563,21 +1563,164 @@ $("#negative3R").click(function() { // button function for rewind
                         
           var btn = document.getElementById("modalR");
       
-            if (btn.value == "Clip 13") {
+            if (btn.value == "TWhisper-55k-11m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtextR">Clip 13</button>';
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "Clip 13";
-              btn.innerHTML = '<button id="modtextR">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "TWhisper-55k-11m";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m&#129093;</button>';
               timerR.stop();
               videoR_player.pause();
               }
         }
+        
+        
+        
+          function on13R(){
+            console.log("13 ended");
+            videoR_index = 12;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+                        
+          var btn = document.getElementById("modalR");
+      
+            if (btn.value == "TWhisper-58k-11m") {
+              btn.value = "";
+              btn.innerHTML = '<button id="modRtext">TWhisper-58k-11m</button>';
+              timerR.reset();
+              videoR_player.play();
+              timerR.start(10);
+              timerR.mode(1);
+              }
+            else {
+              btn.value = "TWhisper-58k-11m";
+              btn.innerHTML = '<button id="modRtext">TWhisper-58k-11m&#129093;</button>';
+              timerR.stop();
+              videoR_player.pause();
+              }
+        }
+
+
+
+       function on14R(){
+            console.log("14 ended");
+            videoR_index = 12;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+                        
+          var btn = document.getElementById("modalR");
+      
+            if (btn.value == "TWhisper-58k-13m") {
+              btn.value = "";
+              btn.innerHTML = '<button id="modRtext">TWhisper-58k-13m</button>';
+              timerR.reset();
+              videoR_player.play();
+              timerR.start(10);
+              timerR.mode(1);
+              }
+            else {
+              btn.value = "TWhisper-58k-13m";
+              btn.innerHTML = '<button id="modRtext">TWhisper-58k-13m&#129093;</button>';
+              timerR.stop();
+              videoR_player.pause();
+              }
+        }
+
+      function on15R(){
+            console.log("15 ended");
+            videoR_index = 12;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+                        
+          var btn = document.getElementById("modalR");
+      
+            if (btn.value == "TWhisper-55k-11m") {
+              btn.value = "";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
+              timerR.reset();
+              videoR_player.play();
+              timerR.start(10);
+              timerR.mode(1);
+              }
+            else {
+              btn.value = "TWhisper-55k-11m";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m&#129093;</button>';
+              timerR.stop();
+              videoR_player.pause();
+              }
+        }
+
+    function on16R(){
+            console.log("16 ended");
+            videoR_index = 12;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+                        
+          var btn = document.getElementById("modalR");
+      
+            if (btn.value == "TWhisper-55k-11m") {
+              btn.value = "";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
+              timerR.reset();
+              videoR_player.play();
+              timerR.start(10);
+              timerR.mode(1);
+              }
+            else {
+              btn.value = "TWhisper-55k-11m";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m&#129093;</button>';
+              timerR.stop();
+              videoR_player.pause();
+              }
+        }
+
+   function on17R(){
+            console.log("17 ended");
+            videoR_index = 12;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+                        
+          var btn = document.getElementById("modalR");
+      
+            if (btn.value == "TWhisper-55k-11m") {
+              btn.value = "";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
+              timerR.reset();
+              videoR_player.play();
+              timerR.start(10);
+              timerR.mode(1);
+              }
+            else {
+              btn.value = "TWhisper-55k-11m";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m&#129093;</button>';
+              timerR.stop();
+              videoR_player.pause();
+              }
+        }
+
+   function on18R(){
+            console.log("18 ended");
+            videoR_index = 12;
+            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+                        
+          var btn = document.getElementById("modalR");
+      
+            if (btn.value == "TWhisper-55k-11m") {
+              btn.value = "";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
+              timerR.reset();
+              videoR_player.play();
+              timerR.start(10);
+              timerR.mode(1);
+              }
+            else {
+              btn.value = "TWhisper-55k-11m";
+              btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m&#129093;</button>';
+              timerR.stop();
+              videoR_player.pause();
+              }
+        }
+
 
 
 

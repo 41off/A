@@ -82,38 +82,88 @@ $(document).ready(function() {
    
   $('[data-toggle="popover"]').popover({
     placement: 'top',
+    html: true,
+    title:function(){
+          return $('.popover-title').html();
+       },
+       content:function(){
+          return $('.popover-content').html();
+       }
+  });
+
+/*  $('[data-toggle="popover"]').on("mouseenter", function() {
+    $(this).popover('show');
+  });
+
+  $('[data-toggle="popover"]').on("click", function() {
+    $(this).popover('show');
+*/
+
+  $('[data-toggle="popover"]').on("mouseenter", function() {
+    $(this).popover('show');
+           
+ //   setTimeout(function () {
+ //           timeout = $('.popover').fadeOut(120000);
+ //       }, 5000);
+    
+  });
+
+
+
+
+
+  
+  $('#wrap, popover-title').on('click', function(e) {
+       
+   
+    $('[data-toggle=popover]').each(function() {
+       
+      if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+        $(this).popover('hide');
+        }
+    });
+  });
+});
+
+
+/// popver2 ////
+
+$(document).ready(function() {
+   
+  $('[data-toggle="popover2"]').popover({
+    placement: 'top',
     html: true
   });
 
 /*  $('[data-toggle="popover"]').on("mouseenter", function() {
     $(this).popover('show');
   });
-*/
+
   $('[data-toggle="popover"]').on("click", function() {
     $(this).popover('show');
+*/
 
-
-  $('[data-toggle="popover"]').on("mouseenter", function() {
+  $('[data-toggle="popover2"]').on("mouseenter", function() {
     $(this).popover('show');
            
     setTimeout(function () {
-            timeout = $('.popover').fadeOut(90000);
+            timeout = $('.popover2').fadeOut(120000);
         }, 5000);
     
   });
 
   
-  $('body').on('click', function(e) {
-       clearTimeout(timeout);
-   
-    $('[data-toggle=popover]').each(function() {
+  $('#wrapR, #wrapL').on('mouseenter', function(e) {
+         
+    $('[data-toggle=popover2]').each(function() {
        
-      if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+      if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover2').has(e.target).length === 0) {
         $(this).popover('hide');
       }
     });
   });
 });
+
 
 
 

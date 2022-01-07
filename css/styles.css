@@ -1850,7 +1850,6 @@ body {
     opacity: .25;
     transition: opacity 5s;
     bottom: 0.5%;
-    
 -webkit-animation: fadeout 45s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 45s; /* Firefox < 16 */
         -ms-animation: fadeout 45s; /* Internet Explorer */
@@ -2001,7 +2000,7 @@ body {
 .paperscriptL {
     position: absolute !important;
     width:99%;
-    height:52%;
+    height:7%;
     top:1%;
     left:1%;
     right:0%;

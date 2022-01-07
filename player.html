@@ -204,20 +204,35 @@ or ES6 equivalent:
          
     <input type="file" class="custom-file-input" accept="video/mp4" name="video" data-toggle="popover" data-placement="right" title="Details Below. This popover will auto-destruct in 90 seconds!" data-html="true" 
                            data-content="
-                           
-1.) Click “Choose your own .mp4” to play a video clip from your machine. The script in this player renders your .mp4 file (only .mp4 files are supported) as an URL object allowing the HTML5 features in your browser to stream the file locally. Chrome is the best browser, Mozilla is decent. Have not tried with Safari.
+1.)	Clips of Pro Skiers or Club members are found in the respective dropdown menus at bottom left of each screen.
 <br>
 <br>
-2.)	Clips of Pro Skiers or Club members are found in the respective dropdown menus at bottom left of each screen.
+2.)	Pro Skier clips labeled at speeds below their actual have been rendered with reduced rates accordingly. I.e.,  N. Smith clips at 52k were rendered at 52/58 rates. It may not be ideal with regard to edge change position, but is likely reasonable to study time from buoy to centerline.
 <br>
 <br>
-3.)	Some member clips are automatically “paired” to a Pro skier in the Right Side Player.
-<br>
-<br>
-4.)	Pro Skier clips labeled at speeds below their actual have been rendered with reduced rates accordingly. I.e.,  N. Smith clips at 52k were rendered at 52/58 rates. It may not be ideal with regard to edge change position, but is likely reasonable to study time from buoy to centerline.
-<br>
-<br>
-5.)	Click anywhere outside this menu to close it.
+<uk>
+ <li><a href='#' onclick='on8R()'>Nate Smith 52-13</a></li>
+ <li><a href='#' onclick='on1R()'>Jamie Bull 52-13</a></li>
+ <li><a href='#' onclick='on2R()'>Nate Smith 55-13</a></li>
+ <li><a href='#' onclick='on3R()'>Fred Winter 52-11</a></li>
+                                        <li><a href='#' onclick='on4R()'>BM Viewer</a></li>
+                                        <li><a href='#' onclick='on5R()'>TH Viewer</a></li>
+                                        <li><a href='#' onclick='on6R()'>Nate Smith 13/52</a></li>
+                                        <li><a href='#' onclick='on7R()'>TWhisper 55-13</a></li>
+                                        <li><a href='#' onclick='on10R()'>TWhisper-52k-11m</a></li>
+                                        <li><a href='#' onclick='on11R()'>TWhisper-52k-13m</a></li>
+                                        <li><a href='#' onclick='on12R()'>TWhisper-55k-11m</a></li>
+                                        <li><a href='#' onclick='on13R()'>TWhisper-58k-11m</a></li>
+                                        <li><a href='#' onclick='on14R()'>TWhisper-58k-13m</a></li>
+                                        <li><a href='#' onclick='on8R()'>NG Viewer</a></li>
+                                        <li><a href='#' onclick='on1R()'>Jamie Bull 52-13</a></li>
+                                        <li><a href='#' onclick='on9R()'>Nate Smith 52k-11m</a></li>
+                                        <li><a href='#' onclick='on15R()'>HM Viewer</a></li>
+</uk>
+
+
+
+
 ">    
     <div id="messageR" display="inline-block"></div> 
  
@@ -232,25 +247,25 @@ or ES6 equivalent:
 
                                       <div class="dropdownR-content">
                                         <ul> 
-                                        <li><a href="#" onclick="on8R()">Nate Smith 52-13</a></li>
-                                        <li><a href="#" onclick="on1R()">Jamie Bull 52-13</a></li>
-                                        <li><a href="#" onclick="on2R()">Nate Smith 55-13</a></li>
-                                        <li><a href="#" onclick="on3R()">Fred Winter 52-11</a></li>
-                                        <li><a href="#" onclick="on4R()">BM Viewer</a></li>
-                                        <li><a href="#" onclick="on5R()">TH Viewer</a></li>
-                                        <li><a href="#" onclick="on6R()">Nate Smith 13/52</a></li>
-                                        <li><a href="#" onclick="on7R()">TWhisper 55-13</a></li>
-                                        <li><a href="#" onclick="on8R()">NG Viewer</a></li>
-                                        <li><a href="#" onclick="on1R()">Jamie Bull 52-13</a></li>
-                                        <li><a href="#" onclick="on9R()">Nate Smith 52k-11m</a></li>
-                                        <li><a href="#" onclick="on10R()">TK Viewer</a></li>
-                                        <li><a href="#" onclick="on11R()">SK Viewer</a></li>
-                                        <li><a href="#" onclick="on12R()">MV Viewer</a></li>
-                                        <li><a href="#" onclick="on13R()">RB Viewer</a></li>
-                                        <li><a href="#" onclick="on14R()">ET Viewer</a></li>
-                                        <li><a href="#" onclick="on15R()">HM Viewer</a></li>
-                                        <li><a href="#" onclick="onvideoBackR()">Prior</a></li>
-                                        <li><a href="#">Link 3</a></li>
+                                        <li><a href='#' onclick='on8R()'>Nate Smith 52-13</a></li>
+                                        <li><a href='#' onclick='on1R()'>Jamie Bull 52-13</a></li>
+                                        <li><a href='#' onclick='on2R()'>Nate Smith 55-13</a></li>
+                                        <li><a href='#' onclick='on3R()'>Fred Winter 52-11</a></li>
+                                        <li><a href='#' onclick='on4R()'>BM Viewer</a></li>
+                                        <li><a href='#' onclick='on5R()'>TH Viewer</a></li>
+                                        <li><a href='#' onclick='on6R()'>Nate Smith 13/52</a></li>
+                                        <li><a href='#' onclick='on7R()'>TWhisper 55-13</a></li>
+                                        <li><a href='#' onclick='on10R()'>TWhisper-52k-11m</a></li>
+                                        <li><a href='#' onclick='on11R()'>TWhisper-52k-13m</a></li>
+                                        <li><a href='#' onclick='on12R()'>TWhisper-55k-11m</a></li>
+                                        <li><a href='#' onclick='on13R()'>TWhisper-58k-11m</a></li>
+                                        <li><a href='#' onclick='on14R()'>TWhisper-58k-13m</a></li>
+                                        <li><a href='#' onclick='on8R()'>NG Viewer</a></li>
+                                        <li><a href='#' onclick='on1R()'>Jamie Bull 52-13</a></li>
+                                        <li><a href='#' onclick='on9R()'>Nate Smith 52k-11m</a></li>
+                                        <li><a href='#' onclick='on15R()'>HM Viewer</a></li>
+                                        <li><a href='#' onclick='onvideoBackR()'>Prior</a></li>
+                                        <li><a href='#'>Link 3</a></li>
                                         </ul>
                                       </div>
                                     </div>
@@ -318,7 +333,9 @@ or ES6 equivalent:
                 
         <div class="controlsR"><span class="drag" title="Drag Right Zoom Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span></div>
 
-					<div class="toolblock">
+					<div class="toolblock"><span title="Drag Canvas down with far right ruler to draw upon it." class="box">Use vertical ruler at far upper right of screen to drag Canvas down for drawing upon it.<span title="Close this message box"            
+					     class="closebtn2">&nbsp;&nbsp;&#11097;</span></span>
+
 															
 								 <div class="inner_tool">
 									<button class="line-drawing-tools" data-value="circle">

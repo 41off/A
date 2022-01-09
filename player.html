@@ -107,8 +107,7 @@ or ES6 equivalent:
        
       
       <button class="Mbtn ML" title="View Left Player Only" href="#" onclick="window.location.href='playerL.html';">[\+/]</button> 
-           
-       <input type="file" class="custom-file-input" accept="video/mp4" data-toggle="popover" data-placement="right" title="Details Below. This popover will auto-destruct in 90 seconds!" data-html="true" 
+      <button class="popmenu" title="Click here or anywhere outside gray box to close menu" data-toggle="popover" data-placement="left" data-html="true" 
                            data-content="
                            
 1.) Click “Choose your own .mp4” to play a video clip from your machine. The script in this player renders your .mp4 file (only .mp4 files are supported) as an URL object allowing the HTML5 features in your browser to stream the file locally. Chrome is the best browser, Mozilla is decent. Have not tried with Safari.
@@ -124,8 +123,10 @@ or ES6 equivalent:
 <br>
 <br>
 5.)	Click anywhere outside this menu to close it.
-">        
-          <div id="message" display="inline-block"></div> 
+">Click for Pop-Out Menu</button>
+           
+       <input type="file" class="custom-file-input" accept="video/mp4">        
+         
        
      <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
      
@@ -200,9 +201,8 @@ or ES6 equivalent:
          </div>
 
     
-    <button class="Mbtn MR" title="View Right Player Only" href="#" onclick="window.location.href='playerR.html';">[\+/]</button>      
-         
-    <input type="file" class="custom-file-input" accept="video/mp4" name="video" data-toggle="popover" data-placement="right" title="Details Below. This popover will auto-destruct in 90 seconds!" data-html="true" 
+    <button class="Mbtn MR" title="View Right Player Only" href="#" onclick="window.location.href='playerR.html';">[\+/]</button>
+     <button class="popmenu" title="Click here or anywhere outside gray box to close menu" data-toggle="popover" data-placement="right" data-html="true" 
                            data-content="
 1.)	Clips of Pro Skiers or Club members are found in the respective dropdown menus at bottom left of each screen.
 <br>
@@ -230,10 +230,10 @@ or ES6 equivalent:
                                         <li><a href='#' onclick='on15R()'>HM Viewer</a></li>
 </uk>
 
-
-
-
-">    
+">Click for Pop-Out Menu</button>
+      
+         
+    <input type="file" class="custom-file-input" accept="video/mp4" name="video">    
     <div id="messageR" display="inline-block"></div> 
  
     <script type="text/javascript" src="plugins/41off-loadR.js"></script>

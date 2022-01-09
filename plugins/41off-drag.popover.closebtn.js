@@ -99,7 +99,7 @@ $(document).ready(function() {
     $(this).popover('show');
 */
 
-  $('[data-toggle="popover"]').on("mouseenter", function() {
+  $('[data-toggle="popover"]').on("click", function() {
     $(this).popover('show');
            
  //   setTimeout(function () {
@@ -113,7 +113,7 @@ $(document).ready(function() {
 
 
   
-  $('#wrap, popover-title').on('click', function(e) {
+  $('#wrap').on('click', function(e) {
        
    
     $('[data-toggle=popover]').each(function() {

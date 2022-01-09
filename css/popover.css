@@ -18,14 +18,14 @@
 
 
 .popover {
-margin-left:36.25%;
+
 z-index:1;
 padding:4px;
 font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 font-size:12pt;
 font-style:normal;
 font-weight:500;
-line-height:1.5;
+line-height:1.75;
 text-align:center;
 text-decoration:blink;
 text-shadow: 1px 1px white;
@@ -34,28 +34,31 @@ letter-spacing:normal;
 word-spacing:normal;
 white-space:normal;
 background-color:silver;
-border:1px solid #ccc;
 border:1px solid rgba(0,0,0,.2);
 border-radius:6px;
 width:98%;
-opacity:0.65;
 transition: 3s;
--webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadeout 15s; /* Firefox < 16 */
-        -ms-animation: fadeout 15s; /* Internet Explorer */
-         -o-animation: fadeout 15s; /* Opera < 12.1 */
-            animation: fadeout 15s;  
+-webkit-animation: fadeout 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 2s; /* Firefox < 16 */
+        -ms-animation: fadeout 2s; /* Internet Explorer */
+         -o-animation: fadeout 2s; /* Opera < 12.1 */
+            animation: fadeout 2s; 
+opacity:0.85; 
 
 }
 
 
-.popover.top{margin-top:-25px}
+.popover.top {
+margin-top:-1%;
+margin-left:-36%;
 
-.popover.right{margin-left:-10px}
+}
+
+.popover.right{margin-left:10px}
 
 .popover.bottom{margin-top:5px}
 
-.popover.left{margin-left:-10px}
+.popover.left{margin-left:10px}
 
 
 .popover-title {
@@ -71,32 +74,18 @@ transition: 3s;
   text-align:center;
   color:red;
   line-height:26px;
-  height:auto
+  height:auto;
+  opacity:1.0;
 }
 
 .popover-body {
     overflow-y: scroll;
     white-space:pre-wrap;
+    float:left;
+    
   
     
 }
-
-.popover-footer {
-  display:inline-block;
-  padding: 10px 10px;
-  margin:0 auto;
-  width:98%;
-  font-size:16px;
-  background-color:#f7f7f7;
-  border-bottom:1px solid #ebebeb;
-  border-radius:5px 5px 0 0;
-  text-shadow: 1px 1px silver;
-  text-align:center;
-  color:red;
-  line-height:26px;
-  height:auto
-}
-
 
 .popover-content {
   width:auto;
@@ -120,6 +109,7 @@ transition: 3s;
   text-indent:12px;
   text-shadow: 0.5px 0.5px black;
   font-weight:500;
+ 
   
 }
 
@@ -165,15 +155,15 @@ transition: 3s;
 
 .popover>.arrow,.popover>.arrow:after{position:absolute;display:block;width:0;height:0;border-color:transparent;border-style:solid}
 
-.popover>.arrow{border-width:15px}.popover>.arrow:after{content:"";border-width:10px}
+.popover>.arrow{border-width:15px}.popover>.arrow:after{content:"";border-width:15px}
 
 .popover.top>.arrow {
-bottom:-27px; 
-left:1% !important;
+bottom:-20px; 
+right:1% !important;
 margin-left:0px;
-border-top-color:pink;
+border-top-color:red;
 border-style:groove;
-border-bottom-width:5px;
+border-bottom-width:15px;
 
 }
 

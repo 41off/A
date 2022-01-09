@@ -15,12 +15,12 @@ body {
 }
 
 .custom-file-input::before {
-  content: 'Choose your own .mp4 video';
+  content: 'Click to Choose your own .mp4 video';
   display: inline-block;
   background: -webkit-linear-gradient(top, lightgray, black);
   border: 1px solid #999;
-  border-radius: 3px;
-  padding: 5px 8px;
+  border-radius: 6px;
+  padding: 3px 5px;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
@@ -29,7 +29,7 @@ body {
   font-weight: 700;
   font-size: 10pt;
   color:white;
-  float:left
+  float:left;
 }
 .custom-file-input:hover::before {
   border-color: black;
@@ -41,79 +41,6 @@ body {
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, pink, #f9f9f9);
 }
-
-
-
-
-.L-file-input::-webkit-file-upload-button {
-  visibility: hidden;
-  
-}
-
-.L-file-input::before {
-  content: 'View';
-  display: inline-block;
-  background: -webkit-linear-gradient(top, lightgray, black);
-  border: 1px solid #999;
-  border-radius: 3px;
-  padding: 5px 8px;
-  outline: none;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-  text-shadow: 1px 1px black;
-  font-weight: 700;
-  font-size: 10pt;
-  color:white;
-  float:right
-
-   
-}
-.L-file-input:hover::before {
-  border-color: black;
-  background: -webkit-linear-gradient(top, lightyellow, lightpink);
-  text-shadow: 1px 1px silver;
-  color:black;
-
-}
-.L-file-input:active::before {
-  background: -webkit-linear-gradient(top, pink, #f9f9f9);
-}
-
-
-
-.double::-webkit-file-upload-button {
-  visibility: hidden;
-  
-}
-
-.double::before {
-  content: 'Go Back to Side-by-Side View';
-  display: inline-block;
-  background: -webkit-linear-gradient(top, lightgray, black);
-  border: 1px solid #999;
-  border-radius: 3px;
-  padding: 5px 8px;
-  outline: none;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-  text-shadow: 1px 1px black;
-  font-weight: 700;
-  font-size: 10pt;
-  color:white;
-}
-.double:hover::before {
-  border-color: black;
-  background: -webkit-linear-gradient(top, lightyellow, lightpink);
-  text-shadow: 1px 1px silver;
-  color:black;
-
-}
-.double:active::before {
-  background: -webkit-linear-gradient(top, pink, #f9f9f9);
-}
-
 
 
 
@@ -454,6 +381,40 @@ body {
     border-color: white;
     background: -webkit-linear-gradient(top, lightgray, #008CBA);
     color: black;
+}
+
+.popmenu {
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 10pt;
+    color:white;
+    line-height:14px;
+    margin: 2px 2px;
+    margin-top: 2px;
+    padding-top:3px;
+    padding-bottom:2px;
+    padding-left:3px;
+    padding-right:3px;
+    height: 26px;
+    width: auto; 
+    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
+    cursor: pointer;
+    border: 2px solid #999;
+    border-radius: 6px;
+    border-style:groove;
+    float:right;
+    position:relative;
+    background: -webkit-linear-gradient(top, lightgray, black);
+
+}
+
+.popmenu:hover {
+  border-color: black;
+  background: -webkit-linear-gradient(top, lightyellow, lightpink);
+  text-shadow: 1px 1px silver;
+  color:black;
+
 }
 
 

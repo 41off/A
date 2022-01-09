@@ -7,7 +7,7 @@
             video_player.currentTime();
             timer.start(10);
             
-       }
+    }
        
        
  function onloadR(){
@@ -20,9 +20,6 @@
             timerR.start(10)
      }
   
- 
- 
- 
  
  
   function multiStartB() {
@@ -444,7 +441,9 @@
    }
 
   
-        var video_directory = ['https://www.dropbox.com/s/9kxq97lunb2xn9n/JM%2052k-11mb.mp4?raw=1',
+        var video_directory = ['https://www.dropbox.com/s/xpjr6mgml5k8ml1/FWinter-58k-11m.mp4?raw=1',
+                               'https://www.dropbox.com/s/9kxq97lunb2xn9n/JM%2052k-11mb.mp4?raw=1',
+                               
                                'https://www.dropbox.com/s/7413essf1mxro6j/V1.mp4?raw=1',
                                'https://www.dropbox.com/s/ih9se43lx6ixj02/JE-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/75luo4kenawyp1o/BM-52-13.mp4?raw=1',
@@ -597,14 +596,11 @@ $("#negative3").click(function() { // button function for rewind
 });
 */
             
-       function on0L(){
+       function on1L(){
             console.log("0 ended");
-            video_index = 0;
+            video_index = 1;
             video_player.setAttribute("src", video_directory[video_index]);
-            videoR_index = 0;
-            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
-
-                       
+                                
         var btn = document.getElementById("modal");
       
             if (btn.value == "JM-52k-11m") {
@@ -620,24 +616,24 @@ $("#negative3").click(function() { // button function for rewind
               }
           }
         
-        function on1L(){
+        function on0L(){
             console.log("1 ended");
-            video_index = 1;
+            video_index = 0;
             video_player.setAttribute("src", video_directory[video_index]);
-           
+                     
          var btn = document.getElementById("modal");
               
-            if (btn.value == "V1.mp4") {
-              btn.value = "V1.mp4";
-              btn.innerHTML = '<button id="modtext">V1.mp4</button>';             
+            if (btn.value == "FredWinter-58k-11m") {
+              btn.value = "FredWinter-58k-11m";
+              btn.innerHTML = '<button id="modtext">FredWinter-58k-11m</button>';             
               timer.reset();
               video_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
-              btn.value = "V1.mp4";
-              btn.innerHTML =  '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "FredWinter-58k-11m";
+              btn.innerHTML =  '<button id="modtext">FredWinter-58k-11m&#129093;</button>';
               timer.stop();
               video_player.pause();              
               }
@@ -693,7 +689,7 @@ $("#negative3").click(function() { // button function for rewind
             console.log("4 ended");
             video_index = 4;
             video_player.setAttribute("src", video_directory[video_index]);
-            videoR_index = 4;
+            videoR_index = 2;
             videoR_player.setAttribute("src", videoR_directory[videoR_index]);
 
                         
@@ -1142,22 +1138,24 @@ $("#negative3").click(function() { // button function for rewind
    }
    
   
-        var videoR_directory = ['https://www.dropbox.com/s/0xdysd8eszm4m5r/FWinter%2052k-11m.mp4?raw=1',
+        var videoR_directory = ['https://www.dropbox.com/s/wi6oikkgds2f6is/NateSmith-58k-11m.mp4?raw=1',
+                                'https://www.dropbox.com/s/0xdysd8eszm4m5r/FWinter%2052k-11m.mp4?raw=1',
                                'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
-                               'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
+                               
                                'https://www.dropbox.com/s/0xdysd8eszm4m5r/FWinter%2052k-11m.mp4?raw=1',
+                               'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
                                'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
                                'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
-                               'https://www.dropbox.com/s/gbylnf22v2y9z2p/PG-08-22-2021.mp4?raw=1',
+                               'https://www.dropbox.com/s/xpjr6mgml5k8ml1/FWinter-58k-11m.mp4?raw=1',
                                'https://www.dropbox.com/s/gdnz5mdfxjq3hel/TWhisper-55k-13m.mp4?raw=1',
-                               'https://www.dropbox.com/s/f6fvnwe0qi7joyc/V2.mp4?raw=1',
+                               
                                'https://www.dropbox.com/s/i76zs5g0snmmf1d/NateSmith-52k-11mb.mp4?raw=1',
                                'https://www.dropbox.com/s/ztqqdo8wyua0z28/TWhisper-52k-11m.mp4?raw=1',
                                'https://www.dropbox.com/s/6i4c298r83sdezp/TWhisper-52k-13m.mp4?raw=1',
                                'https://www.dropbox.com/s/x6xl9643twkar2v/TWhisper-55k-11m.mp4?raw=1',
                                'https://www.dropbox.com/s/3yio8nq5xvxkcog/TWhisper-58k-11m.mp4?raw=1',
                                'https://www.dropbox.com/s/dslnk6u6sxxbp1e/TWhsisper-58k-13m.mp4?raw=1',
-                               'https://www.dropbox.com/s/spmsl2jlhgjyhfi/PG.mp4?raw=1'
+                               'https://www.dropbox.com/s/wi6oikkgds2f6is/NateSmith-58k-11m.mp4?raw=1'
                                ];                      
  
   
@@ -1287,17 +1285,17 @@ $("#negative3R").click(function() { // button function for rewind
                        
         var btn = document.getElementById("modalR");
       
-            if (btn.value == "Latest") {
-              btn.value = "Latest";
-              btn.innerHTML = '<button id="modRtext">Latest</button>';              
+            if (btn.value == "NateSmith-58k-11m") {
+              btn.value = "NateSmith-58k-11m";
+              btn.innerHTML = '<button id="modRtext">NateSmith-58k-11m</button>';              
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "Latest";
-              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "NateSmith-58k-11m";
+              btn.innerHTML = '<button id="modRtext">NateSmith-58k-11m&#129093;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1310,9 +1308,9 @@ $("#negative3R").click(function() { // button function for rewind
            
          var btn = document.getElementById("modalR");
               
-            if (btn.value == "JamieBull-52k-13m") {
-              btn.value = "JamieBull-52k-13m";
-              btn.innerHTML = '<button id="modRtext">JamieBull-52k-13m</button>';             
+            if (btn.value == "FredWinter-52k-13m") {
+              btn.value = "FredWinter-52k-13m";
+              btn.innerHTML = '<button id="modRtext">FredWinter-52k-13m</button>';             
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1320,7 +1318,7 @@ $("#negative3R").click(function() { // button function for rewind
               }
             else {
               btn.value = "JamieBull-52k-13m4";
-              btn.innerHTML =  '<button id="modRtext">JamieBull-52k-13m&#129093;</button>';
+              btn.innerHTML =  '<button id="modRtext">FredWinter-52k-13m&#129093;</button>';
               timerR.stop();
               videoR_player.pause();              
               }
@@ -1333,17 +1331,17 @@ $("#negative3R").click(function() { // button function for rewind
             
           var btn = document.getElementById("modalR");
       
-            if (btn.value == "V2.mp4") {
-              btn.value = "V2.mp4";
-              btn.innerHTML = '<button id="modRtext">V2.mp4</button>';
+            if (btn.value == "JamieBull-52k-13m") {
+              btn.value = "JamieBull-52k-13m";
+              btn.innerHTML = '<button id="modRtext">JamieBull-52k-13m&#129093;</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "V2.mp4";
-              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.value = "JamieBull-52k-13m";
+              btn.innerHTML = '<button id="modRtext">JamieBull-52k-13m&#129093;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1356,17 +1354,17 @@ $("#negative3R").click(function() { // button function for rewind
             
            var btn = document.getElementById("modalR");
       
-            if (btn.value == "F Winter-52-11") {
-              btn.value = "F Winter-52-11";
-              btn.innerHTML = '<button id="modRtext">F Winter-52-11</button>';
+            if (btn.value == "FredWinter-52-11") {
+              btn.value = "FredWinter-52-11";
+              btn.innerHTML = '<button id="modRtext">FredWinter-52-11</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "F Winter-52-11";
-              btn.innerHTML = '<button id="modRtext">Fred Winter-52-11&nbsp;&nbsp;&#129093;</button>';              
+              btn.value = "FredWinter-52-11";
+              btn.innerHTML = '<button id="modRtext">FredWinter-52-11&nbsp;&nbsp;&#129093;</button>';              
               timerR.stop();
               videoR_player.pause();
               }
@@ -1425,9 +1423,9 @@ $("#negative3R").click(function() { // button function for rewind
                         
           var btn = document.getElementById("modalR");
       
-            if (btn.value == "Clip 7") {
+            if (btn.value == "FWinter-58k-11m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modRtext">Clip 7</button>';
+              btn.innerHTML = '<button id="modRtext"FWinter-58k-11m</button>';
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
@@ -1435,7 +1433,7 @@ $("#negative3R").click(function() { // button function for rewind
               }
             else {
               btn.value = "Clip 7";
-              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
+              btn.innerHTML = '<button id="modRtext">FWinter-58k-11m&#129093;</button>';
               timerR.stop();
               videoR_player.pause();
               }
@@ -1469,17 +1467,17 @@ $("#negative3R").click(function() { // button function for rewind
             
            var btn = document.getElementById("modalR");
       
-            if (btn.value == "Clip 9") {
+            if (btn.value == "NateSmith-58k-11m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modRtext">Clip 9</button>';              
+              btn.innerHTML = '<button id="modRtext">NateSmith-58k-11m</button>';              
               timerR.reset();
               videoR_player.play();
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "Clip 9";
-              btn.innerHTML = '<button id="modRtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
+              btn.value = "NateSmith-58k-11m";
+              btn.innerHTML = '<button id="modRtext">NateSmith-58k-11m&#129093;</button>';              
               timerR.stop();
               videoR_player.pause();
               }

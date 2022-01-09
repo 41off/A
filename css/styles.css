@@ -396,7 +396,7 @@ body {
     padding-bottom:2px;
     padding-left:3px;
     padding-right:3px;
-    height: 26px;
+    height: auto;
     width: auto; 
     -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
     cursor: pointer;
@@ -426,13 +426,14 @@ body {
     font-family:Verdana;
     line-height:14px;
     margin: 2px 2px;
+    margin-right:4px;
     margin-top: 2px;
-    padding-top:1px;
-    padding-bottom:2px;
-    padding-left:2px;
-    padding-right:2px;
+    padding-top:2px;
+    padding-bottom:3px;
+    padding-left:4px;
+    padding-right:4px;
     width: auto; 
-    height: 24px;
+    height: auto;
     -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
     cursor: pointer;
     border: 4px;

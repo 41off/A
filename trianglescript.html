@@ -1,0 +1,112 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Untitled 1</title>
+
+
+ <script src="js/jquery-3.6.0.js"></script>
+ <script src="js/jquery-ui.js"></script>
+ 
+
+</head>
+<style>
+
+#triangleCanvas {
+background-color:gray;	
+	
+}
+</style>
+
+<body>
+<canvas id="triangleCanvas" width="600px" height="600px"></canvas>
+   
+<button title="View Left Player Only" href="#" onclick="drawTriangle(x1,y1,x2,y2,x3,y3)">[\+/]</button>
+
+<script>
+
+var canvas = document.getElementById("triangleCanvas");
+var ctx = canvas.getContext('2d');
+var textX = x + Math.cos(startAngle + sweepAng / 2) * minDist *2;
+var textY = y + Math.sin(startAngle + sweepAng / 2) * minDist *2;
+// ctx is the canvas context
+
+// function to get distance
+function distance(x, y, xx, yy) {
+   return Math.sqrt(Math.pow(x - xx, 2) + Math.pow(y - yy, 2) );
+}
+
+// function gets the direction of a line
+function direction(x, y, xx, yy) {
+   var angV = Math.acos( (xx - x) / Math.sqrt( Math.pow(x - xx, 2) + Math.pow(y - yy, 2) ) );
+
+   if (y - yy > 0) angV = - angV; // check the sign
+
+   return (angV + Math.PI * 2) % (Math.PI * 2); // makes the angle positive. 
+                                                // Not needed but for this 
+                                                // makes it easier to understand
+}
+
+// function to draw a triangle with angle marks
+// pass it the 3 points at the corners of the triangle.
+// will handle any triangle
+function drawTriangle(x1,y1,x2,y2,x3,y3){ 
+    // function to draw angle
+    function drawAngle(x, y, dirA, dirB){
+        dirB += Math.PI;              // revers second direction
+        var sweepAng = dirB - dirA;   // angle between lines
+        var startAng = dirA;          // angle to start the sweep of the arc
+        if(Math.abs(sweepAng) > Math.PI){  // if the angle us greater the 180
+            sweepAng = Math.PI * 2 - sweepAng;  // get the smaller angle
+            startAng = dirB;          // and change the start angle
+        }
+        ctx.beginPath();
+        if(sweepAng < 0){                  // if the angle is sweeping anticlockwise
+            ctx.arc(x, y, minDist ,startAng + sweepAng , startAng);
+        }else{                        // draw clockwise angle
+            ctx.arc(x, y, minDist, startAng, startAng + sweepAng);
+        }
+        ctx.stroke();                 // all done
+    }
+
+     ctx.lineWidth = 3;               // draw the lines of the triangle
+     ctx.strokeStyle = "black";
+     ctx.beginPath();
+     ctx.moveTo(x1, y1);
+     ctx.lineTo(x2, y2);
+     ctx.lineTo(x3, y3);
+     ctx.closePath();
+     ctx.stroke();
+
+     // now work out the radius of the angle stroke
+     var dist1 = distance(x1, y1, x2, y2);  // get the 3 distance of the lines
+     var dist2 = distance(x2, y2, x3, y3);
+     var dist3 = distance(x3, y3, x1, y1);
+     var minDist = Math.min(dist1, dist2, dist3); // get the min dist;
+     if(minDist === 0){
+        return; // there are no angles to draw and exit 
+                // to avoid divide by zero in direction function
+     }
+     minDist /= 5; // get the amgle arc radius 1/5th
+
+     var dir1 = direction(x1, y1, x2, y2);  // get the 3 directions of the lines
+     var dir2 = direction(x2, y2, x3, y3);
+     var dir3 = direction(x3, y3, x1, y1);
+
+    drawAngle(x1, y1, dir1, dir3); // draw the angle stoke first corner;
+    drawAngle(x2, y2, dir2, dir1); // draw the angle stoke second corner;
+    drawAngle(x3, y3, dir3, dir2); // draw the angle stoke third;
+} 
+
+
+</script>
+
+<script src="plugins/fabric/fabric.min.js"></script>
+   <script src="js/commonFunctionBothProtractor.js"></script>
+
+
+
+</body>
+
+</html>

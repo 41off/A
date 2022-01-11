@@ -37,7 +37,7 @@ white-space:normal;
 background-color:silver;
 border:1px solid rgba(0,0,0,.2);
 border-radius:6px;
-width:98%;
+width:96%;
 transition: 3s;
 -webkit-animation: fadeout 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 2s; /* Firefox < 16 */
@@ -51,7 +51,7 @@ opacity:0.85;
 
 .popover.top {
 margin-top:-1%;
-margin-left:-36%;
+margin-left:-33%;
 
 }
 
@@ -401,3 +401,46 @@ uk {
 .dropdownR-content p{
     clear:right;
 }
+
+
+.Maindiv
+				{
+				width:500px;
+				height:500px;
+				border:1px solid red;
+				}
+		.p1
+				{
+				width:10px;
+				height:10px;
+				background-color:yellow;
+				border-radius:10px;
+				position:absolute;
+				left:50px;
+				top:50px;
+				cursor:pointer
+				}
+		.p2
+				{
+				width:10px;
+				height:10px;
+				background-color:yellow;
+				border-radius:10px;
+				position:absolute;
+				left:150px;
+				top:50px;
+				cursor:pointer
+				}
+		.p3
+				{
+				width:10px;
+				height:10px;
+				background-color:yellow;
+				border-radius:10px;
+				position:absolute;
+				left:150px;
+				top:150px;
+				cursor:pointer
+				}
+		
+ 

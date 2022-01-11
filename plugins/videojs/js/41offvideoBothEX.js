@@ -627,7 +627,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "FredWinter-58k-11m";
               btn.innerHTML = '<button id="modtext">FredWinter-58k-11m</button>';             
               timer.reset();
-              video_player.play();
+              
               timer.start(10);
               timer.mode(1);
               }
@@ -650,7 +650,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "V2.mp4";
               btn.innerHTML = '<button id="modtext">V2.mp4</button>';
               timer.reset();
-              video_player.play();
+              
               timer.start(10);
               timer.mode(1);
               }
@@ -673,7 +673,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "V3.mp4";
               btn.innerHTML = '<button id="modtext">V3.mp4</button>';
               timer.reset();
-              video_player.play();
+              
               timer.start(10);
               timer.mode(1);
               }
@@ -689,9 +689,7 @@ $("#negative3").click(function() { // button function for rewind
             console.log("4 ended");
             video_index = 4;
             video_player.setAttribute("src", video_directory[video_index]);
-            videoR_index = 2;
-            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
-
+           
                         
            var btn = document.getElementById("modal");
       
@@ -713,8 +711,7 @@ $("#negative3").click(function() { // button function for rewind
             console.log("5 ended");
             video_index = 5;
             video_player.setAttribute("src", video_directory[video_index]);
-            videoR_index = 5;
-            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
+            
                         
           var btn = document.getElementById("modal");
       
@@ -742,7 +739,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modtext">Clip 7</button>';
               timer.reset();
-              video_player.play();
+           
               timer.start(10);
               timer.mode(1);
               }
@@ -765,7 +762,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modtext">Clip 8</button>';
               timer.reset();
-              video_player.play();
+            
               timer.start(10);
               timer.mode(1);
               }
@@ -781,7 +778,7 @@ $("#negative3").click(function() { // button function for rewind
             console.log("8 ended");
             video_index = 8;
             video_player.setAttribute("src", video_directory[video_index]);
-            video_player.play();
+            
             
            var btn = document.getElementById("modal");
       
@@ -789,7 +786,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modtext">JM-52k-13m</button>';              
               timer.reset();
-              video_player.play();
+             
               timer.start(10);
               timer.mode(1);
               }
@@ -805,10 +802,7 @@ $("#negative3").click(function() { // button function for rewind
            console.log("9 ended");
            video_index = 9;
            video_player.setAttribute("src", video_directory[video_index]);
-           video_player.play();
-           videoR_index = 9;
-           videoR_player.setAttribute("src", videoR_directory[videoR_index]);
-
+           
            
           var btn = document.getElementById("modal");
       
@@ -816,7 +810,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modtext">JE 52k-11m</button>';
               timer.reset();
-              video_player.play();
+              
               timer.start(10);
               timer.mode(1);
               }
@@ -839,7 +833,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modtext">Clip 11</button>';
               timer.reset();
-              video_player.play();
+             
               timer.start(10);
               timer.mode(1);
               }
@@ -861,7 +855,7 @@ $("#negative3").click(function() { // button function for rewind
             }
             video_player = document.getElementById("video");
             video_player.setAttribute("src", video_directory[video_index]);
-            video_player.play();
+            
            
            var btn = document.getElementById("modal");
       
@@ -869,7 +863,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "Play";
               btn.innerHTML = '<button id="modtext">V11.mp4</button>';              
               timer.reset();
-              video_player.play();
+              
               timer.start(10);
               timer.mode(1);
               }
@@ -892,7 +886,7 @@ $("#negative3").click(function() { // button function for rewind
             }
             video_player = document.getElementById("video");
             video_player.setAttribute("src", video_directory[video_index]);
-            video_player.play();
+           
            
            var btn = document.getElementById("modal");
       
@@ -900,7 +894,7 @@ $("#negative3").click(function() { // button function for rewind
               btn.value = "Play";
               btn.innerHTML = '<button id="modtext">V12.mp4</button>';              
               timer.reset();
-              video_player.play();
+             
               timer.start(10);
               timer.mode(1);
               }
@@ -1289,7 +1283,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "NateSmith-58k-11m";
               btn.innerHTML = '<button id="modRtext">NateSmith-58k-11m</button>';              
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1312,7 +1306,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "FredWinter-52k-13m";
               btn.innerHTML = '<button id="modRtext">FredWinter-52k-13m</button>';             
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1335,7 +1329,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "JamieBull-52k-13m";
               btn.innerHTML = '<button id="modRtext">JamieBull-52k-13m&#129093;</button>';
               timerR.reset();
-              videoR_player.play();
+             
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1358,7 +1352,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "FredWinter-52-11";
               btn.innerHTML = '<button id="modRtext">FredWinter-52-11</button>';
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1381,7 +1375,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">V4.mp4</button>';
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1404,7 +1398,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "V5.mp4";
               btn.innerHTML = '<button id="modRtext">V5.mp4</button>';
               timerR.reset();
-              videoR_player.play();
+             
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1427,7 +1421,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext"FWinter-58k-11m</button>';
               timerR.reset();
-              videoR_player.play();
+            
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1463,7 +1457,7 @@ $("#negative3R").click(function() { // button function for rewind
             console.log("8 ended");
             videoR_index = 8;
             videoR_player.setAttribute("src", videoR_directory[videoR_index]);
-            videoR_player.play();
+            
             
            var btn = document.getElementById("modalR");
       
@@ -1471,7 +1465,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">NateSmith-58k-11m</button>';              
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1487,7 +1481,7 @@ $("#negative3R").click(function() { // button function for rewind
            console.log("9 ended");
            videoR_index = 9;
            videoR_player.setAttribute("src", videoR_directory[videoR_index]);
-           videoR_player.play();
+         
            
           var btn = document.getElementById("modalR");
       
@@ -1495,7 +1489,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">Nate Smith-52k-11m</button>';
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1518,7 +1512,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">TWhisper-52k-11m</button>';
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1541,7 +1535,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">TWhisper-52k-13m</button>';
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1565,7 +1559,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1590,7 +1584,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">TWhisper-58k-11m</button>';
               timerR.reset();
-              videoR_player.play();
+             
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1615,7 +1609,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">TWhisper-58k-13m</button>';
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1638,7 +1632,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
               timerR.reset();
-              videoR_player.play();
+             
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1661,7 +1655,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
               timerR.reset();
-              videoR_player.play();
+              
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1684,7 +1678,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
               timerR.reset();
-              videoR_player.play();
+              ;
               timerR.start(10);
               timerR.mode(1);
               }
@@ -1707,7 +1701,7 @@ $("#negative3R").click(function() { // button function for rewind
               btn.value = "";
               btn.innerHTML = '<button id="modRtext">TWhisper-55k-11m</button>';
               timerR.reset();
-              videoR_player.play();
+            
               timerR.start(10);
               timerR.mode(1);
               }

@@ -1,0 +1,184 @@
+﻿<html lang="en" false="" class=" notification passiveeventlisteners touchevents"><head>
+    <meta charset="utf-8">
+    <title>Online protractor &amp; angle maker | interactive angle visualiser | visnos</title>
+
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Visnos">
+    <meta name="apple-mobile-web-app-title" content="Visnos">
+    <meta name="theme-color" content="#1e69de">
+    <meta name="msapplication-navbutton-color" content="#1e69de">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-starturl" content="/demos">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="author" href="/humans.txt">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Easy measure angles, using interactive whiteboard angle simulator. Online protractor or angle problems with acute, obtuse, reflex angles. Further complementary, supplementary and angles at a point. Use on interactive whiteboards, angles can be automatically shown or measured with a protractor.">
+    <meta name="author" content="mc@visnos.com">
+
+<link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    
+    <link rel="canonical" href="https://www.visnos.com/demos/basic-angles">
+    
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-28282838-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-28282838-1');
+		</script>
+		
+	<style type="text/css">#loader{position:absolute;top:10%;width:100%;text-align:center}.load-ring:after{content:" ";display:inline-block;text-align:center;width:200px;max-width:100%;height:200px;margin:1px;border-radius:50%;border:10px solid #00f;border-color:red transparent #00f;animation:ring 1.5s linear infinite}@keyframes ring{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}</style>
+    
+	<!--[if lt IE 9]>
+    	<script src="/3-5-9/js/exlib/html5shiv.min.js"></script>
+  	<![endif]-->
+</head>
+	<body class="activity" style="cursor: auto;">
+    	<div id="container">
+			<div id="mCanv" data-widname="basic-angles" class="mc-widget mc-basic-angles mc-mouse-pane"><canvas width="698" height="524" style="position: absolute; left: 0px; top: 180px;"></canvas><div class="mc-hold mc-widget mc-protractor" style="left: 0px; top: 180px; width: 523.5px; height: 523.5px; display: none;"><canvas width="524" height="524" style="position: absolute; left: -1px; top: -1px;"></canvas></div><div id="mc-id-0" class="mc-ctrl mc-group-0" style="left: 567.125px; top: 180px; width: 130.875px; height: 523.5px; font-size: 523.5px; background: darkblue;"></div><div id="mc-id-2" class="mc-ctrl mc-group-0 ui-corner-all" style="left: 0px; top: 180px; width: 130.875px; height: 43.625px; font-size: 28.3562px;"><select><option value="one">one</option><option value="complementary">complementary</option><option value="supplementary">supplementary</option><option value="point">point</option><option value="intersect">intersect</option></select></div><div id="mc-id-4" class="mc-ctrl mc-group-0 ui-corner-all" style="left: 130.875px; top: 180px; width: 87.25px; height: 43.625px; font-size: 43.625px;"><select disabled=""><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></div><div id="mc-id-6" class="mc-ctrl mc-group-0 mc-hide mc-hidden" style="left: 567.125px; top: 267.25px; width: 130.875px; height: 43.625px; font-size: 34.9px; transition-duration: 0.8s; transition-property: transform; transform: scale(1, 1);"><input size="1" readonly="readonly"><div class="mc-hide-layer">?</div></div><div id="mc-id-8" class="mc-ctrl mc-group-0" style="left: 220.306px; top: 182.181px; width: 39.2625px; height: 39.2625px; font-size: 39.2625px;"><button class="ui-button ui-corner-all ui-widget"><img class="mc-icon" src="/img/icons/dice.svg"></button></div><div id="mc-id-10" class="mc-ctrl mc-group-0" style="left: 263.931px; top: 182.181px; width: 39.2625px; height: 39.2625px; font-size: 51.0413px;"><button class="ui-button ui-corner-all ui-widget">=</button></div><div id="mc-id-12" class="mc-ctrl mc-group-0 mc-bool" style="left: 305.375px; top: 180px; width: 43.625px; height: 43.625px; font-size: 43.625px;"><label for="mc-id-14" class="ui-checkboxradio-label ui-corner-all ui-button ui-widget"><img class="mc-icon" src="/img/icons/protractor.svg"></label><input id="mc-id-14" type="checkbox" class="ui-checkboxradio ui-helper-hidden-accessible"></div><div id="mc-id-15" class="mc-ctrl mc-group-0 ui-corner-all" style="left: 349px; top: 180px; width: 109.062px; height: 43.625px; font-size: 28.3562px;"><select><option value="squares">squares</option><option value="spots">spots</option><option value="none">none</option></select></div><div id="mc-id-17" class="mc-ctrl mc-group-0 ui-corner-all" style="left: 458.062px; top: 180px; width: 109.062px; height: 43.625px; font-size: 28.3562px;"><select><option value="show-all">show-all</option><option value="hide-all">hide-all</option><option value="calculate">calculate</option></select></div><div id="mc-id-19" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide" style="left: 570.397px; top: 183.272px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(1, 1);"><label for="mc-id-20" style="width: 30%;">a :</label><input size="1" type="text" readonly="readonly" id="mc-id-20" style="width: 70%;"><div class="mc-hide-layer">a</div></div><div id="mc-id-21" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide" style="left: 570.397px; top: 226.897px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-22" style="width: 30%;">b :</label><input size="1" type="text" readonly="readonly" id="mc-id-22" style="width: 70%;"><div class="mc-hide-layer">b</div></div><div id="mc-id-23" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 270.522px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-24" style="width: 30%;">c :</label><input size="1" type="text" readonly="readonly" id="mc-id-24" style="width: 70%;"><div class="mc-hide-layer">c</div></div><div id="mc-id-25" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 314.147px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-26" style="width: 30%;">d :</label><input size="1" type="text" readonly="readonly" id="mc-id-26" style="width: 70%;"><div class="mc-hide-layer">d</div></div><div id="mc-id-27" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 357.772px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-28" style="width: 30%;">e :</label><input size="1" type="text" readonly="readonly" id="mc-id-28" style="width: 70%;"><div class="mc-hide-layer">e</div></div><div id="mc-id-29" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 401.397px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-30" style="width: 30%;">f :</label><input size="1" type="text" readonly="readonly" id="mc-id-30" style="width: 70%;"><div class="mc-hide-layer">f</div></div><div id="mc-id-31" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 445.022px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-32" style="width: 30%;">g :</label><input size="1" type="text" readonly="readonly" id="mc-id-32" style="width: 70%;"><div class="mc-hide-layer">g</div></div><div id="mc-id-33" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 488.647px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-34" style="width: 30%;">h :</label><input size="1" type="text" readonly="readonly" id="mc-id-34" style="width: 70%;"><div class="mc-hide-layer">h</div></div><div id="mc-id-35" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 532.272px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-36" style="width: 30%;">i :</label><input size="1" type="text" readonly="readonly" id="mc-id-36" style="width: 70%;"><div class="mc-hide-layer">i</div></div><div id="mc-id-37" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 575.897px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-38" style="width: 30%;">j :</label><input size="1" type="text" readonly="readonly" id="mc-id-38" style="width: 70%;"><div class="mc-hide-layer">j</div></div><div id="mc-id-39" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 619.522px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-40" style="width: 30%;">k :</label><input size="1" type="text" readonly="readonly" id="mc-id-40" style="width: 70%;"><div class="mc-hide-layer">k</div></div><div id="mc-id-41" class="mc-ctrl mc-group-0 mc-split ui-widget-content mc-hide mc-hidden" style="left: 570.397px; top: 663.147px; width: 124.331px; height: 37.0812px; font-size: 37.0812px; transition-duration: 0.8s; transition-property: transform; transform: scale(0, 0);"><label for="mc-id-42" style="width: 30%;">l :</label><input size="1" type="text" readonly="readonly" id="mc-id-42" style="width: 70%;"><div class="mc-hide-layer">l</div></div><div class="mc-mark mc-hover ui-draggable ui-draggable-handle" style="display: none; left: 775.167px; top: 405.167px; width: 73.6667px; height: 73.6667px;"></div><div class="mc-mark mc-hover ui-draggable ui-draggable-handle" style="left: 868.303px; top: 723.314px; width: 73.6667px; height: 73.6667px;"></div><div class="mc-mark mc-hover ui-draggable ui-draggable-handle" style="left: 552.033px; top: 160.006px; width: 73.6667px; height: 73.6667px;"></div><div class="mc-mark mc-hover ui-draggable ui-draggable-handle" style="left: 242.773px; top: 206.773px; width: 37.9537px; height: 37.9537px; display: none;"></div><div class="mc-mark mc-hover ui-draggable ui-draggable-handle" style="left: 347.473px; top: 206.773px; width: 37.9537px; height: 37.9537px; display: none;"></div><div class="mc-mark mc-hover" style="cursor: pointer; left: 295.123px; top: 206.773px; width: 37.9537px; height: 37.9537px; display: none;"></div></div>
+			<div id="actBar" class="ui-widget-header">
+				<span class="ui-dialog-title" style="font-size: 100%;"></span>
+				<a href="/demos" title="close the activity" id="close"></a>
+				<a href="#info" title="View information about the activity" id="info"></a>
+				<a href="#video" title="Click to view instruction videos" id="video"></a>
+			</div>
+    		<div id="video-dia" data-videos="WkunHw5V4e0"></div>
+    	</div>
+	
+	<article id="info-dia" data-pos="right-bottom" style="display: none;">
+	<h1>Angle activity with online protractor</h1>
+	<p>This activity allows manipulation and investigation of various
+		types of angles. The online protractor tool can be used to practice measuring angles.
+		It can be used at a variety of different grade
+		levels. At its most basic for teaching about types of angles, acute,
+		obtuse or reflex. For more advanced use to create angle problems in
+		which the missing letter angle values have to be found. You can click and drag the
+		handles to change the angles and the values will updated. </p>
+	<h2>The controls</h2>
+	<ul>
+		<li>The <span data-opt="mode">mode control</span> is used to it selects the type of angle problem.</li>
+		<li> Next to this is <span data-opt="lines">number of lines</span>. But please note this control is disabled
+		for both 'one' and 'intersect' modes.</li>
+		<li>the <span data-opt="rand">random</span> button sets each angle to
+			a random value</li>
+		<li>the <span data-opt="equal">equals</span> button
+			make all the angles equal.</li>
+		<li>the <span data-opt="protractor">Protractor</span> button when clicked
+			will show or hide a protractor</li>
+		<li><span data-opt="pstyle">Paper</span> can select spots, squares or
+			none for the background.</li>
+		<li>Use the <span data-opt="showAngs">angles display</span> to choose whether
+			to show or hide angles</li>
+	</ul>
+	<p>
+		In all the modes individual angles can be shown or hidden for example
+		click the <span data-opt="a">angle (a)</span>. Notice when the value is
+		hidden the angle value next to the angle arc is replaced by the
+		corresponding letter.
+	</p>
+	<p>The handles at the end of each line can be clicked and dragged
+		to change the angle.</p>
+
+	<h2>Mode 'one' Identifying angle types.</h2>
+	<p>
+		The initial mode is unique in that there is only one angle. This mode
+		is great for identifying various types of angles. Click the <span data-opt="oneType">angle type</span> ctrl to either show or hide the
+		type. So now you can change the angle by dragging a handle or clicking
+		<span data-opt="rand">dice</span> for a random value. The angle
+		types definitions are listed in the glossary below.
+	</p>
+	<h2>Complementary Angles mode</h2>
+	<p>
+		In this mode a complementary angle is shown, complementary
+		angles add up to 90° Initially the 90° is split by just one line
+		but this can be changed by selecting a different number of <span data-opt="lines">lines</span>. A standard school problem is to have one
+		missing angle that needs to be calculated. You can produce infinite
+		such problems by selecting calculate from <span data-opt="showAngs">angles display</span>, now press <span data-opt="rand">dice</span> for a new
+		problem.
+	</p>
+	<h2>Supplementary Angles mode</h2>
+	<p>Supplementary angles are angles that add up to 180°. This
+		mode behaves exactly the same as the previous.</p>
+	<h2>Angles at a point mode</h2>
+	<p>
+		The angles at a point add up to 360°. In this mode press <span data-opt="equal"> =
+			button</span> to make all the angles equal. This can be good way to start a
+		problem followed by small adjustments to the lines by dragging.
+	</p>
+	<h2>Angles at intersecting lines mode</h2>
+	<p>
+		The final mode deals with angles produced by an intersection of two lines. If
+		you have selected <span data-opt="showAngs">calculate</span> you will 
+		notice that only one angle is given and all the other 3 can be worked out
+		using the vertically opposite rule, or spotting the supplementary angles.
+	</p>
+	<h2>Angles Glossary</h2>
+	<dl>
+		<dt>Acute Angle</dt>
+		<dd>Any angle that is less than 90°</dd>
+		<dt>Right Angle</dt>
+		<dd>An angle that is 90°</dd>
+		<dt>Obtuse Angle</dt>
+		<dd>An angle greater than 90° but less than 180°</dd>
+		<dt>Straight Angle</dt>
+		<dd>An angle of 180° which makes a straight line</dd>
+		<dt>Reflex Angle</dt>
+		<dd>An angle greater than 180°</dd>
+	</dl>
+	<h2>Related activities</h2>
+	<p>The <a href="/demos/clock">interactive clock angles activity</a> can also be used in explaining angles.</p>
+
+
+
+
+</article>
+	<dl id="ctrl-desc">
+	<dt></dt>
+	<dd id="mc-id-1"></dd>
+	<dt></dt>
+	<dd id="mc-id-3">Select the mode, each option is a different angle type.</dd>
+	<dt></dt>
+	<dd id="mc-id-5">Change this number to add or remove lines/angles to the current problem</dd>
+	<dt></dt>
+	<dd id="mc-id-7">Toggle to show/hide the type of angle currently displayed.</dd>
+	<dt></dt>
+	<dd id="mc-id-9">Click to set all the values to random values.</dd>
+	<dt>=</dt>
+	<dd id="mc-id-11">Click to automatically set angles so they are all equal.</dd>
+	<dt></dt>
+	<dd id="mc-id-13">Toggle the display of the protractor.</dd>
+	<dt></dt>
+	<dd id="mc-id-16">Select the paper background style</dd>
+	<dt></dt>
+	<dd id="mc-id-18">Press the random button and this is the initial display state for the angles</dd>
+</dl>
+	
+	
+	
+	
+	<link rel="stylesheet" href="/css/demo-inline.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="/3-5-9/js/lib.js"></script>
+	<script src="/3-5-9/js/wid/jquery.mc.protractor.js"></script>
+	<script src="/3-5-9/js/wid/jquery.mc.basic-angles.js"></script>
+	<script src="/3-5-9/js/main.js"></script>
+	<link rel="stylesheet" href="/css/jquery-ui.min.css">
+	<script>
+
+		function launch(e){function o(e,o,t){var i=document.createElement(e);return o.appendChild(i),i.innerHTML=t,i}if(!localStorage.getItem(e)){var t=document.body,i=o("div",t,'<h1>Your privacy</h1><div>We use cookies to improve your experience on our site.</div><div>To find out more, read our <a href="/privacy">privacy policy</a></div>'),r=o("button",i,"I'm Ok with that");r.className="ui-button ui-corner-all ui-widget mc-shadow",i.style="font-size:20px;text-align:center;left:0;width:100%;position:absolute;top:64px;z-index:2;background:#fff;border:1px solid grey;",r.onclick=function(){localStorage.setItem(e,1),t.removeChild(i)},o("p",i," "),Array.from(i.children).forEach(e=>e.style.fontSize="20px")}}launch("2020-04-05");
+				
+	if ('serviceWorker' in navigator) 
+		window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'))
+	</script><div style="font-size: 20px; text-align: center; left: 0px; width: 100%; position: absolute; top: 64px; z-index: 2; background: rgb(255, 255, 255); border: 1px solid grey;"><h1 style="font-size: 20px;">Your privacy</h1><div style="font-size: 20px;">We use cookies to improve your experience on our site.</div><div style="font-size: 20px;">To find out more, read our <a href="/privacy">privacy policy</a></div><button class="ui-button ui-corner-all ui-widget mc-shadow" style="font-size: 20px;">I'm Ok with that</button><p style="font-size: 20px;"> </p></div>
+	
+	
+	
+
+</body></html>

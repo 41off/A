@@ -1,0 +1,269 @@
+﻿<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Triangle</title>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-touch-fullscreen" content="yes"/>
+  <meta name="msapplication-tap-highlight" content="no"/>
+
+
+ <link rel='icon' href='favicon.ico' type='image/x-icon'/ > 
+ 
+ 
+            
+
+
+ 
+ <script src="js/jquery-3.6.0.js"></script>
+ <script src="js/jquery-ui.js"></script>
+
+</head>
+
+<body>
+
+ <style>
+.Maindiv
+				{
+				width:500px;
+				height:500px;
+				border:1px solid red;
+				}
+		.p1
+				{
+				width:10px;
+				height:10px;
+				background-color:black;
+				border-radius:10px;
+				position:absolute;
+				left:50px;
+				top:50px;
+				cursor:pointer
+				}
+		.p2
+				{
+				width:10px;
+				height:10px;
+				background-color:black;
+				border-radius:10px;
+				position:absolute;
+				left:150px;
+				top:50px;
+				cursor:pointer
+				}
+		.p3
+				{
+				width:10px;
+				height:10px;
+				background-color:black;
+				border-radius:10px;
+				position:absolute;
+				left:150px;
+				top:150px;
+				cursor:pointer
+				}
+		
+ 
+ 
+ 
+ 
+ 
+ 
+ </style>  
+
+
+		<canvas id="canvas" width="500" height="500" style="position:absolute;border:1px solid green;"></canvas>
+		<div class="Maindiv">
+					<div class="p1"></div>
+					<div class="p2"></div>
+					<div class="p3"></div>
+				
+	
+					
+		</div>
+		<button type="button" id="draw">Draw</button>
+
+<script>
+
+$(document).ready(function(){
+		var c=document.getElementById('canvas');
+		var ctx=c.getContext("2d");
+		
+
+		ctx.beginPath();
+		ctx.moveTo(parseInt($(".p1").css("left"))-5,parseInt($(".p1").css("top"))-5)
+		ctx.lineTo(parseInt($(".p2").css("left"))-5,parseInt($(".p2").css("top"))-5)
+		ctx.lineTo(parseInt($(".p3").css("left"))-5,parseInt($(".p3").css("top"))-5)
+		
+		ctx.lineTo(parseInt($(".p1").css("left"))-5,parseInt($(".p1").css("top"))-5)
+		ctx.fillStyle='#E6E0EC';
+		ctx.fill();
+		ctx.strokeStyle="#604A7B";
+		ctx.lineWidth="3"
+		ctx.stroke();
+		ctx.closePath();
+		$(".p1,.p2,.p3").draggable({
+		drag:function(){
+		ctx.clearRect(0,0,500,500);
+		ctx.beginPath();
+		ctx.moveTo(parseInt($(".p1").css("left"))-5,parseInt($(".p1").css("top"))-5)
+		ctx.lineTo(parseInt($(".p2").css("left"))-5,parseInt($(".p2").css("top"))-5)
+		ctx.lineTo(parseInt($(".p3").css("left"))-5,parseInt($(".p3").css("top"))-5)
+		
+		ctx.lineTo(parseInt($(".p1").css("left"))-5,parseInt($(".p1").css("top"))-5)
+		ctx.fillStyle='#E6E0EC';
+		ctx.fill();
+		ctx.strokeStyle="#604A7B";
+		ctx.lineWidth="2"
+		ctx.stroke();
+		ctx.closePath();
+	  }
+	  
+		
+		});
+
+
+		});
+		
+
+var PI2 = Math.PI * 2;
+var rectStrokeStyle = "black";
+
+function drawAnchor(point, color) {
+    ctx.beginPath();
+    ctx.arc(point.x, point.y, 5, 0, PI2);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+}
+
+function drawAngleSymbol(pt3, pt2, pt1) {
+    var dx1 = pt1.x - pt2.x;
+    var dy1 = pt1.y - pt2.y;
+    var dx2 = pt3.x - pt2.x;
+    var dy2 = pt3.y - pt2.y;
+    var a1 = Math.atan2(dy1, dx1);
+    var a2 = Math.atan2(dy2, dx2);
+    var a = parseInt((a2 - a1) * 180 / Math.PI + 360) % 360;
+    // draw angleSymbol
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(pt2.x, pt2.y);
+    ctx.arc(pt2.x, pt2.y, 20, a1, a2);
+    ctx.closePath();
+    ctx.fillStyle = "red";
+    ctx.globalAlpha = 0.25;
+    ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "black";
+    ctx.fillText(a, pt2.x + 15, pt2.y);
+
+}
+
+
+//  angle attempt below  -->
+
+
+// var canvas = document.getElementById("canvas");
+// var ctx = canvas.getContext("2d");
+
+var PI2 = Math.PI * 2;
+var corners = []
+corners.push({
+    x: 50,
+    y: 100
+});
+corners.push({
+    x: 150,
+    y: 40
+});
+corners.push({
+    x: 250,
+    y: 80
+});
+corners.push({
+    x: 180,
+    y: 115
+});
+var rectStrokeStyle = "black";
+
+// draw everything
+
+drawAll();
+
+
+function drawAll() {
+
+    // draw the polygon
+    ctx.beginPath();
+    ctx.moveTo(corners[0].x, corners[0].y);
+    for (var i = 1; i < corners.length; i++) {
+        var c = corners[i];
+        ctx.lineTo(c.x, c.y);
+    }
+    ctx.closePath();
+    ctx.strokeStyle = rectStrokeStyle;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // draw anchor points on each corner
+    for (var i = 0; i < corners.length; i++) {
+        drawAnchor(corners[i], "blue");
+    }
+
+    // draw the angle symbols on corners
+    for (var i = 0; i < corners.length - 2; i++) {
+        drawAngleSymbol(corners[i], corners[i + 1], corners[i + 2]);
+    }
+    // draw the last 2 angle symbols
+    var n = corners.length;
+    drawAngleSymbol(corners[n - 2], corners[n - 1], corners[0]);
+    drawAngleSymbol(corners[n - 1], corners[0], corners[1]);
+
+
+}
+
+function drawAnchor(point, color) {
+    ctx.beginPath();
+    ctx.arc(point.x, point.y, 5, 0, PI2);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+}
+
+function drawAngleSymbol(pt3, pt2, pt1) {
+    var dx1 = pt1.x - pt2.x;
+    var dy1 = pt1.y - pt2.y;
+    var dx2 = pt3.x - pt2.x;
+    var dy2 = pt3.y - pt2.y;
+    var a1 = Math.atan2(dy1, dx1);
+    var a2 = Math.atan2(dy2, dx2);
+    var a = parseInt((a2 - a1) * 180 / Math.PI + 360) % 360;
+    // draw angleSymbol
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(pt2.x, pt2.y);
+    ctx.arc(pt2.x, pt2.y, 20, a1, a2);
+    ctx.closePath();
+    ctx.fillStyle = "red";
+    ctx.globalAlpha = 0.25;
+    ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "black";
+    ctx.fillText(a, pt2.x + 15, pt2.y);
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>

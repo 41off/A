@@ -32,6 +32,10 @@
    $( function() {
     $(".toolblock").draggable();
 } );
+   $( function() {
+    $(".popover").draggable();
+} );
+
 
 
 /// dropdown drag option ///

@@ -135,21 +135,27 @@ function timerStart() {
              btn.value = "Play Both";
              btn.innerHTML = "";
              timer.start(10);
+             timerR.start(10);
              
+
                 }
          else {
              btn.value = "Pause Both";
              btn.innerHTML = "";
              timer.stop();
+             timerR.stop();
               }
               
-     if(timer.stop){
+     if(timer.stop, timerR.stop){
       
       timer.start(10);
-      timer.mode(1);      
+      timer.mode(1);
+      timerR.start(10);
+      timerR.mode(1);       
      } 
        else {
             timer.stop();
+            timerR.stop();
      }
 }
 

@@ -626,9 +626,9 @@ $("#negative3").click(function() { // button function for rewind
             if (btn.value == "FredWinter-58k-11m") {
               btn.value = "FredWinter-58k-11m";
               btn.innerHTML = '<button id="modtext">FredWinter-58k-11m</button>';             
-              timer.reset();
+              timer.reset(0000);
               
-              timer.start(10);
+       //       timer.start(10);
               timer.mode(1);
               }
             else {
@@ -1282,10 +1282,10 @@ $("#negative3R").click(function() { // button function for rewind
             if (btn.value == "NateSmith-58k-11m") {
               btn.value = "NateSmith-58k-11m";
               btn.innerHTML = '<button id="modRtext">NateSmith-58k-11m</button>';              
-              timerR.reset();
+              timerR.reset(0000);
               
-              timerR.start(10);
-              timerR.mode(1);
+  //            timerR.start(10);
+  //            timerR.mode(1);
               }
             else {
               btn.value = "NateSmith-58k-11m";

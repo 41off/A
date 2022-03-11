@@ -17,30 +17,214 @@
                 
  <link rel="stylesheet" href="css/popover.css">
 
+  <link rel="stylesheet" href="vecjs/css/style.css">
+    <script type="text/javascript" src="vecjs/paper-full.js"></script>
+    <script type="text/paperscript" canvas="canvas">
+    
+    
+     ////////////////////////////////////////////////////////////////////////////////
+    // Interface
 
- 
+    var values = {
+        fixLength: false,
+        fixAngle: false,
+        showCircle: false,
+        showAngleLength: true,
+        showCoordinates: false
+    };
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // Vector
+
+    var vectorStart, vector, vectorPrevious;
+    var vectorItem, items, dashedItems;
+
+    function processVector(event, drag) {
+        vector = event.point - vectorStart;
+        if (vectorPrevious) {
+            if (values.fixLength && values.fixAngle) {
+                vector = vectorPrevious;
+            } else if (values.fixLength) {
+                vector.length = vectorPrevious.length;
+            } else if (values.fixAngle) {
+                vector = vector.project(vectorPrevious);
+            }
+        }
+        drawVector(drag);
+    }
+
+    function drawVector(drag) {
+        if (items) {
+            for (var i = 0, l = items.length; i < l; i++) {
+                items[i].remove();
+            }
+        }
+        if (vectorItem)
+            vectorItem.remove();
+        items = [];
+        var arrowVector = vector.normalize(10);
+        var end = vectorStart + vector;
+        vectorItem = new Group(
+            new Path(vectorStart, end),
+            new Path(
+                end + arrowVector.rotate(135),
+                end,
+                end + arrowVector.rotate(-135)
+            )
+        );
+        vectorItem.strokeWidth = 0.75;
+        vectorItem.strokeColor = '#e4141b';
+        // Display:
+        dashedItems = [];
+        // Draw Circle
+        if (values.showCircle) {
+            dashedItems.push(new Path.Circle(vectorStart, vector.length));
+        }
+        // Draw Labels
+        if (values.showAngleLength) {
+            drawAngle(vectorStart, vector, !drag);
+            if (!drag)
+                drawLength(vectorStart, end, vector.angle < 0 ? -1 : 1, true);
+        }
+        var quadrant = vector.quadrant;
+        if (values.showCoordinates && !drag) {
+            drawLength(vectorStart, vectorStart + [vector.x, 0],
+                    [1, 3].indexOf(quadrant) != -1 ? -1 : 1, true, vector.x, 'x: ');
+            drawLength(vectorStart, vectorStart + [0, vector.y],
+                    [1, 3].indexOf(quadrant) != -1 ? 1 : -1, true, vector.y, 'y: ');
+        }
+        for (var i = 0, l = dashedItems.length; i < l; i++) {
+            var item = dashedItems[i];
+            item.strokeColor = 'black';
+            item.dashArray = [1, 2];
+            items.push(item);
+        }
+        // Update palette
+        values.x = vector.x;
+        values.y = vector.y;
+        values.length = vector.length;
+        values.angle = vector.angle;
+    }
+
+    function drawAngle(center, vector, label) {
+        var radius = 25, threshold = 10;
+        if (vector.length < radius + threshold || Math.abs(vector.angle) < 15)
+            return;
+        var from = new Point(radius, 0);
+        var through = from.rotate(vector.angle / 2);
+        var to = from.rotate(vector.angle);
+        var end = center + to;
+        dashedItems.push(new Path.Line(center,
+                center + new Point(radius + threshold, 0)));
+        dashedItems.push(new Path.Arc(center + from, center + through, end));
+        var arrowVector = to.normalize(7.5).rotate(vector.angle < 0 ? -90 : 90);
+        dashedItems.push(new Path([
+                end + arrowVector.rotate(135),
+                end,
+                end + arrowVector.rotate(-135)
+        ]));
+        if (label) {
+            // Angle Label
+            var text = new PointText(center
+                    + through.normalize(radius + 10) + new Point(0, 3));
+            text.content = Math.floor(vector.angle * 100) / 100 + '\xb0';
+            items.push(text);
+        }
+    }
+
+    function drawLength(from, to, sign, label, value, prefix) {
+        var lengthSize = 5;
+        if ((to - from).length < lengthSize * 4)
+            return;
+        var vector = to - from;
+        var awayVector = vector.normalize(lengthSize).rotate(90 * sign);
+        var upVector = vector.normalize(lengthSize).rotate(45 * sign);
+        var downVector = upVector.rotate(-90 * sign);
+        var lengthVector = vector.normalize(
+                vector.length / 2 - lengthSize * Math.SQRT2);
+        var line = new Path();
+        line.add(from + awayVector);
+        line.lineBy(upVector);
+        line.lineBy(lengthVector);
+        line.lineBy(upVector);
+        var middle = line.lastSegment.point;
+        line.lineBy(downVector);
+        line.lineBy(lengthVector);
+        line.lineBy(downVector);
+        dashedItems.push(line);
+        if (label) {
+            // Length Label
+            var textAngle = Math.abs(vector.angle) > 90
+                    ? textAngle = 180 + vector.angle : vector.angle;
+            // Label needs to move away by different amounts based on the
+            // vector's quadrant:
+            var away = (sign >= 0 ? [1, 4] : [2, 3]).indexOf(vector.quadrant) != -1
+                    ? 8 : 0;
+            var text = new PointText(middle + awayVector.normalize(away + lengthSize));
+            text.rotate(textAngle);
+            text.justification = 'center';
+            value = value || vector.length;
+            text.content = (prefix || '') + Math.floor(value * 1000) / 1000;
+            items.push(text);
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // Mouse Handling
+
+    var dashItem;
+
+    function onMouseDown(event) {
+        var end = vectorStart + vector;
+        var create = false;
+        if (event.modifiers.shift && vectorItem) {
+            vectorStart = end;
+            create = true;
+        } else if (vector && (event.modifiers.option
+                || end && end.getDistance(event.point) < 10)) {
+            create = false;
+        } else {
+            vectorStart = event.point;
+        }
+        if (create) {
+            dashItem = vectorItem;
+            vectorItem = null;
+        }
+        processVector(event, true);
+    }
+
+    function onMouseDrag(event) {
+        if (!event.modifiers.shift && values.fixLength && values.fixAngle)
+            vectorStart = event.point;
+        processVector(event, event.modifiers.shift);
+    }
+
+    function onMouseUp(event) {
+        processVector(event, false);
+        if (dashItem) {
+            dashItem.dashArray = [1, 2];
+            dashItem = null;
+        }
+        vectorPrevious = vector;
+    }
+    </script>
+
+  
  <script src="js/jquery-3.6.0.js"></script>
  <script src="js/jquery-ui.js"></script>
  
  
  <script src="js/bootstrap_popup.min.js"></script> 
- 
- 
+
 
 </head>
-
 
 <script>
 
 window.addEventListener("load", function B() { onloadL() })
 window.addEventListener("load", function B() { onloadR() })
 
-
-
 </script>
-
-
-
 
 
 <body >
@@ -60,8 +244,8 @@ or ES6 equivalent:
 <div id="wrap">
 
 
- <div title="Click for Directions video" class="dirbtn" href="#" onclick="window.location.href='playerR.html';">
-   <span title="Close Directions button if preferred"  class="closebtn2">&#11097;&nbsp;</span>Directions<span title="Drag Button elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span>
+ <div title="Click for Directions video" class="dirbtn" onclick="window.open('playerR.html');">
+   <span title="Drag Button elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span><span title="Close Directions button if preferred" class="closebtn1">&#11097;&nbsp;</span>Directions
  </div>
  
 
@@ -76,31 +260,36 @@ or ES6 equivalent:
              <span title="Drag Timer elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span>
          </div> 
          
-   
-    <div class="paperscriptL" title="Drag Drawing Canvas Up from SE corner to Access Video Interface&nbsp;&#129142;">
+     <div class="paperscript" title="Drag Drawing Canvas Up from SE corner to Access Video Interface&nbsp;&#129142;">
          <canvas id="video-canvas1" height="650" width="1880"></canvas>
          <canvas id="video-canvas"></canvas>
-      </div>
+       </div>
  
-   <div id="wrapL">
-     
+  <div id="wrapL"> 
+  
+   
    <div id="stageL">
+   
+ 
          
                <video id="video" controls muted loop
                      onclick="this.paused? ClickPauseL():ClickStartL(); this.paused? timer.start(10):timer.stop(0)" onended="onVideoEndedL();">
                     <source type="video/mp4">
                     <source type="video/ogg">
                     <source type='video/webm; codecs="vp8, vorbis"'>
-                </video>
+               </video>
                
          <div id="modal">
          </div>
-       
-      
+         
+                       
       <button class="Mbtn ML" title="View Left Player Only" href="#" onclick="window.location.href='playerL.html';">[\+/]</button> 
-      <button class="popmenu" title="&nbsp;&nbsp;&nbsp;&#10016;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click here or anywhere outside gray box to close menu" data-toggle="popover" data-placement="right" data-html="true" draggable="true"
+      
+      
+      
+      <button class="popmenu" title="Click here or anywhere outside gray box to close menu" data-toggle="popover" data-placement="left" data-html="true" 
                            data-content="
-                           
+   <div class='ukcont'>
 1.) Click “Choose your own .mp4” to play a video clip from your machine. The script in this player renders your .mp4 file (only .mp4 files are supported) as an URL object allowing the HTML5 features in your browser to stream the file locally. Chrome is the best browser, Mozilla is decent. Have not tried with Safari.
 <br>
 <br>
@@ -114,8 +303,8 @@ or ES6 equivalent:
 <br>
 <br>
 5.)	Click anywhere outside this menu to close it.
-<uk>
-                                     <li><a href='#' onclick='on0L() | on0R()'>FW-58k-11m</a></li>
+
+                      <!--               <li><a href='#' onclick='on0L() | on0R()'>FW-58k-11m</a></li>
                                         <li><a href='#' onclick='on1L() | on3R()'>JM-52k-11m</a></li>                                        
                                         <li><a href='#' onclick='on2L()'>PG-52k-14m</a></li>
                                         <li><a href='#' onclick='on3L()'>JE-52k-13m</a></li>
@@ -149,33 +338,21 @@ or ES6 equivalent:
                                         <li><a href='#' onclick='on15L()'>Directions</a></li>
 
                                         <li><a href='#' onclick='onvideoBackL()'>Prior</a></li>
-                                       </uk>
+                                        -->
+                                       </div>
 
-">Click for Pop-Out Menu</button>
+">&nbsp;Click for Description&nbsp;</button>
            
-       <input type="file" class="custom-file-input" accept="video/mp4">
+       <input type="file" class="input" accept="video/mp4">
        <div id="message" display="inline-block"></div>        
          
        
      <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
      
-    
-     
-     
-    
-    
-  </div>
-  
-  
- 
-     
-     
-  <!--  
-     <div class="single" onclick="window.location.href='playerL.html';"></div>
-   --> 
-                               <div class="dropdownL" title="Drag Menu to left as needed">&#10016;
-                                     <button class="dropbtn">Victory Lake Clips
-                                      </button>
+       </div>
+       
+       <div class="dropdownL" onmouseclick="document.getElementsByClassName('dropdownL-content').style.display = 'block';$('.dropdownL-content').fadeOut(6000);" title="Drag Menu to left as needed">&#10016;
+                                     <button class="dropbtn">Victory Lake Clips</button>
                                        
                                        <div class="dropdownL-content">
                                        <ul>
@@ -211,12 +388,40 @@ or ES6 equivalent:
                                         <li><a href='#' onclick='on13L()'>RB Viewer</a></li>
                                         <li><a href='#' onclick='on14L()'>ET Viewer</a></li>
                                         <li><a href='#' onclick='on15L()'>Directions</a></li>
-
+                                         <li><a href='#' onclick='on11L()'>TK Viewer</a></li>
+                                        <li><a href='#' onclick='on12L()'>MV Viewer</a></li>
+                                        <li><a href='#' onclick='on13L()'>RB Viewer</a></li>
+                                        <li><a href='#' onclick='on14L()'>ET Viewer</a></li>
+                                        <li><a href='#' onclick='on15L()'>Directions</a></li>
+                                        <li><a href='#' onclick='on0L()'>JM-52k-13m</a></li>
+                                        <li><a href='#' onclick='on1L()'>PG-52k-14m</a></li>
+                                        <li><a href='#' onclick='on2L()'>JE-52k-13m</a></li>
+                                        <li><a href='#' onclick='on3L()'>BM-52k-13m</a></li>
+                                        <li><a href='#' onclick='on4L()'>EB-52k-13m</a></li>
+                                        <li><a href='#' onclick='on5L()'>TH-55k-13m</a></li>
+                                        <li><a href='#' onclick='on6L()'>ET 55k-13m</a></li>
+                                        <li><a href='#' onclick='on7R()'>MC Viewer</a></li>
+                                        <li><a href='#' onclick='on8L()'>NG Viewer</a></li>
+                                        <li><a href='#' onclick='on9L()'>PG Viewer</a></li>
+                                        <li><a href='#' onclick='on10L()'>TK Viewer</a></li>
+                                        <li><a href='#' onclick='on11L()'>SK Viewer</a></li>
+                                        <li><a href='#' onclick='on12L()'>MV Viewer</a></li>
+                                        <li><a href='#' onclick='on13L()'>RB Viewer</a></li>
+                                        <li><a href='#' onclick='on14L()'>ET Viewer</a></li>
+                                        <li><a href='#' onclick='on15L()'>Directions</a></li>
+                                         <li><a href='#' onclick='on11L()'>TK Viewer</a></li>
+                                        <li><a href='#' onclick='on12L()'>MV Viewer</a></li>
+                                        <li><a href='#' onclick='on13L()'>RB Viewer</a></li>
+                                        <li><a href='#' onclick='on14L()'>ET Viewer</a></li>
+                                        <li><a href='#' onclick='on15L()'>Directions</a></li>
+                                        <li><a href='#' onclick='on0L()'>JM-52k-13m</a></li>
+                                        <li><a href='#' onclick='on1L()'>PG-52k-14m</a></li>
                                         <li><a href='#' onclick='onvideoBackL()'>Prior</a></li>
                                        </ul>
                                        </div>
-                               </div>
-                        </div>
+                               </div> 
+                                
+     </div>
 
   <div id="wrapR">
 
@@ -231,17 +436,21 @@ or ES6 equivalent:
 
     
     <button class="Mbtn MR" title="View Right Player Only" href="#" onclick="window.location.href='playerR.html';">[\+/]</button>
-     <button class="popmenu" title="Click here or anywhere outside gray box to close menu" data-toggle="popover" data-placement="right" data-html="true" 
+ 
+<!--
+
+   <button class="popmenu" title="Click here or anywhere outside gray box to close menu" data-toggle="popover" data-placement="right" data-html="true" 
                            data-content="
+ <div class='ukcont'>
 1.)	Clips of Pro Skiers or Club members are found in the respective dropdown menus at bottom left of each screen.
 <br>
 <br>
 2.)	Pro Skier clips labeled at speeds below their actual have been rendered with reduced rates accordingly. I.e.,  N. Smith clips at 52k were rendered at 52/58 rates. It may not be ideal with regard to edge change position, but is likely reasonable to study time from buoy to centerline.
 <br>
 <br>
-<uk>
+
 <li><a href='#' onclick='on3R()'>FredWinter 52-11</a></li> 
-                                        <li><a href='#' onclick='on1R()'>FWinter-58k-11m</a></li>
+                                        <li><a href='#' onclick='on6R()'>FWinter-58k-11m</a></li>
                                         <li><a href='#' onclick='on8R()'>NateSmith 52-13</a></li>                                        
                                         <li><a href='#' onclick='on2R()'>NateSmith 55-13</a></li>
                                         <li><a href='#' onclick='on9R()'>NateSmith 52k-11m</a></li>
@@ -276,12 +485,13 @@ or ES6 equivalent:
                                         <li><a href='#' onclick='on13R()'>TWhisper-58k-11m</a></li>
                                         <li><a href='#' onclick='on14R()'>TWhisper-58k-13m</a></li>
 
-</uk>
+</div>
 
 ">Click for Pop-Out Menu</button>
-      
+
+-->      
          
-    <input type="file" class="custom-file-input" accept="video/mp4" name="video">    
+    <input type="file" class="input" accept="video/mp4" name="video">    
     <div id="messageR" display="inline-block"></div> 
  
     <script type="text/javascript" src="plugins/41off-loadR.js"></script>
@@ -289,7 +499,7 @@ or ES6 equivalent:
          </div>
           
        
-                            <div class="dropdownR" title="Drag Menu to relocate as needed">&#10016;                       
+                            <div class="dropdownR" onmouseclick="document.getElementsByClassName('dropdownR-content').style.display = 'block';$('.dropdownR-content').fadeOut(6000);" title="Drag Menu to relocate as needed">&#10016;                       
                        
                          <button class="dropbtn">Select a Pro Skier</button>
 
@@ -321,56 +531,48 @@ or ES6 equivalent:
                                         
                                         </ul>
                                       </div>
-                                    </div>
-
-               
- 
-        
-
-     </div>
+                             </div>
+               </div>
        
-
- 
-        
-        
         
          <div class="menubarL" style="text-align:center">
-            <button id="L5" class="Lbtn" onClick="multiStartL()" value="Play">Play Left</button>
+            <button class="Lbtn" id="Lreset" onClick="multiResetL()">&#129148;&nbsp;Reset</button>
+            <button id="L5" class="Lbtn" onClick="multiStartL()" value="Play Left">Play Left</button>
             <button class="Lbtn" id="L1_8" onClick="multiSlowL()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
             <button class="Lbtn" id="L1_16" onClick="multiSuperSlowL()" value="+1/16x">+1/16X</button> 
             <button class="Lbtn Lbtn1" id="negative2L">-1/8X</button>
             <button class="Lbtn Lbtn1" id="negativeL" >-1X</button >
             <button class="Lbtn Lbtn1" id="negative3L">-4X</button> 
             <button class="Lbtn" id="L4x" onClick="multiFwdL()" value="4X">+4X</button>
-            <button class="Lbtn" id="L16x" onClick="multiSupFwdL()" value="16X">+16X</button>               
-            <button class="Lbtn" id="Lreset" onclick="on0L()">Repeat</button> 
+            <button class="Lbtn" id="L16x" onClick="multiSupFwdL()" value="16X">+16X</button>           
        <!-- <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNextL()">Next</button>   -->
             <button class="Lbtn" id ="Lnegative2" onClick="onvideoBackL()">Prior</button>  
             <button class="Lbtn" id="Lreset" onClick="onvideoNextL()">Next</button>
-            <button class="Lbtn" id="Lreset" onClick="multiResetL()">&#129148;&nbsp;Reset</button>
+            <button class="Lbtn" id="Lreset" onclick="on0L()">Repeat</button>
+            
             <span class="drag" title="Drag Left Player Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span>             
            </div> 
                 
         <div class="controlsL"><span class="drag" title="Drag Left Zoom Controls elsewhere as needed">&nbsp;&nbsp;&nbsp;&#10016;</span></div> 
         
         
-        <div class="menubarB" style="text-align:center">
-            
-            <button id="M5" class="Mbtn" onClick="multiStartB();" value="Play Both">Play Both</button>
+        <div class="menubarB">
+            <span class="drag" title="Drag Dual Player Controls elsewhere as needed">&nbsp;&#10016;</span>  
+            <button class="Mbtn M6" title="Open Recorder. Works best with Chrome." href="#" onclick='window.open("https://rec.41off.com");return false;'></button>
+            <button class="Mbtn" id="Mreset" onclick="on0L()|on0R()">Repeat</button>  
+            <button class="Mbtn" id="Mreset" onClick="multiResetB()">&#129148;&nbsp;Reset&nbsp;&#129149;</button> 
             <button class="Mbtn" id="M1_8" onClick="multiSlowB();" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
             <button class="Mbtn" id="M1_16" onClick="multiSuperSlowB();" value="+1/16x">+1/16X</button>
-            <button class="Mbtn" id="Mreset" onClick="multiResetB()">&#129148;&nbsp;Reset&nbsp;&#129149;</button> 
-            <button class="Mbtn" id="Mreset" onclick="on0L()|on0R()">Repeat</button> 
+            <button id="M5" class="Mbtn" onClick="multiStartB();" value="Play Both" title="Click twice to initiate">Play Both</button>
        <!-- <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNextL()">Next</button>  
             <button class="timerbutton timerbutton3" id ="negative2" onClick="onVideoBackL()">Prior</button>   -->
-            <button class="Mbtn M6" title="Open Recorder. Works best with Chrome." href="#" onclick='window.open("https://rec.41off.com");return false;'></button> 
-             <span class="drag" title="Drag Dual Player Controls elsewhere as needed">&nbsp;&#10016;</span>     
-           </div> 
+         </div> 
            
            
         <div class="menubarR" style="text-align:center">
-            <button class="Rbtn" id="Rreset" onClick="multiResetR()">Reset&nbsp;&#129149;</button>
-            <button id="R5" class="Rbtn" onClick="multiStartR()" value="Play">Play Right</button>
+            <button class="Rbtn" id="Rreset" onclick="on0R()">Repeat</button>
+            <button class="Rbtn" id ="Rnegative2" onClick="onvideoBackR()">Prior</button>  
+            <button class="Rbtn" id="Rreset" onClick="onvideoNextR()">Next</button>               
             <button class="Rbtn" id="R1_8" onClick="multiSlowR()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
             <button class="Rbtn" id="R1_16" onClick="multiSuperSlowR()" value="+1/16x">+1/16X</button> 
             <button class="Rbtn Rbtn1" id="negative2R">-1/8X</button>
@@ -378,17 +580,15 @@ or ES6 equivalent:
             <button class="Rbtn Rbtn1" id="negative3R">-4X</button> 
             <button class="Rbtn" id="R4x" onClick="multiFwdR()" value="4X">+4X</button>
             <button class="Rbtn" id="R16x" onClick="multiSupFwdR()" value="16X">+16X</button>
-            <button class="Rbtn" id ="Rnegative2" onClick="onvideoBackR()">Prior</button>  
-            <button class="Rbtn" id="Rreset" onClick="onvideoNextR()">Next</button>               
-            <button class="Rbtn" id="Rreset" onclick="on0R()">Repeat</button> 
+            <button id="R5" class="Rbtn" onClick="multiStartR()" value="Play Right">Play Right</button>
+            <button class="Rbtn" id="Rreset" onClick="multiResetR()">Reset&nbsp;&#129149;</button>
             <span class="drag" title="Drag Right Player Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span>             
            </div> 
                 
         <div class="controlsR"><span class="drag" title="Drag Right Zoom Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span></div>
 
-					<div class="toolblock"><span title="Drag Canvas down with far right ruler to draw upon it." class="box">Use vertical ruler at far upper right of screen to drag Canvas down for drawing upon it.<span title="Close this message box"            
-					     class="closebtn2">&nbsp;&nbsp;&#11097;</span></span>
-
+					<div class="toolblock"><span title="Drag Canvas down or up with far right ruler to change drawing area." class="box">Use vertical ruler at far right of screen to drag and adjust height of Canvas for drawing upon it.
+					<span title="Close this message box" class="closebtn2" style="text-align:right">&nbsp;&nbsp;&#11097;</span></span>
 															
 								 <div class="inner_tool">
 									<button class="line-drawing-tools" data-value="circle">
@@ -444,10 +644,7 @@ or ES6 equivalent:
    
    <script type="text/javascript" src="plugins/41off-drag.popover.closebtn.js"></script>
         
-           
-    
-        
-  </div>
+ </div>
       
        					
  <!-- Optional JavaScript -->
@@ -455,10 +652,9 @@ or ES6 equivalent:
   
    <!-- Text - Color Palette JS -->
    <script src="plugins/textbox.js"></script>
+ 
+  <script src="plugins/paper.js"></script>
    
-   
-  
-
    <script type="text/javascript" src="plugins/videojs/js/41offvideoBothEX.js"></script>
  <!--  <script type="text/javascript" src="plugins/videojs/js/41offvideoR.js"></script>  -->
    
@@ -470,12 +666,10 @@ or ES6 equivalent:
    
    <script type="text/javascript" src="plugins/41offzoomR.js"></script>
    
-
-
    
  <!-- Video JS -->
    <script src="plugins/fabric/fabric.min.js"></script>
-   <script src="js/commonFunctionBothProtractor.js"></script>
+   <script src="js/commonFunctionBoth.js"></script>
 
 </body>
 </html>

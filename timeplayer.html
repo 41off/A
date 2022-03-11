@@ -1,0 +1,200 @@
+﻿<html>
+<head>
+    <title>Split Video Player</title>
+    
+<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-touch-fullscreen" content="yes"/>
+  <meta name="msapplication-tap-highlight" content="no"/>
+
+
+ <link rel='icon' href='favicon.ico' type='image/x-icon'/ > 
+ <link href="plugins/videojs/css/video-js.css" rel="stylesheet" type="text/css">
+ <link href="css/styles.css" rel="stylesheet" type="text/css">
+ <link href="css/slidebardrop.css" rel="stylesheet" type="text/css">
+                
+ <link rel="stylesheet" href="css/popover.css">
+
+
+ 
+ <script src="js/jquery-3.6.0.js"></script>
+ <script src="js/jquery-ui.js"></script>
+ 
+ 
+ <script src="js/bootstrap_popup.min.js"></script> 
+ 
+ 
+
+	<style type="text/css">
+	.auto-style1 {
+		text-align: right;
+	}
+	</style>
+ 
+ 
+
+</head>
+
+
+<script>
+
+window.addEventListener("load", function B() { onloadL() })
+window.addEventListener("load", function B() { onloadR() })
+
+
+
+</script>
+
+
+
+
+
+<body >
+
+
+<div class="auto-style1">
+
+
+<!--
+
+<a href="#" onClick={function(event){ func1(); func2()}}>Test Link</a>
+or ES6 equivalent:
+
+<a href="#" onClick={() => { func1(); func2();}}>Test Link</a>
+
+-->
+         
+        
+
+
+
+
+ 
+
+  <div id="wrap">
+
+        <div id="stageR">
+               <video id="video" controls muted loop  onclick="this.paused? ClickPauseR():ClickStartR(); this.paused? timerR.start(10):timerR.stop(0)" onended="onVideoEndedR();">
+                    <source type="video/mp4">
+                    <source type='video/webm; codecs="vp8, vorbis"'>
+               </video>
+     
+     <div id="modalR">
+         </div>
+
+   
+     <button class="popmenu" title="Click here or anywhere outside gray box to close menu" data-toggle="popover" data-placement="right" data-html="true" 
+                           data-content="
+1.)	Clips of Pro Skiers or Club members are found in the respective dropdown menus at bottom left of each screen.
+<br>
+<video id='video' controls muted loop  onclick='this.paused? ClickPauseR():ClickStartR(); this.paused? timerR.start(10):timerR.stop(0)' onended='onVideoEndedR();'>
+                    <source type='video/mp4'>
+                    
+               </video>
+
+
+">Click for Pop-Out Menu</button>
+      
+         
+    <input type="file" class="custom-file-input" accept="video/mp4" name="video">    
+    <div id="messageR" display="inline-block"></div> 
+ 
+    <script type="text/javascript" src="plugins/41off-loadR.js"></script>
+      
+         </div>
+          
+       
+                            <div class="dropdownR" title="Drag Menu to relocate as needed">&#10016;                       
+                       
+                         <button class="dropbtn">Select a Pro Skier</button>
+
+                                      <div class="dropdownR-content">
+                                        <ul>
+                                        <li><a href='#' onclick='on3R()'>FredWinter 52-11</a></li> 
+                                        <li><a href='#' onclick='on6R()'>FWinter-58k-11m</a></li>
+                                        <li><a href='#' onclick='on8R()'>NateSmith 52-13</a></li>                                        
+                                        <li><a href='#' onclick='on2R()'>NateSmith 55-13</a></li>
+                                        <li><a href='#' onclick='on9R()'>NateSmith 52k-11m</a></li>
+                                        <li><a href='#' onclick='on8R()'>NateSmith-58k-11m</a></li>
+                                        <li><a href='#' onclick='on7R()'>TWhisper 55-13</a></li>
+                                        <li><a href='#' onclick='on10R()'>TWhisper-52k-11m</a></li>
+                                        <li><a href='#' onclick='on11R()'>TWhisper-52k-13m</a></li>
+                                        <li><a href='#' onclick='on12R()'>TWhisper-55k-11m</a></li>
+                                        <li><a href='#' onclick='on13R()'>TWhisper-58k-11m</a></li>
+                                        <li><a href='#' onclick='on14R()'>TWhisper-58k-13m</a></li>
+                                        
+                                        
+                                        <li><a href='#' onclick='on1R()'>Jamie Bull 52-13</a></li>
+                                        
+                                        <li><a href='#' onclick='on4R()'>empty</a></li>
+                                        <li><a href='#' onclick='on5R()'>empty</a></li>
+                                        
+                                        
+                                        
+                                        <li><a href='#' onclick='on15R()'>empty</a></li>
+                                        <li><a href='#' onclick='onvideoBackR()'>Prior</a></li>
+                                        
+                                        </ul>
+                                      </div>
+                                    </div>
+
+               
+ 
+        
+
+     </div>
+       
+
+ 
+        
+        
+      
+        
+        
+      
+           
+           
+        <div class="menubarR" style="text-align:center">
+            <button class="Rbtn" id="Rreset" onClick="multiResetR()">Reset&nbsp;&#129149;</button>
+            <button id="R5" class="Rbtn" onClick="multiStartR()" value="Play">Play Right</button>
+            <button class="Rbtn" id="R1_8" onClick="multiSlowR()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
+            <button class="Rbtn" id="R1_16" onClick="multiSuperSlowR()" value="+1/16x">+1/16X</button> 
+            <button class="Rbtn Rbtn1" id="negative2R">-1/8X</button>
+            <button class="Rbtn Rbtn1" id="negativeR" >-1X</button >
+            <button class="Rbtn Rbtn1" id="negative3R">-4X</button> 
+            <button class="Rbtn" id="R4x" onClick="multiFwdR()" value="4X">+4X</button>
+            <button class="Rbtn" id="R16x" onClick="multiSupFwdR()" value="16X">+16X</button>
+            <button class="Rbtn" id ="Rnegative2" onClick="onvideoBackR()">Prior</button>  
+            <button class="Rbtn" id="Rreset" onClick="onvideoNextR()">Next</button>               
+            <button class="Rbtn" id="Rreset" onclick="on0R()">Repeat</button> 
+            <span class="drag" title="Drag Right Player Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span>             
+           </div> 
+       
+		    
+    
+   <!-- this script must be within wrap   -->
+   
+   <script type="text/javascript" src="plugins/exertimer-drag.popover.closebtn.js"></script>
+        
+           
+    
+        
+  </div>
+      
+       					
+ 
+   
+  
+
+   <script type="text/javascript" src="plugins/videojs/js/41offvideoR.js"></script>
+ <!--  <script type="text/javascript" src="plugins/videojs/js/41offvideoR.js"></script>  -->
+   
+   
+
+
+
+</body>
+</html>
+

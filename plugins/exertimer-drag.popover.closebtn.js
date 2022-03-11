@@ -77,22 +77,43 @@ $(document).ready(function() {
         
 }).data('bs.popover').tip().attr('id', 'mypop');
 
+/// video try ///
+
+let html1 = `
+    <div style="min-width: 300px;">
+      <div class="embed-responsive embed-responsive-16by9">
+        <video class="embed-responsive-item" src=".../...mp4" loop muted></video>
+      </div>
+    </div>
+    `;
+
+    $('#popover').popover({
+      trigger: 'manual',
+      html: true,
+      sanitize: false,
+      content: html1
+    });
+    
+///
+
 */
 
 ///
 
 
 $(document).ready(function() {
-   
-  $('[data-toggle="popover"]').popover({
+
+ $('[data-toggle="popover"]').popover({
     placement: 'top',
     html: true,
+    sanitize: false,
+     
+
+    
     title:function(){
           return $('.popover-title').html();
        },
-       content:function(){
-          return $('.popover-content').html();
-       }
+       content:video
   });
 
 /*  $('[data-toggle="popover"]').on("mouseenter", function() {
@@ -117,7 +138,7 @@ $(document).ready(function() {
 
 
   
-  $('#wrap').on('click', function(e) {
+  $('body').on('click', function(e) {
        
    
     $('[data-toggle=popover]').each(function() {
@@ -167,19 +188,6 @@ $(document).ready(function() {
     });
   });
 });
-
-
-//  closbnt1 script below //
-
-var close = document.getElementsByClassName('closebtn1');
-var i;
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function(){
-        var div = this.parentElement;
-        div.style.opacity = "0";
-        setTimeout(function(){ div.style.display = "none"; }, 1600);
-    }
-}
 
 
 

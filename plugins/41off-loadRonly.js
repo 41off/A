@@ -13,18 +13,9 @@
              var fileR = this.files[0]
              var typeR = fileR.type
              var videoNodeR = document.getElementsByTagName('video')[0];
-             var canPlayR = videoNodeR.canPlayType(typeR);
-             if (canPlayR === '') canPlayR = 'No'
-             var messageR = 'Can play type "' + typeR + '": Yes ' 
-             var isErrorR = canPlayR === 'No: .mp4 video files only'
-    displayMessageR(messageR, isErrorR)
-
-    if (isErrorR) {
-      return
-    }
-
-    var fileR_URL = R_URL.createObjectURL(fileR);
-    videoNodeR.src = fileR_URL
+             var fileR_URL = R_URL.createObjectURL(fileR);
+             
+                 videoNodeR.src = fileR_URL
   }
   var inputNodeR = document.querySelector("div#stageR input[name='video']");
   inputNodeR.addEventListener('change', playSelectedFileR, false)

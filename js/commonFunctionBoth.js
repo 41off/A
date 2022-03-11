@@ -151,7 +151,7 @@ $(document).on('click', '.line-drawing-tools', function (event) {
             }
             else if (btnValue == "angle") {
                 isAngleDrawing = "1";
-                drawAngle();
+                 drawAngle();
             }
             else if (btnValue == "move") {
                 changeDrawing();
@@ -223,85 +223,12 @@ function changeDrawing() {
     })
 }
 
-var startLine;
+
 var startLine1;
 function drawLine() {
-    canvas.on('mouse:down', function (o) {
-        if (isLineDrawing == "1") {
-            canvas.selection = false;
-            isDownAngle = true;
-            var pointer = canvas.getPointer(o.e);
-            var points = [pointer.x, pointer.y, pointer.x, pointer.y];
+    
 
-            line = new fabric.Line(points, {
-                strokeWidth: 2,
-                fill: 'yellow',
-                stroke: 'yellow',
-                originX: 'center',
-                originY: 'center'
-            });
-            line.line1 = line;
-            canvas.add(line);
-        }
-    });
-
-    canvas.on('mouse:move', function (o) {
-        if (!isDownAngle)
-            return;
-        if (isLineDrawing == "1") {
-            var pointer = canvas.getPointer(o.e);
-            line.set({x2: pointer.x, y2: pointer.y});
-            canvas.renderAll();
-        }
-    });
-
-    canvas.on('mouse:up', function (o) {
-        if (isLineDrawing == "1") {
-            y11 = line.get('y1');
-            y12 = line.get('y2');
-            x11 = line.get('x1');
-            x12 = line.get('x2');
-            var dy = y12 - y11;
-            var dx = x12 - x11;
-            var theta = Math.hypot(dy, dx); // range (-PI, PI]
-            theta *= 180 / Math.PI;
-            line.startAngle = theta;
-            var angle = countAngle(theta);
-            var angl = parseInt(angle).toString() +'°';
-            var top = line.top
-            var left = line.left;
-            if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
-                left += 11;
-            }
-            if((theta >76 && theta < 90) || (theta >-166 && theta < -145)){
-                left += 08;
-            }
-            if((theta >0 && theta < 46) || (theta >-146 && theta < -90)){
-                left += 20;
-            }
-            var text1 = new fabric.Text(angl, {
-                fontSize: 20,
-                fontFamily: 'Verdana', top: top, left:left,
-                fill: 'lime'
-            });
-            line.lineText = text1;
-            canvas.add(text1);
-            isDownAngle = false;
-            rotateText(line);
-            ctx.translate(x0,y0);
-        }
-    });
-    canvas.on('object:rotating', function (e) {
-        if(typeof e.target.lineText != "undefined"){
-            var newAngle = getCurrentAngle(e);
-            var theta = countAngle(newAngle);
-            theta = parseInt(theta).toString() +'°';
-            e.target.lineText.setText(theta);
-            rotateText(e.target);
-        }
-    });
-
-    //draw angel in canvas 2
+    //draw line in canvas 2
 
     canvas1.on('mouse:down', function (o) {
         if (isLineDrawing == "1") {
@@ -347,44 +274,19 @@ function drawLine() {
             var angl = parseInt(angle).toString() +' units';
             var top = line2.top
             var left = line2.left;
-            if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
-                left += 11;
-            }
-            if((theta >76 && theta < 90) || (theta >-166 && theta < -145)){
-                left += 08;
-            }
-            if((theta >0 && theta < 46) || (theta >-146 && theta < -90)){
-                left += 20;
-            }
             var text2 = new fabric.Text(angl, {
-                fontSize: 20,
+                fontSize: 16,
                 fontFamily: 'Verdana', top: top, left:left,
-                fill: 'lime'
+                fill: 'white'
             });
             line2.lineText = text2;
             canvas1.add(text2);
             isDownAngle = false;
             rotateText(line2);
        }
-       
-     /*  
-        var btn = document.getElementById("modal");
-      
-            if (btn.value == "line") {
-              btn.value = "line";
-              btn.innerHTML = '<button id="modtext">Draw Line</button>';              
-            
-              }
-            else {
-              btn.value = "line";
-              btn.innerHTML = '<button id="modtext">Line Draw&#8665;</button>';
-              
-              }
-        */
-       
-       
     });
-    canvas1.on('object:rotating', function (e) {
+  
+  canvas1.on('object:rotating', function (e) {
         if(typeof e.target.lineText != "undefined"){
             var newAngle = getCurrentAngle(e);
             var theta = countAngle(newAngle);
@@ -468,8 +370,8 @@ function drawCircle() {
                 radius: pointer.x - origX,
                 angle: 0,
                 fill: '',
-                stroke: 'lightblue',
-                strokeWidth: 3,
+                stroke: 'green',
+                strokeWidth: 5,
             });
             canvas1.add(circle);
         } 
@@ -504,30 +406,14 @@ function drawCircle() {
         isDown = false;
     });
     
-    
-   /* var btn = document.getElementById("modal");
-      
-            if (btn.value == "circle") {
-              btn.value = "circle";
-              btn.innerHTML = '<button id="modtext">Draw Circle</button>';              
-            
-              }
-            else {
-              btn.value = "circle";
-              btn.innerHTML = '<button id="modal">Circle Draw&#8665;</button>';
-              
-              }
-  */
-
 }
 
 
 var startAngle
-//var startAngle1
- function drawAngle() {
-    
 
-    //draw angel in canvas 2
+ function drawAngle() {
+
+    //draw angle in canvas 2
 
     canvas1.on('mouse:down', function (o) {
         if (isAngleDrawing == "1") {
@@ -544,6 +430,7 @@ var startAngle
                 originY: 'center'
             });
        //     line.line1 = line;
+     
             canvas1.add(line);
         }
     });
@@ -572,27 +459,15 @@ var startAngle
             omega *= 180 / Math.PI;
             line.startAngle = omega;
             var angle = countAngle(omega);
-            var leng = parseInt(angle).toString() +' u ---     ' + '                        ';
+            var leng = parseInt(angle).toString() +'  u --  ' + '   ';
             var top = line.top;
             var left = line.left;
-            if((omega >45 && omega < 75) || (omega >-180 && omega < -165)){
-                left += 11;
-            }
-            if((omega >76 && omega < 90) || (omega >-166 && omega < -145)){
-                left += 08;
-            }
-            if((omega >0 && omega < 46) || (omega >-146 && omega < -90)){
-                left += 20;
-            }
             var text3 = new fabric.Text(leng, {
                 fontSize: 14,
-                fontWeight: 500,
+                fontWeight: 400,
                 fontFamily: 'Arial', top: top, left:left,
-                fill: 'yellow'
+                fill: 'lime'
             });
-
-            
-            
 
             var theta = Math.atan2(dy, dx); // range (-PI, PI]
             theta *= 180 / Math.PI;
@@ -605,26 +480,29 @@ var startAngle
                 left += 11;
             }
             if((theta >76 && theta < 90) || (theta >-166 && theta < -145)){
-                left += 08;
+                right += 16;
             }
             if((theta >0 && theta < 46) || (theta >-146 && theta < -90)){
-                left += 20;
+                left += 10;
             }
             var text2 = new fabric.Text(angl, {
-                fontSize: 18,
+                fontSize: 16,
+                fontWeight: 400,
                 fontFamily: 'Verdana', top: top, left:left,
-                fill: 'lime'
+                fill: 'yellow'
             });
             
-        //    line.lineText = text3;
-        //    canvas1.add(text3);
+            line.lineText = text3;
+            canvas1.add(text3);
             line.lineText = text2;
             canvas1.add(text2);
             isDownAngle = false;
             rotateText(line);
+            
+  }
+});
 
-   }
- });
+
      canvas1.on('object:rotating', 
        function (e) {
         if(typeof e.target.lineText != "undefined"){
@@ -672,6 +550,7 @@ function makeLineForTriangle(coords) {
         selectable: false
     });
 }
+
 
 // select all objects
 function deleteObjects() {

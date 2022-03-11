@@ -23,12 +23,12 @@ display:table;
 z-index:1;
 padding:4px;
 font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-font-size:12pt;
+font-size:1.5vmin;
 font-style:normal;
 font-weight:500;
-line-height:1.5;
+line-height:2.5vmin;
 text-align:center;
-
+float:left;
 text-shadow: 1px 1px white;
 text-transform:bold;
 letter-spacing:normal;
@@ -38,6 +38,7 @@ background-color:silver;
 border:1px solid rgba(0,0,0,.2);
 border-radius:6px;
 width:95%;
+height:90%;
 transition: 3s;
 -webkit-animation: fadeout 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 2s; /* Firefox < 16 */
@@ -45,6 +46,11 @@ transition: 3s;
          -o-animation: fadeout 2s; /* Opera < 12.1 */
             animation: fadeout 2s; 
 opacity:0.85;
+
+ /* whatever you want */
+left: 50%;
+transform: translateY(-50%);
+
 
 }
 
@@ -81,9 +87,10 @@ margin-left:-42.5%;
 }
 
 .popover-body {
-    overflow-y: scroll;
+    overflow: scroll;
     white-space:pre-wrap;
-    float:left;
+    
+    
     
   
     
@@ -91,7 +98,7 @@ margin-left:-42.5%;
 
 .popover-content {
   width:auto;
-  -webkit-background-clip:padding-box;
+/*  -webkit-background-clip:padding-box;
   background-clip:padding-box;
   column-count: 4;
   column-gap: 16px;
@@ -100,13 +107,15 @@ margin-left:-42.5%;
   column-rule: 2px solid red; 
   column-width: 100px; 
   overflow-y : scroll;
-  height: 80%;
+*/ 
+  height: 90%;
   text-align:left;
-  text-indent:12px;
+  text-indent:0px;
   text-shadow: 0.5px 0.5px black;
   text-decoration:none;
   font-weight:500;
- 
+  overflow-x: scroll;
+  margin-left:3%;
   
 }
 
@@ -190,35 +199,37 @@ border-bottom-width:0
 
 .box {
  position:absolute;
- width:100%;
- height:24px;
- line-height:20px;
- padding-top: 3px;
+ width:98%;
+ height:2vmin;
+ line-height:2vmin;
+ color:white;
+ text-align:center;
+ text-shadow: 0.1vmin 0.1vmin red;
+ font-weight: 500;
+ font-size: 1.5vmin;
+ border-color:black;
+ border:medium;
+ border-radius: 0.2vmin;
+ padding-top: 0.0vmin;
  background:transparent;
  float:left;
- left:0%;
- bottom:0.5%;
- opacity: 0.0;
+ left:1%;
+ bottom:0%;
+ opacity: 0.5;
  
 }
  
 .box:hover{
  background: -webkit-linear-gradient(top, silver, black);
- color:white;
- text-align:center;
- text-shadow: 1px 1px pink;
- font-weight: 500;
- font-size: 14pt;
- border-color:black;
- border:medium;
- border-radius: 4px;
  opacity:1.0;
  transition-duration: 0.4s;
 
 }
 
-
-
+ul ul {
+	visibility: hidden;
+	transition: all 5s;
+}
 
 ul.a {
     list-style-type: circle;
@@ -251,9 +262,16 @@ a:hover { text-decoration: underline; }
 
 a:active { text-decoration: none; }
 
+
 li {
+
  
 } 
+
+li:hover ul {
+	visibility: visible;
+	transition-delay: 1s;
+}
 
 li span {
   list-style-image: url('../images/bluesm.png');
@@ -262,15 +280,33 @@ li span {
 
 
 uk {
-  text-decoration:none;
   list-style-image: url('../images/bluesm.png');
+  margin-left:0.2vmin;
+  margin-bottom:0.1vmin;
 
+
+}
+
+.ukcont {
+  height:98%;
+  width:97%;
+  bottom:2%;
+  column-count: 4;
+  column-gap: 10px;
+  column-rule-style: groove;
+  column-rule-width:2px;
+  column-rule: 2px solid red; 
+  column-width: 25%;
+  display:inline-block;
+  margin-left:2%;
+
+	
 }
 
 
 .dropdownL-content ul{
     list-style:none;
-  /* list-style:none; */
+
     margin-left:0px;
     padding:0px;
     columns:2;
@@ -299,26 +335,22 @@ uk {
 }
 
 .dropdownL-content li ul{
-   
-    display:none;
+ /*   display:none;
     height:auto;
-    
-    
     border:0px;
     position:absolute;
     width:250px;
-    z-index:200;
-    /*top:1em;
-    /*left:0;*/
+    z-index:100;
+    top:1em;
+    /*left:0; */
 }
 
 .dropdownL-content li:hover ul{
-    display:block;
+    display:inline-block;
 }
 
 .dropdownL-content li li {
-    display:block;
-    float:left;
+   display:inline-block;    float:left;
     width:120px;
 }
 
@@ -327,7 +359,7 @@ uk {
 }
 
 .dropdownL-content li ul a{
-    display:block;
+    display:inline-block;
     height:22px;
     text-align:left;
 }
@@ -346,11 +378,19 @@ uk {
 
 .dropdownR-content ul{
     list-style:none;
-  /* list-style:none; */
+  
     margin-left:0px;
     padding:0px;
     columns:2;
 }
+
+.dropdownR-content ul ul{
+	visibility: hidden;
+	transition: all 5s;
+}
+
+
+
 .dropdownR-content li{
     float:left;
     padding-left:6px;
@@ -376,22 +416,24 @@ uk {
     width:250px;
     z-index:200;
     /*top:1em;
-    /*left:0;*/
+    /*left:0; */
 }
 .dropdownR-content li:hover ul{
     display:block;
+    visibility: visible;
+	transition-delay: 1s;
 }
 .dropdownR-content li li {
     display:block;
     float:left;
-    width:120px;
+    width:auto;
 }
 .dropdownR-content li:hover li a{
     background:none;
 }
 .dropdownR-content li ul a{
     display:block;
-    height:22px;
+    height:3vmin;
     text-align:left;
     
 }
@@ -403,45 +445,3 @@ uk {
     clear:right;
 }
 
-
-.Maindiv
-				{
-				width:500px;
-				height:500px;
-				border:1px solid red;
-				}
-		.p1
-				{
-				width:10px;
-				height:10px;
-				background-color:yellow;
-				border-radius:10px;
-				position:absolute;
-				left:50px;
-				top:50px;
-				cursor:pointer
-				}
-		.p2
-				{
-				width:10px;
-				height:10px;
-				background-color:yellow;
-				border-radius:10px;
-				position:absolute;
-				left:150px;
-				top:50px;
-				cursor:pointer
-				}
-		.p3
-				{
-				width:10px;
-				height:10px;
-				background-color:yellow;
-				border-radius:10px;
-				position:absolute;
-				left:150px;
-				top:150px;
-				cursor:pointer
-				}
-		
- 

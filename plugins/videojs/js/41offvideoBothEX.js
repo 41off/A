@@ -449,7 +449,7 @@
                                'https://www.dropbox.com/s/75luo4kenawyp1o/BM-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/919w2816y4wt7ld/EB-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/1h8ofv23eexuu8u/TH-55-13b.mp4?raw=1',
-                               'https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1',
+                               'https://www.dropbox.com/s/nbbe2y09o5tp4pu/X04-18-2022_14m-33.3-2hand-drillC.mp4?raw=1',
                                'https://www.dropbox.com/s/43ewvwpf48p1qos/v2.mp4?raw=1',
                                'https://www.dropbox.com/s/j4priqaxu1rgcdz/JM-08-27-2021-Rd2-S1-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/dohzqvbggqrihbp/JE-52k-11mb.mp4?raw=1',

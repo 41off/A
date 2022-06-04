@@ -441,10 +441,10 @@
    }
 
   
-        var video_directory = ['https://www.dropbox.com/s/xpjr6mgml5k8ml1/FWinter-58k-11m.mp4?raw=1',
+        var video_directory = ['https://www.dropbox.com/s/rumptfpm2rwijie/X08-27-2021-Rd1-S1.mp4?raw=1',
                                'https://www.dropbox.com/s/9kxq97lunb2xn9n/JM%2052k-11mb.mp4?raw=1',
                                
-                               'https://www.dropbox.com/s/l2kc1uqvarxx2fv/XPG-06-02-2022-52-13-DM-match.mp4?raw=1',
+                               'https://www.dropbox.com/s/7413essf1mxro6j/V1.mp4?raw=1',
                                'https://www.dropbox.com/s/ih9se43lx6ixj02/JE-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/75luo4kenawyp1o/BM-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/919w2816y4wt7ld/EB-52-13.mp4?raw=1',
@@ -646,17 +646,17 @@ $("#negative3").click(function() { // button function for rewind
             
           var btn = document.getElementById("modal");
       
-            if (btn.value == "PG-52k-13m") {
-              btn.value = "PG-52k-13m";
-              btn.innerHTML = '<button id="modtext">PG-52k-13m</button>';
+            if (btn.value == "V2.mp4") {
+              btn.value = "V2.mp4";
+              btn.innerHTML = '<button id="modtext">V2.mp4</button>';
               timer.reset();
               
               timer.start(10);
               timer.mode(1);
               }
             else {
-              btn.value = "PG-52k-13m";
-              btn.innerHTML = '<button id="modtext">PG-52k-13m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#129093;</button>';
+              btn.value = "V2.mp4";
+              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
               video_player.pause();
               }
@@ -1141,7 +1141,7 @@ $("#negative3").click(function() { // button function for rewind
                                'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
                                'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
                                'https://www.dropbox.com/s/xpjr6mgml5k8ml1/FWinter-58k-11m.mp4?raw=1',
-                               'https://www.dropbox.com/s/xz70dshuiiconlq/XDMechler-52-13-MiamiPro-2022.mp4?raw=1',
+                               'https://www.dropbox.com/s/gdnz5mdfxjq3hel/TWhisper-55k-13m.mp4?raw=1',
                                
                                'https://www.dropbox.com/s/i76zs5g0snmmf1d/NateSmith-52k-11mb.mp4?raw=1',
                                'https://www.dropbox.com/s/ztqqdo8wyua0z28/TWhisper-52k-11m.mp4?raw=1',
@@ -1461,17 +1461,17 @@ $("#negative3R").click(function() { // button function for rewind
             
            var btn = document.getElementById("modalR");
       
-            if (btn.value == "Dane Mechler-52k-13m") {
+            if (btn.value == "NateSmith-58k-11m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modRtext">Dane Mechler-52k-13m</button>';              
+              btn.innerHTML = '<button id="modRtext">NateSmith-58k-11m</button>';              
               timerR.reset();
               
               timerR.start(10);
               timerR.mode(1);
               }
             else {
-              btn.value = "Dane Mechler-52k-13m";
-              btn.innerHTML = '<button id="modRtext">Dane Mechler-52k-13m&#129093;</button>';              
+              btn.value = "NateSmith-58k-11m";
+              btn.innerHTML = '<button id="modRtext">NateSmith-58k-11m&#129093;</button>';              
               timerR.stop();
               videoR_player.pause();
               }

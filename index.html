@@ -283,7 +283,7 @@ or ES6 equivalent:
          </div>
          
                        
-      <button class="Mbtn ML" title="View Left Player Only" href="#" onclick="window.location.href='playerL.html';">[\+/]</button> 
+      <button class="Mbtn ML" title="View Left Player Only" href="#" onclick="window.location.href='ex.html';">[\+/]</button> 
       
       
       
@@ -311,8 +311,8 @@ or ES6 equivalent:
                                         <li><a href='#' onclick='on4L()'>BM-52k-13m</a></li>
                                         <li><a href='#' onclick='on5L()'>EB-52k-13m</a></li>
                                         <li><a href='#' onclick='on6L()'>TH-55k-13m</a></li>
-					<li><a href='#' onclick='on7L()'>PG 2Hand Drill</a></li>
-                                        <li><a href='#' onclick='on8L()'>ET 55k-13m</a></li>
+                                        <li><a href='#' onclick='on7L()'>ET 55k-13m</a></li>
+                                        <li><a href='#' onclick='on8L()'>blank</a></li>
                                         <li><a href='#' onclick='on9L()'>JM-52k-13m</a></li>
                                         <li><a href='#' onclick='on10L()'>JE 52k-11m</a></li>
                                         <li><a href='#' onclick='on11L()'>TK Viewer</a></li>
@@ -358,7 +358,7 @@ or ES6 equivalent:
                                        <ul>
                                         <li><a href='#' onclick='on0L() | on0R()'>FW-58k-11m</a></li>
                                         <li><a href='#' onclick='on1L() | on3R()'>JM-52k-11m</a></li>                                        
-                                        <li><a href='#' onclick='on2L()'>PG-52k-14m</a></li>
+                                        <li><a href='#' onclick='on2L() | on8R()'>PG-52k-13m</a></li>
                                         <li><a href='#' onclick='on3L()'>JE-52k-13m</a></li>
                                         <li><a href='#' onclick='on4L()'>BM-52k-13m</a></li>
                                         <li><a href='#' onclick='on5L()'>EB-52k-13m</a></li>
@@ -507,7 +507,7 @@ or ES6 equivalent:
                                         <ul>
                                         <li><a href='#' onclick='on3R()'>FredWinter 52-11</a></li> 
                                         <li><a href='#' onclick='on6R()'>FWinter-58k-11m</a></li>
-                                        <li><a href='#' onclick='on8R()'>NateSmith 52-13</a></li>                                        
+                                        <li><a href='#' onclick='on8R()'>DaneMechler 52-13</a></li>                                        
                                         <li><a href='#' onclick='on2R()'>NateSmith 55-13</a></li>
                                         <li><a href='#' onclick='on9R()'>NateSmith 52k-11m</a></li>
                                         <li><a href='#' onclick='on8R()'>NateSmith-58k-11m</a></li>
@@ -540,20 +540,17 @@ or ES6 equivalent:
             <button id="L5" class="Lbtn" onClick="multiStartL()" value="Play Left">Play Left</button>
             <button class="Lbtn" id="L1_8" onClick="multiSlowL()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
             <button class="Lbtn" id="L1_16" onClick="multiSuperSlowL()" value="+1/16x">+1/16X</button> 
+            <button class="Lbtn" id="L4x" onClick="multiFwdL()" value="4X">+4X</button>
+            <button class="Lbtn" id="L16x" onClick="multiSupFwdL()" value="16X">+16X</button> 
             <button class="Lbtn Lbtn1" id="negative2L">-1/8X</button>
             <button class="Lbtn Lbtn1" id="negativeL" >-1X</button >
             <button class="Lbtn Lbtn1" id="negative3L">-4X</button> 
-            <button class="Lbtn" id="L4x" onClick="multiFwdL()" value="4X">+4X</button>
-            <button class="Lbtn" id="L16x" onClick="multiSupFwdL()" value="16X">+16X</button>           
-       <!-- <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNextL()">Next</button>   -->
             <button class="Lbtn" id ="Lnegative2" onClick="onvideoBackL()">Prior</button>  
             <button class="Lbtn" id="Lreset" onClick="onvideoNextL()">Next</button>
             <button class="Lbtn" id="Lreset" onclick="on0L()">Repeat</button>
-            
             <span class="drag" title="Drag Left Player Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span>             
            </div> 
-                
-        <div class="controlsL"><span class="drag" title="Drag Left Zoom Controls elsewhere as needed">&nbsp;&nbsp;&nbsp;&#10016;</span></div> 
+         <div class="controlsL"><span class="drag" title="Drag Left Zoom Controls elsewhere as needed">&nbsp;&nbsp;&nbsp;&#10016;</span></div> 
         
         
         <div class="menubarB">
@@ -564,8 +561,6 @@ or ES6 equivalent:
             <button class="Mbtn" id="M1_8" onClick="multiSlowB();" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
             <button class="Mbtn" id="M1_16" onClick="multiSuperSlowB();" value="+1/16x">+1/16X</button>
             <button id="M5" class="Mbtn" onClick="multiStartB();" value="Play Both" title="Click twice to initiate">Play Both</button>
-       <!-- <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNextL()">Next</button>  
-            <button class="timerbutton timerbutton3" id ="negative2" onClick="onVideoBackL()">Prior</button>   -->
          </div> 
            
            
@@ -573,13 +568,13 @@ or ES6 equivalent:
             <button class="Rbtn" id="Rreset" onclick="on0R()">Repeat</button>
             <button class="Rbtn" id ="Rnegative2" onClick="onvideoBackR()">Prior</button>  
             <button class="Rbtn" id="Rreset" onClick="onvideoNextR()">Next</button>               
-            <button class="Rbtn" id="R1_8" onClick="multiSlowR()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
-            <button class="Rbtn" id="R1_16" onClick="multiSuperSlowR()" value="+1/16x">+1/16X</button> 
-            <button class="Rbtn Rbtn1" id="negative2R">-1/8X</button>
+            <button class="Rbtn Rbtn1" id="negative3R">-4X</button>
             <button class="Rbtn Rbtn1" id="negativeR" >-1X</button >
-            <button class="Rbtn Rbtn1" id="negative3R">-4X</button> 
+            <button class="Rbtn Rbtn1" id="negative2R">-1/8X</button>          
+            <button class="Rbtn" id="R16x" onClick="multiSupFwdR()" value="16X">+16X</button> 
             <button class="Rbtn" id="R4x" onClick="multiFwdR()" value="4X">+4X</button>
-            <button class="Rbtn" id="R16x" onClick="multiSupFwdR()" value="16X">+16X</button>
+            <button class="Rbtn" id="R1_16" onClick="multiSuperSlowR()" value="+1/16x">+1/16X</button> 
+             <button class="Rbtn" id="R1_8" onClick="multiSlowR()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
             <button id="R5" class="Rbtn" onClick="multiStartR()" value="Play Right">Play Right</button>
             <button class="Rbtn" id="Rreset" onClick="multiResetR()">Reset&nbsp;&#129149;</button>
             <span class="drag" title="Drag Right Player Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span>             

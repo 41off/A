@@ -442,21 +442,26 @@
 
   
         var video_directory = ['https://www.dropbox.com/s/xpjr6mgml5k8ml1/FWinter-58k-11m.mp4?raw=1',
-                               'https://www.dropbox.com/s/9kxq97lunb2xn9n/JM%2052k-11mb.mp4?raw=1',
-                               
+        
+                               'https://www.dropbox.com/s/9kxq97lunb2xn9n/JM%2052k-11mb.mp4?raw=1',                               
                                'https://www.dropbox.com/s/l2kc1uqvarxx2fv/XPG-06-02-2022-52-13-DM-match.mp4?raw=1',
+                               
                                'https://www.dropbox.com/s/ih9se43lx6ixj02/JE-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/75luo4kenawyp1o/BM-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/919w2816y4wt7ld/EB-52-13.mp4?raw=1',
+                               
                                'https://www.dropbox.com/s/1h8ofv23eexuu8u/TH-55-13b.mp4?raw=1',
                                'https://www.dropbox.com/s/365bhju44j7zlj7/V1.mp4?raw=1',
-                               'https://www.dropbox.com/s/43ewvwpf48p1qos/v2.mp4?raw=1',
+                               'https://www.dropbox.com/s/1jkznavhtbdfnyw/XXXGX010948.mp4?raw=1',
+                               
                                'https://www.dropbox.com/s/j4priqaxu1rgcdz/JM-08-27-2021-Rd2-S1-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/dohzqvbggqrihbp/JE-52k-11mb.mp4?raw=1',
                                'https://player.vimeo.com/external/554033182.hd.mp4?s=c88df5d6ba1a17d9abcc34972021be24ed72164f&profile_id=175',
+                               
                                'https://player.vimeo.com/external/468376204.hd.mp4?s=ae32c4912bfba41349aecd4d9e38974dce7b64fe&profile_id=175',
                                'https://player.vimeo.com/external/384270451.hd.mp4?s=d712635e1dcc47fd9d2bff9f7eb62553499b8f83&profile_id=175',
                                'https://player.vimeo.com/external/470756931.hd.mp4?s=e1898c446656131819fe8170eafc50d3e6b247bb&profile_id=175',
+                               
                                'https://player.vimeo.com/external/576318773.hd.mp4?s=860340a4527e90128a1852bcba3634f859386001&profile_id=175',
                                'https://www.dropbox.com/s/afmg5cv1z94kfrg/XPG-08-09-2021.mkv.mp4?raw=1',
                                'https://www.dropbox.com/s/spmsl2jlhgjyhfi/PG.mp4?raw=1'
@@ -782,17 +787,17 @@ $("#negative3").click(function() { // button function for rewind
             
            var btn = document.getElementById("modal");
       
-            if (btn.value == "JM-52k-13m") {
+            if (btn.value == "PG-52k-13m") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">JM-52k-13m</button>';              
+              btn.innerHTML = '<button id="modtext">PG-52k-13m</button>';              
               timer.reset();
              
               timer.start(10);
               timer.mode(1);
               }
             else {
-              btn.value = "JM-52k-13m";
-              btn.innerHTML = '<button id="modtext">JM-52k-13m&nbsp;&nbsp;&#129093;</button>';              
+              btn.value = "PG-52k-13m";
+              btn.innerHTML = '<button id="modtext">PG-52k-13m&nbsp;&nbsp;&#129093;</button>';              
               timer.stop();
               video_player.pause();
               }
@@ -1133,23 +1138,27 @@ $("#negative3").click(function() { // button function for rewind
    
   
         var videoR_directory = ['https://www.dropbox.com/s/wi6oikkgds2f6is/NateSmith-58k-11m.mp4?raw=1',
+        
                                 'https://www.dropbox.com/s/0xdysd8eszm4m5r/FWinter%2052k-11m.mp4?raw=1',
-                               'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
+                                'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
                                
-                               'https://www.dropbox.com/s/0xdysd8eszm4m5r/FWinter%2052k-11m.mp4?raw=1',
-                               'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
-                               'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
-                               'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
-                               'https://www.dropbox.com/s/xpjr6mgml5k8ml1/FWinter-58k-11m.mp4?raw=1',
-                               'https://www.dropbox.com/s/xz70dshuiiconlq/XDMechler-52-13-MiamiPro-2022.mp4?raw=1',
+                                'https://www.dropbox.com/s/0xdysd8eszm4m5r/FWinter%2052k-11m.mp4?raw=1',
+                                'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
+                                'https://www.dropbox.com/s/epsp8oipp8dntqg/JamieBull-52k-13m.mp4?raw=1',
                                
-                               'https://www.dropbox.com/s/i76zs5g0snmmf1d/NateSmith-52k-11mb.mp4?raw=1',
-                               'https://www.dropbox.com/s/ztqqdo8wyua0z28/TWhisper-52k-11m.mp4?raw=1',
-                               'https://www.dropbox.com/s/6i4c298r83sdezp/TWhisper-52k-13m.mp4?raw=1',
-                               'https://www.dropbox.com/s/x6xl9643twkar2v/TWhisper-55k-11m.mp4?raw=1',
-                               'https://www.dropbox.com/s/3yio8nq5xvxkcog/TWhisper-58k-11m.mp4?raw=1',
-                               'https://www.dropbox.com/s/dslnk6u6sxxbp1e/TWhsisper-58k-13m.mp4?raw=1',
-                               'https://www.dropbox.com/s/wi6oikkgds2f6is/NateSmith-58k-11m.mp4?raw=1'
+                                'https://www.dropbox.com/s/l61sguks0adghma/Nate%20Smith-55-13.mp4?raw=1',
+                                'https://www.dropbox.com/s/xpjr6mgml5k8ml1/FWinter-58k-11m.mp4?raw=1',
+                                'https://www.dropbox.com/s/xz70dshuiiconlq/XDMechler-52-13-MiamiPro-2022.mp4?raw=1',
+                               
+                                'https://www.dropbox.com/s/i76zs5g0snmmf1d/NateSmith-52k-11mb.mp4?raw=1',
+                                'https://www.dropbox.com/s/ztqqdo8wyua0z28/TWhisper-52k-11m.mp4?raw=1',
+                                'https://www.dropbox.com/s/6i4c298r83sdezp/TWhisper-52k-13m.mp4?raw=1',
+                               
+                                'https://www.dropbox.com/s/x6xl9643twkar2v/TWhisper-55k-11m.mp4?raw=1',
+                                'https://www.dropbox.com/s/3yio8nq5xvxkcog/TWhisper-58k-11m.mp4?raw=1',
+                                'https://www.dropbox.com/s/dslnk6u6sxxbp1e/TWhsisper-58k-13m.mp4?raw=1',
+                               
+                                'https://www.dropbox.com/s/wi6oikkgds2f6is/NateSmith-58k-11m.mp4?raw=1'
                                ];                      
  
   

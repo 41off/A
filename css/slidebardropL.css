@@ -368,8 +368,8 @@
   display: inline-block;
   width:auto;
   float:right;
-  right: 4%;
-  bottom:14%;
+  right: 0.5%;
+  bottom:90%;
   text-align: center;
   padding-top:4px;
   padding-bottom:4px;
@@ -394,7 +394,7 @@
   background: -webkit-linear-gradient(top, black, silver);  
   width:auto;
   max-width: 150px;
-  height:150px;
+  height:50%;
   overflow:scroll;
   border: 2px;
   border-radius: 2px;

@@ -32,21 +32,20 @@ body {
   border-radius: 0.6vmin;
   border-style:double;
   margin-right: 1vmin;
-    margin-left: 0.5vmin;
-    margin-top: 0.3vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.25vmin;
-    padding-right:0.25vmin;
-
+  margin-left: 0.5vmin;
+  margin-top: 0.3vmin;
+  padding-top:0.1vmin;
+  padding-bottom:0.1vmin;
+  padding-left:1vmin;
+  padding-right:1vmin;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
   cursor: pointer;
   text-shadow: 0.1vmin 0.1vmin black;
-  font-weight: 600;
-    font-size: 1.5vmin;
-    color:white;
+  font-weight: 500;
+  font-size: 1.5vmin;
+  color:white;
   float:left;
   width:auto;
   overflow:visible;
@@ -114,7 +113,83 @@ body {
   background: -webkit-linear-gradient(top, pink, #f9f9f9);
 }
 
+.barL {
+   position: absolute;
+   display:inline;
+   padding-top: 2px;
+   padding-bottom:2px;
+   left:12%;
+   bottom: 3.5%;
+   height: auto;
+  
+   max-height:34pt;
+   width: auto;
+   
+ 
+   
+   opacity: 1.0;
+   transition: opacity 50s;
+   background-color: transparent;
+   border: 2px;
+   border-color: transparent;
+   border-radius: 4px;
+   border-style:groove;
+   overflow:hidden;
+   z-index:25;
+   color:transparent;
+}
 
+.barL:hover {
+    background: -webkit-linear-gradient(top, lightgray, black);
+    border-color: black;
+    border-radius: 4px;
+    text-shadow: 1px 1px black;
+    font-weight: 800;
+    font-size: 12pt;
+    color:red;
+    opacity: 1;
+    transition: opacity 2s;
+    cursor:move;
+}
+
+.barR {
+   position: absolute;
+   display:inline;
+   padding-top: 2px;
+   padding-bottom:2px;
+   left:12%;
+   bottom: 3.5%;
+   height: auto;
+  
+   max-height:34pt;
+   width: auto;
+   
+ 
+   
+   opacity: 1.0;
+   transition: opacity 50s;
+   background-color: transparent;
+   border: 2px;
+   border-color: transparent;
+   border-radius: 4px;
+   border-style:groove;
+   overflow:hidden;
+   z-index:25;
+   color:transparent;
+}
+
+.barR:hover {
+    background: -webkit-linear-gradient(top, lightgray, black);
+    border-color: black;
+    border-radius: 4px;
+    text-shadow: 1px 1px black;
+    font-weight: 800;
+    font-size: 12pt;
+    color:red;
+    opacity: 1;
+    transition: opacity 2s;
+    cursor:move;
+}
 
 
 .timer {
@@ -576,7 +651,7 @@ body {
 .popmenu {
     text-align: center;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.5vmin;
     color:white;
     line-height:1.75vmin;
@@ -983,7 +1058,8 @@ body {
 #R5:hover {
     border-color: white;
     background: -webkit-linear-gradient(top, lightgray, orange);
-    color: black;}
+    color: black;
+}
 
 
 .ML {
@@ -2333,7 +2409,7 @@ body {
   height:80%;
   position:relative;
   border: 2px;
-  border-color:#0066CD;
+  border-color:transparent;
   border-style:solid;
   border-radius: 10x;
   overflow:hidden;
@@ -2352,10 +2428,11 @@ body {
   position:relative;
   margin:0;
   border: 2px;
-  border-color:#0066CD;
+  border-color:transparent;
   border-style:solid;
   border-radius: 10x;
   overflow:hidden;
+  /* prior blue #0066CD */
  
 }
 

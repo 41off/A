@@ -1,0 +1,248 @@
+﻿<html>
+<head>
+    <title>Mono Video Player</title>
+    
+<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-touch-fullscreen" content="yes"/>
+  <meta name="msapplication-tap-highlight" content="no"/>
+
+
+ <link rel='icon' href='favicon.ico' type='image/x-icon'/ > 
+ <link href="plugins/videojs/css/video-js.css" rel="stylesheet" type="text/css">
+ <link href="css/stylesL.css" rel="stylesheet" type="text/css">
+ <link href="css/slidebardropL.css" rel="stylesheet" type="text/css">
+ 
+  <link rel="stylesheet" href="css/popoverL.css">
+ 
+ <script src="js/jquery-3.6.0.js"></script>
+ <script src="js/jquery-ui.js"></script>
+ 
+ 
+ <script src="js/bootstrap_popup.min.js"></script> 
+
+</head>
+
+
+<script>
+
+window.addEventListener("load", function B() { onloadL() })
+
+</script>
+
+
+
+<body >
+       
+        
+
+<div id="wrap">
+
+ 
+
+ <div  class="timer">
+             <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
+             <span title="Drag Timer elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span>
+         </div> 
+    
+    <div class="paperscriptM">
+         <canvas id="video-canvas1" height="1080" width="1960"></canvas>
+         <canvas id="video-canvas"></canvas>
+       </div>
+
+  <div id="wrapL">
+  
+   <div id="stageL">
+         
+               <video id="video" controls muted loop
+                     onclick="this.paused? ClickPauseL():ClickStartL(); this.paused? timer.start(10):timer.stop(0)" onended="onVideoEndedL();">
+                    <source type="video/mp4">
+                    <source type="video/ogg">
+                    <source type='video/webm; codecs="vp8, vorbis"'>
+               </video>
+     
+     <button class="Mbtn ML" title="View Side-By-Side Player" href="#" onclick="window.location.href='player.html';">[\\+//]</button>
+     
+     <button class="popmenu" title="Click here or anywhere outside gray box to close menu" data-toggle="popover" data-placement="left" data-html="true" 
+                           data-content="
+                           
+1.) Click “Choose your own .mp4” to play a video clip from your machine. The script in this player renders your .mp4 file (only .mp4 files are supported) as an URL object allowing the HTML5 features in your browser to stream the file locally. Chrome is the best browser, Mozilla is decent. Have not tried with Safari.
+<br>
+<br>
+2.)	Clips of Pro Skiers or Club members are found in the respective dropdown menus at bottom left of each screen.
+<br>
+<br>
+3.)	Some member clips are automatically “paired” to a Pro skier in the Right Side Player.
+<br>
+<br>
+4.)	Pro Skier clips labeled at speeds below their actual have been rendered with reduced rates accordingly. I.e.,  N. Smith clips at 52k were rendered at 52/58 rates. It may not be ideal with regard to edge change position, but is likely reasonable to study time from buoy to centerline.
+<br>
+<br>
+5.)	Click anywhere outside this menu to close it.
+">Click for Pop-Out Menu</button>
+     
+     <input type="file" class="custom-file-input" accept="video/mp4"/>
+    
+     <div id="message" display="inline-block"></div> 
+       
+     <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
+     
+  </div>
+  
+   <!--    <div class="double" onclick="window.location.href='player.html';"> 
+           </div>
+   --> 
+         <div class="dropdownL" title="Drag Menu as needed">
+                                     &#10016;
+                                     <button class="dropbtn">Victory Clips</button>
+                                       <div class="dropdownL-content">
+                                        
+                                        <a href="#" onclick=on0L()">41off Viewer</a>
+                                        <a href="#" onclick="on1L()">JM Viewer</a>
+                                        <a href="#" onclick="on2L()">JE Viewer</a>
+                                        <a href="#" onclick="on3L()">SM Viewer</a>
+                                        <a href="#" onclick="on4L()">BM Viewer</a>
+                                        <a href="#" onclick="on5L()">TH Viewer</a>
+                                        <a href="#" onclick="on6L()">Nate Smith 13/52</a>
+                                        <a href="#" onclick="on7R()">MC Viewer</a>
+                                        <a href="#" onclick="on8L()">NG Viewer</a>
+                                        <a href="#" onclick="on9L()">PG Viewer</a>
+                                        <a href="#" onclick="on10L()">TK Viewer</a>
+                                        <a href="#" onclick="on11L()">SK Viewer</a>
+                                        <a href="#" onclick="on12L()">MV Viewer</a>
+                                        <a href="#" onclick="on13L()">RB Viewer</a>
+                                        <a href="#" onclick="on14L()">ET Viewer</a>
+                                        <a href="#" onclick="on15L()">HM Viewer</a>
+                                        <a href="#" onclick="onvideoBackL()">Prior</a>
+                                        <a href="#">Link 3</a>
+                                         </div>
+                                    </div>
+                    </div>
+
+         <div class="menubarL" style="text-align:center">
+            <button id="L5" class="Lbtn" onClick="multiStartL()" value="Play">Play</button>
+            <button class="Lbtn" id="L1_8" onClick="multiSlowL()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
+            <button class="Lbtn" id="L1_16" onClick="multiSuperSlowL()" value="+1/16x">+1/16X</button> 
+            <button class="Lbtn Lbtn1" id="negative2L">-1/8X</button>
+            <button class="Lbtn Lbtn1" id="negativeL" >-1X</button >
+            <button class="Lbtn Lbtn1" id="negative3L">-4X</button> 
+            <button class="Lbtn" id="L4x" onClick="multiFwdL()" value="4X">+4X</button>
+            <button class="Lbtn" id="L16x" onClick="multiSupFwdL()" value="16X">+16X</button>               
+            <button class="Lbtn" id="Lreset" onclick="on0L()">Repeat</button> 
+            <button class="Lbtn" id ="Lnegative2" onClick="onvideoBackL()">Prior</button>  
+            <button class="Lbtn" id="Lreset" onClick="onvideoNextL()">Next</button>
+            <button class="Lbtn" id="Lreset" onClick="multiResetL()">&#129148;&nbsp;Reset</button>
+            <span class="drag" title="Drag Left Player Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span>             
+           </div> 
+                
+        <div class="controlsL"><span class="drag" title="Drag Left Zoom Controls elsewhere as needed">&nbsp;&nbsp;&nbsp;&#10016;</span></div> 
+        
+       
+					<div class="toolblock">
+															
+								 <div class="inner_tool">
+									<button class="line-drawing-tools" data-value="circle">
+										<i class="toolicon12"></i><span class="hint">Click to draw circle.</span>
+									</button>
+									<button class="line-drawing-tools" data-value="line">
+									    <i class="toolicon3"></i><span class="hint">Click to draw line. "Units" of measure are relative based on hypotenuse function.</span>
+									</button>
+									<button class="line-drawing-tools" background data-value="angle">
+									    <i class="toolicon2"></i><span class="hint">Click to draw line measuring angle against X-axis (relative length units included).</span>
+									</button>
+									<button class="line-drawing-tools" data-value="triangle">
+									    <i class="toolicon13"></i><span class="hint">Click to create triangle function not working yet.</span>
+									</button>
+									<button class="line-drawing-tools" data-value="yellow">
+										<i class="toolicon5"></i><span class="hint">Click to paint yellow line.</span>									
+									</button>
+									<button class="line-drawing-tools" data-value="red">
+										<i class="toolicon4"></i><span class="hint">Click to paint red line.</span>	
+									</button>
+									<button class="line-drawing-tools" data-value="blue">
+										<i class="toolicon7"></i><span class="hint">Click to paint blue line.</span>										
+									</button>
+									<button class="line-drawing-tools" data-value="green">
+										<i class="toolicon6"></i><span class="hint">Click to paint green line.</span>										
+									</button>
+									<button class="line-drawing-tools" data-value="dark">
+										<i class="toolicon15"></i><span class="hint">Click to black-out an area.</span>	
+									</button>
+									<button class="line-drawing-tools" data-value="white">
+										<i class="toolicon14"></i><span class="hint">Click to white-out an area.</span>	
+									</button>
+									<button class="line-drawing-tools" data-value="move">
+									    <i class="toolicon1"></i><span class="hint">Click to "select" object, drag, rotate, re-size as needed.</span>
+									</button>
+									<button class="line-drawing-tools" data-value="off">
+									    <i class="toolicon16"></i><span class="hint">Click to "release" palette drawing task prior to using line function.</span>
+									</button>
+									<button class="line-drawing-tools" onclick="Addtext()">
+									    <i class="toolicon9"></i><span class="hint">Click to add text; highlight, delete, and then type over.</span>	
+									</button>
+								    <button href="javascript:void(0)" class="line-drawing-tools" data-value="delete">
+								        <i class="toolicon10"></i><span class="hint">Click to "clear" only "selected" items.</span>
+								    </button>								
+							        <button href="javascript:void(0)" class="line-drawing-tools" data-value="clear">
+							            <i class="toolicon11"></i><span class="hint">Click to "delete" all drawn items on the canvas.</span>
+							        </button>
+							        <span class="drag" title="Drag Drawing Tools Bar elsewhere as needed">&nbsp;&nbsp;&#10016;</span>
+							</div>
+				    	
+             </div>  
+             
+      <script type="text/javascript" src="plugins/41off-drag.popover.closebtn.js"></script>    <!-- within wrap   -->
+        
+ </div>
+      
+       					
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+  
+  
+  
+  
+  
+   <!-- Text - Color Palette JS -->
+   <script src="plugins/textbox.js"></script>
+   
+   
+  
+
+   <script type="text/javascript" src="plugins/videojs/js/41offvideoSingleEX.js"></script>
+ <!--  <script type="text/javascript" src="plugins/videojs/js/41offvideoR.js"></script>  -->
+   
+   <script type="text/javascript" src="plugins/41offtimerBoth.js"></script>
+   <script type="text/javascript" src="plugins/41offtimerR.js"></script>
+   
+   
+   <script type="text/javascript" src="plugins/41offzoomL.js"></script>
+   
+   <script type="text/javascript" src="plugins/41offzoomR.js"></script>
+   
+   <script type="text/javascript" src="plugins/41off-drag.js"></script>
+
+   
+ <!-- Video JS -->
+   <script src="plugins/fabric/fabric.min.js"></script>
+   <script src="js/commonFunctionBoth.js"></script>
+  
+ 
+<script>
+var close = document.getElementsByClassName('closebtn2');
+var i;
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 1200);
+    }
+}
+</script>
+
+</body>
+</html>
+

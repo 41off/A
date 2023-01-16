@@ -132,7 +132,8 @@
   text-align: center;
   z-index: 11;
   cursor:move;
-  color:red
+  color:red;
+  font-weight:500;
 }
 
 
@@ -226,7 +227,8 @@
   vertical-align:bottom;
   z-index: 11;
   cursor:move;
-  color:red
+  color:red;
+  font-weight:500;
 }
 
 
@@ -264,8 +266,7 @@
   margin-top:0.25vmin;
   margin-bottom:0.25vmin;
   min-width: 14vmin;
-  
-
+  display:inline-block;
   
 }
 
